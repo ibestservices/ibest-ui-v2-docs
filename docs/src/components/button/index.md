@@ -22,7 +22,7 @@ import { IBestButton } from "@ibestservices/ibest-ui-v2";
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Flex({ wrap: FlexWrap.Wrap, space: {main: LengthMetrics.vp(12), cross: LengthMetrics.vp(12)} }) {
@@ -62,7 +62,7 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Row({ space: 12 }) {
@@ -92,7 +92,7 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Row({ space: 12 }) {
@@ -122,7 +122,7 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Row({ space: 12 }) {
@@ -153,7 +153,7 @@ struct DemoPage {
 
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Row({ space: 12 }) {
@@ -185,7 +185,7 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct ButtonPage {
   @Builder Arrow(){
     Image($r('app.media.title_back'))
@@ -213,7 +213,7 @@ struct ButtonPage {
         type: 'primary',
         text: '按钮',
         iconPositon: "bottom",
-        iconBuilder: this.Arrow
+        iconBuilder: (): void => this.Arrow()
       })
     }
   }
@@ -231,7 +231,7 @@ struct ButtonPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct ButtonPage {
   build(){
     Row({ space: 12 }) {
@@ -270,7 +270,7 @@ struct ButtonPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct ButtonPage {
   build(){
     Row({space: 12}) {
@@ -307,7 +307,7 @@ struct ButtonPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct ButtonPage {
   build(){
     IBestButton({
@@ -345,9 +345,10 @@ struct ButtonPage {
 | loadingSize  | 加载图标大小，如果为-1 默认跟随字体大小                  | _string_ \| _number_  | `-1` |
 | icon         | 按钮图标                   | _ResourceStr_ | `-` |
 | fontColor    | 按钮文字颜色                | _ResourceColor_ | `-` |
-| btnBorderColor | 按钮边框颜色    | _ResourceColor_ | `-` |
-| btnBorderRadius| 按钮圆角        | _string_ \| _number_ | `-` |
-| space          | 文字与图标间距   | _string_ \| _number_ | `4` |
+| btnBorderColor | 按钮边框颜色              | _ResourceColor_ | `-` |
+| btnBorderRadius| 按钮圆角                  | _string_ \| _number_ | `-` |
+| space          | 文字与图标间距             | _string_ \| _number_ | `4` |
+| fontWeight     | 文字字重                  | _string_ \| _number_ \| FontWeight | `Normal` |
 
 ### Events
 

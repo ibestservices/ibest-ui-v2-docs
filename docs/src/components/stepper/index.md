@@ -19,13 +19,13 @@ import { IBestStepper } from "@ibestservices/ibest-ui-v2";
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: number = 1
+  @Local value: number = 1
   build() {
     Column(){
       IBestStepper({
-        value: $value
+        value: this.value!!
       })
     }
   }
@@ -43,13 +43,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: number = 1
+  @Local value: number = 1
   build() {
     Column(){
       IBestStepper({
-        value: $value,
+        value: this.value!!,
         step: 2
       })
     }
@@ -68,13 +68,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: number = 1
+  @Local value: number = 1
   build() {
     Column(){
       IBestStepper({
-        value: $value,
+        value: this.value!!,
         min: 5,
         max: 8
       })
@@ -94,13 +94,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: number = 1
+  @Local value: number = 1
   build() {
     Column(){
       IBestStepper({
-        value: $value,
+        value: this.value!!,
         integer: true
       })
     }
@@ -119,13 +119,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: number = 1
+  @Local value: number = 1
   build() {
     Column(){
       IBestStepper({
-        value: $value,
+        value: this.value!!,
         disabled: true
       })
     }
@@ -144,13 +144,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: number = 1
+  @Local value: number = 1
   build() {
     Column(){
       IBestStepper({
-        value: $value,
+        value: this.value!!,
         disableInput: true
       })
     }
@@ -169,13 +169,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: number = 1
+  @Local value: number = 1
   build() {
     Column(){
       IBestStepper({
-        value: $value,
+        value: this.value!!,
         step: 0.2,
         decimalLength: 1
       })
@@ -195,13 +195,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: number = 1
+  @Local value: number = 1
   build() {
     Column(){
       IBestStepper({
-        value: $value,
+        value: this.value!!,
         inputWidth: 40,
         buttonSize: 32
       })

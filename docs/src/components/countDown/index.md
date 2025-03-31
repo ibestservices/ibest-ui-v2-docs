@@ -19,9 +19,9 @@ import { IBestCountDown } from "@ibestservices/ibest-ui-v2";
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State time: number = 30 * 60 * 60 * 1000
+  @Local time: number = 30 * 60 * 60 * 1000
   build() {
     Column(){
       IBestCountDown({
@@ -40,9 +40,9 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State time: number = 30 * 60 * 60 * 1000
+  @Local time: number = 30 * 60 * 60 * 1000
   build() {
     Column(){
       IBestCountDown({
@@ -62,9 +62,9 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State time: number = 30 * 60 * 60 * 1000
+  @Local time: number = 30 * 60 * 60 * 1000
   build() {
     Column(){
       IBestCountDown({
@@ -85,9 +85,9 @@ struct DemoPage {
 ```ts
 import { IBestCountDownController } from '@ibestservices/ibest-ui'
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State time: number = 3 * 1000
+  @Local time: number = 3 * 1000
   private controller = new IBestCountDownController()
   build() {
     Column({space: 16}){
@@ -101,21 +101,21 @@ struct DemoPage {
         IBestButton({
           type: 'primary',
           text: "开始",
-          onClickBtn: () => {
+          onBtnClick: () => {
             this.controller.start()
           }
         })
         IBestButton({
           type: 'primary',
           text: "暂停",
-          onClickBtn: () => {
+          onBtnClick: () => {
             this.controller.pause()
           }
         })
         IBestButton({
           type: 'primary',
           text: "重置",
-          onClickBtn: () => {
+          onBtnClick: () => {
             this.controller.reset()
           }
         })

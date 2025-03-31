@@ -19,9 +19,9 @@ import { IBestImagePreview } from "@ibestservices/ibest-ui-v2";
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State imageList: string[] = [
+  @Local imageList: string[] = [
     "https://inews.gtimg.com/om_bt/Os3eJ8u3SgB3Kd-zrRRhgfR5hUvdwcVPKUTNO6O7sZfUwAA/641",
     "https://res1.vmallres.com/pimages/uomcdn/CN/pms/202409/gbom/6942103136221/800_800_333848611DC0B1FC64909F87CD048F2Cmp.png",
     "https://view.horsevision.cn/huataivr/static/images/longImage/%E9%AB%98%E9%A2%9D%E5%9B%9E%E6%8A%A5%E9%9C%80%E8%AD%A6%E6%83%95%EF%BC%8C%E5%88%87%E5%8B%BF%E8%90%BD%E5%85%A5%E2%80%9C%E5%BA%9E%E6%B0%8F%E9%AA%97%E5%B1%80%E2%80%9D.jpg",
@@ -35,7 +35,7 @@ struct DemoPage {
           title: '预览图片',
           isLink: true,
           hasBorder: false,
-          onClickCell: () => {
+          onCellClick: () => {
             IBestImagePreview.show(this.imageList)
           }
         })
@@ -53,9 +53,9 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State imageList: string[] = [
+  @Local imageList: string[] = [
     "https://inews.gtimg.com/om_bt/Os3eJ8u3SgB3Kd-zrRRhgfR5hUvdwcVPKUTNO6O7sZfUwAA/641",
     "https://res1.vmallres.com/pimages/uomcdn/CN/pms/202409/gbom/6942103136221/800_800_333848611DC0B1FC64909F87CD048F2Cmp.png",
     "https://view.horsevision.cn/huataivr/static/images/longImage/%E9%AB%98%E9%A2%9D%E5%9B%9E%E6%8A%A5%E9%9C%80%E8%AD%A6%E6%83%95%EF%BC%8C%E5%88%87%E5%8B%BF%E8%90%BD%E5%85%A5%E2%80%9C%E5%BA%9E%E6%B0%8F%E9%AA%97%E5%B1%80%E2%80%9D.jpg",
@@ -69,7 +69,7 @@ struct DemoPage {
           title: '预览图片',
           isLink: true,
           hasBorder: false,
-          onClickCell: () => {
+          onCellClick: () => {
             IBestImagePreview.show(this.imageList, {
               maskColor: '#fff',
               indexFontColor: "#000"
@@ -90,9 +90,9 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State imageList: string[] = [
+  @Local imageList: string[] = [
     "https://inews.gtimg.com/om_bt/Os3eJ8u3SgB3Kd-zrRRhgfR5hUvdwcVPKUTNO6O7sZfUwAA/641",
     "https://res1.vmallres.com/pimages/uomcdn/CN/pms/202409/gbom/6942103136221/800_800_333848611DC0B1FC64909F87CD048F2Cmp.png",
     "https://view.horsevision.cn/huataivr/static/images/longImage/%E9%AB%98%E9%A2%9D%E5%9B%9E%E6%8A%A5%E9%9C%80%E8%AD%A6%E6%83%95%EF%BC%8C%E5%88%87%E5%8B%BF%E8%90%BD%E5%85%A5%E2%80%9C%E5%BA%9E%E6%B0%8F%E9%AA%97%E5%B1%80%E2%80%9D.jpg",
@@ -106,7 +106,7 @@ struct DemoPage {
           title: '预览图片',
           isLink: true,
           hasBorder: false,
-          onClickCell: () => {
+          onCellClick: () => {
             IBestImagePreview.show(this.imageList, {
               startIndex: 1
             })
@@ -126,9 +126,9 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State imageList: string[] = [
+  @Local imageList: string[] = [
     "https://inews.gtimg.com/om_bt/Os3eJ8u3SgB3Kd-zrRRhgfR5hUvdwcVPKUTNO6O7sZfUwAA/641",
     "https://res1.vmallres.com/pimages/uomcdn/CN/pms/202409/gbom/6942103136221/800_800_333848611DC0B1FC64909F87CD048F2Cmp.png",
     "https://view.horsevision.cn/huataivr/static/images/longImage/%E9%AB%98%E9%A2%9D%E5%9B%9E%E6%8A%A5%E9%9C%80%E8%AD%A6%E6%83%95%EF%BC%8C%E5%88%87%E5%8B%BF%E8%90%BD%E5%85%A5%E2%80%9C%E5%BA%9E%E6%B0%8F%E9%AA%97%E5%B1%80%E2%80%9D.jpg",
@@ -142,7 +142,7 @@ struct DemoPage {
           title: '预览图片',
           isLink: true,
           hasBorder: false,
-          onClickCell: () => {
+          onCellClick: () => {
             IBestImagePreview.show(this.imageList, {
               indexPosition: 'top'
             })

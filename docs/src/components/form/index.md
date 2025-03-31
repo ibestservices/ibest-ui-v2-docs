@@ -22,12 +22,16 @@ import { IBestForm, IBestFormRule, IBestField, IBestFormController } from "@ibes
 
 ::: details 点我查看代码
 ```ts
-import { IBestCellGroup, IBestButton } from "@ibestservices/ibest-ui-v2"
+import { IBestCellGroup, IBestButton, IBestToast } from "@ibestservices/ibest-ui-v2"
+@ObservedV2
+class Form{
+  @Trace name: string = ''
+  @Trace phone: string = ''
+}
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State name: string = ""
-  @State phone: string = ""
+  @Local form: Form = new Form()
   private formId: string = 'form'
   private controller: IBestFormController = new IBestFormController()
   build() {
@@ -36,11 +40,11 @@ struct DemoPage {
         formId: this.formId,
         controller: this.controller
       }){
-        IBestCellGroup({inset: true}) {
+        IBestCellGroup({hasBorder: false}) {
           IBestField({
             formId: this.formId,
             prop: 'name',
-            value: $name,
+            value: this.form.name!!,
             label: "姓名",
             placeholder: "请输入姓名",
             rules:[
@@ -51,7 +55,7 @@ struct DemoPage {
           IBestField({
             formId: this.formId,
             prop: 'phone',
-            value: $phone,
+            value: this.form.phone!!,
             label: "手机号",
             placeholder: "请输入手机号",
             hasBorder: false,
@@ -59,41 +63,40 @@ struct DemoPage {
               { required: true, message: '请输入手机号' }
             ]
           })
-          IBestButton({
-            text: "验证姓名",
-            type: 'primary',
-            buttonSize: 'large',
-            onClickBtn: () => {
-              this.controller.validateField("name").then(res => {
-                if(res.valid){
-                  IBestToast.show("验证成功")
-                } else {
-                  IBestToast.show({
-                    message: `${res.field.label}验证失败`
-                  })
-                }
-              })
-            }
-          })
-          IBestButton({
-            text: "提交",
-            type: 'primary',
-            buttonSize: 'large',
-            onClickBtn: () => {
-              this.controller.validate().then(res => {
-                if(res.valid){
-                  IBestToast.show("验证成功")
-                } else {
-                  let labels: string[] = res.fields.map(item => item.label)
-                  IBestToast.show({
-                    message: `${labels.join(',')}验证失败`
-                  })
-                }
-              })
-            }
-          })
-            .margin({ top: 20 })
         }
+        IBestButton({
+          text: "验证姓名",
+          type: 'primary',
+          buttonSize: 'large',
+          onBtnClick: () => {
+            this.controller.validateField("name").then(res => {
+              if(res.valid){
+                IBestToast.show("验证成功")
+              } else {
+                IBestToast.show({
+                  message: `${res.field.label}验证失败`
+                })
+              }
+            })
+          }
+        })
+        IBestButton({
+          text: "提交",
+          type: 'primary',
+          buttonSize: 'large',
+          onBtnClick: () => {
+            this.controller.validate().then(res => {
+              if(res.valid){
+                IBestToast.show("验证成功")
+              } else {
+                let labels: string[] = res.fields.map(item => item.label)
+                IBestToast.show({
+                  message: `${labels.join(',')}验证失败`
+                })
+              }
+            })
+          }
+        })
       }
     }
   }
@@ -110,13 +113,17 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 import { IBestCellGroup, IBestButton, IBestToast } from "@ibestservices/ibest-ui-v2"
+@ObservedV2
+class Form{
+  @Trace value1: string = "123"
+  @Trace value2: string = ""
+  @Trace value3: string = "abc"
+  @Trace value4: string = ""
+}
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value1: string = ""
-  @State value2: string = ""
-  @State value3: string = ""
-  @State value4: string = ""
+  @Local form: Form = new Form()
   private formId: string = 'form'
   // 正则校验
   private pattern = /\d{6}/
@@ -159,50 +166,49 @@ struct DemoPage {
         rules: this.rules,
         controller: this.controller
       }){
-        IBestCellGroup({inset: true}) {
+        IBestCellGroup({hasBorder: false}) {
           IBestField({
-            formId: this.formId,
+            formId: this.form,
             prop: 'value1',
-            value: $value1,
+            value: this.form.value1!!,
             label: "正则校验",
             placeholder: "正则校验"
           })
           IBestField({
-            formId: this.formId,
+            formId: this.form,
             prop: 'value2',
-            value: $value2,
+            value: this.form.value2!!,
             label: "函数校验",
             placeholder: "返回true/false"
           })
           IBestField({
-            formId: this.formId,
+            formId: this.form,
             prop: 'value3',
-            value: $value3,
+            value: this.form.value3!!,
             label: "函数校验",
             placeholder: "返回验证信息"
           })
           IBestField({
-            formId: this.formId,
+            formId: this.form,
             prop: 'value4',
-            value: $value4,
+            value: this.form.value4!!,
             label: "异步校验",
             placeholder: "异步函数校验",
             hasBorder: false
           })
-          IBestButton({
-            text: "提交",
-            type: 'primary',
-            buttonSize: 'large',
-            onClickBtn: () => {
-              this.controller.validate((valid, fields) => {
-                if (valid) {
-                  console.log("验证成功")
-                }
-              })
-            }
-          })
-            .margin({ top: 20 })
         }
+        IBestButton({
+          text: "提交",
+          type: 'primary',
+          buttonSize: 'large',
+          onBtnClick: () => {
+            this.controller.validate((valid, fields) => {
+              if (valid) {
+                console.log("验证成功")
+              }
+            })
+          }
+        })
       }
     }
   }
@@ -231,20 +237,24 @@ import {
   IBestUploaderFile,
   IBestUploader
 } from "@ibestservices/ibest-ui-v2"
+@ObservedV2
+class Form{
+  @Trace value1: boolean = false
+  @Trace value2: boolean = false
+  @Trace value3: string[] = []
+  @Trace value4: string = ""
+  @Trace value5: number = 0
+  @Trace value6: string = ""
+  @Trace value7: string = ""
+  @Trace value8: IBestUploaderFile[] = []
+}
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value1: boolean = false
-  @State value2: boolean = false
-  @State value3: string[] = []
-  @State value4: string = ""
-  @State value5: number = 1
-  @State value6: string = ""
-  @State selectValue: string[] = []
-  @State value7: string = ''
-  @State visible: boolean = false
-  @State visible1: boolean = false
-  @State value8: IBestUploaderFile[] = []
+  @Local form: Form = new Form()
+  @Local selectValue: string[] = []
+  @Local visible: boolean = false
+  @Local visible1: boolean = false
   private formId: string = 'form'
   private rules: IBestFormRule = {
     "value3": [
@@ -264,7 +274,7 @@ struct DemoPage {
     ]
   }
   private controller: IBestFormController = new IBestFormController()
-  @State options: IBestCascaderOption[] = [
+  @Local options: IBestCascaderOption[] = [
     {
       text: "江苏省",
       value: "320000",
@@ -336,23 +346,20 @@ struct DemoPage {
   ]
   @Builder switchContent() {
     IBestSwitch({
-      value: $value1
+      value: this.form.value1!!
     })
   }
   @Builder checkboxContent() {
     IBestCheckbox({
-      value: this.value2,
+      value: this.form.value2!!,
       shape: "square",
-      name: "value2",
-      onChange: value => {
-        this.value2 = value
-      }
+      name: "1"
     })
   }
   @Builder checkboxGroupContent() {
     IBestCheckboxGroup({
       group: "group1",
-      activeList: $value3,
+      activeList: this.form.value3!!,
       placeDirection: Axis.Horizontal
     }){
       IBestCheckbox({
@@ -371,7 +378,7 @@ struct DemoPage {
   }
   @Builder radioContent() {
     IBestRadioGroup({
-      active: $value4,
+      active: this.form.value4!!,
       group: "group1",
       placeDirection: Axis.Horizontal
     }){
@@ -389,15 +396,14 @@ struct DemoPage {
   }
   @Builder stepperContent(){
     IBestStepper({
-      value: $value5,
+      value: this.form.value5!!,
       min: 1,
-      max: 99,
-      step: 1
+      max: 99
     })
   }
   @Builder uploadImg(){
     IBestUploader({
-      fileList: $value12,
+      fileList: this.form.value8!!,
       max: 2
     })
   }
@@ -408,47 +414,47 @@ struct DemoPage {
         rules: this.rules,
         controller: this.controller
       }){
-        IBestCellGroup({inset: true}) {
+        IBestCellGroup({hasBorder: false}) {
           IBestField({
             formId: this.formId,
             prop: 'value1',
-            value: $value1,
+            value: this.form.value1,
             label: "开关",
             customRightContent: (): void => this.switchContent()
           })
           IBestField({
             formId: this.formId,
             prop: 'value2',
-            value: $value2,
+            value: this.form.value2,
             label: "复选框",
-            rules: this.value2 ? [{required: true, message: '请选择'}] : [],
+            rules: this.form.value1 ? [{required: true, message: '请选择'}] : [],
             customRightContent: (): void => this.checkboxContent()
           })
           IBestField({
             formId: this.formId,
             prop: 'value3',
-            value: $value3,
+            value: this.form.value3,
             label: "复选框组",
             customRightContent: (): void => this.checkboxGroupContent()
           })
           IBestField({
             formId: this.formId,
             prop: 'value4',
-            value: $value4,
+            value: this.form.value4,
             label: "单选框",
             customRightContent: (): void => this.radioContent()
           })
           IBestField({
             formId: this.formId,
             prop: 'value5',
-            value: $value5,
+            value: this.form.value5,
             label: "步进器",
             customRightContent: (): void => this.stepperContent()
           })
           IBestField({
             formId: this.formId,
             prop: 'value6',
-            value: this.value6,
+            value: this.form.value6,
             label: "选择城市",
             placeholder: "请选择城市",
             isLink: true,
@@ -459,7 +465,7 @@ struct DemoPage {
           IBestField({
             formId: this.formId,
             prop: 'value7',
-            value: this.value7,
+            value: this.form.value7,
             label: "日历",
             placeholder: "请选择日期",
             isLink: true,
@@ -470,40 +476,39 @@ struct DemoPage {
           IBestField({
             formId: this.formId,
             prop: 'value8',
-            value: $value8,
+            value: this.form.value8,
             label: "上传图片",
             hasBorder: false,
             customRightContent: (): void => this.uploadImg()
           })
-          IBestButton({
-            text: "提交",
-            type: 'primary',
-            buttonSize: 'large',
-            onClickBtn: () => {
-              this.controller.validate((valid, fields) => {
-                if (valid) {
-                  IBestToast.show("验证成功")
-                }
-              })
-            }
-          })
-            .margin({ top: 20 })
         }
+        IBestButton({
+          text: "提交",
+          type: 'primary',
+          buttonSize: 'large',
+          onBtnClick: () => {
+            this.controller.validate((valid, fields) => {
+              if (valid) {
+                IBestToast.show("验证成功")
+              }
+            })
+          }
+        })
       }
       // 选择城市
       IBestCascader({
-        visible: this.visible,
+        visible: this.visible!!,
         options: this.options,
-        value: $selectValue,
+        value: this.selectValue!!,
         onConfirm: value => {
-          this.value6 = value.map(item => item.text).join(',')
+          this.form.value6 = value.map(item => item.text).join(',')
         }
       })
       // 日历
       IBestCalendarDialog({
-        visible: $visible1,
+        visible: this.visible1!!,
         onConfirm: value => {
-          this.value7 = value[0].dateStr
+          this.form.value7 = value[0].dateStr
         }
       })
     }
@@ -514,12 +519,6 @@ struct DemoPage {
 
 ### 动态表单校验
 ![动态表单校验](./images/form-dynamics.png)
-:::tip
-• 将需要遍历的表单项封装为单个组件, 在其内部处理每项表单数据;   
-• 需注意, ForEach的key值需要设置为唯一值(事例中为生成的随机id);   
-• 组件内部需在aboutToAppear中初始化表单项的值, 否则动态删除时, 表单数据会丢失;   
-• 组件内部需监听每个变量的变化, 并将新值赋值给表单项(事例中为item);
-:::
 
 ::: details 点我查看代码
 ```ts
@@ -537,24 +536,24 @@ import {
   IBestRadioGroup,
   IBestToast
 } from '@ibestservices/ibest-ui'
-@Observed
+@ObservedV2
+class Form{
+  @Trace sex: string = ""
+  @Trace info1: string = ""
+  @Trace info2: string = ""
+  @Trace list: Subject[] = []
+}
+@ObservedV2
 class Subject {
-  id: string = ""
   type: string = ""
-  name: string = ""
-  score: number = 0
-  constructor() {
-    this.id = Math.random().toString(36).substring(2, 9)
-  }
+  @Trace name: string = ""
+  @Trace score: number = 0
 }
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
+  @Local form: Form = new Form()
   private formId: string = 'form'
-  @State sex: string = ""
-  @State info1: string = ""
-  @State info2: string = ""
-  @State list: Subject[] = []
   private rules: IBestFormRule = {
     "sex": [
       { required: true, message: "请选择是否" }
@@ -575,7 +574,7 @@ struct DemoPage {
   private controller: IBestFormController = new IBestFormController()
   @Builder radioContent() {
     IBestRadioGroup({
-      active: $sex,
+      active: this.form.sex!!,
       group: "group",
       placeDirection: Axis.Horizontal
     }){
@@ -592,7 +591,7 @@ struct DemoPage {
     }
   }
   deleteContent(index: number){
-    this.list.splice(index, 1)
+    this.form.list.splice(index, 1)
   }
   build() {
     Column(){
@@ -605,52 +604,52 @@ struct DemoPage {
           IBestField({
             formId: this.formId,
             prop: 'sex',
-            value: $sex,
+            value: this.form.sex,
             label: "性别",
-            hasBorder: this.sex != '',
+            hasBorder: this.form.sex != '',
             customRightContent: (): void => this.radioContent()
           })
-          if(this.sex == '1'){
+          if(this.form.sex == '1'){
             IBestField({
               formId: this.formId,
               prop: 'info1',
-              value: $info1,
+              value: this.form.info1!!,
               label: "男生信息",
               placeholder: "请输入男生信息",
               hasBorder: false
             })
-          }else if(this.sex == '2'){
+          }else if(this.form.sex == '2'){
             IBestField({
               formId: this.formId,
               prop: 'info2',
-              value: $info2,
+              value: this.form.info2!!,
               label: "女生信息",
               placeholder: "请输入女生信息",
               hasBorder: false
             })
           }
-          ForEach(this.list, (item: Subject, index) => {
+          ForEach(this.form.list, (item: Subject, index) => {
             subjectItem({
               item: item,
               index: index,
               formId: this.formId,
               delete: (): void => this.deleteContent(index)
             })
-          }, (item: Subject) => item.id)
+          })
         }
         IBestButton({
-          text: "添加内容",
+          text: "添加学科",
           type: "primary",
           buttonSize: 'large',
-          onClickBtn: () => {
-            this.list.push(new Subject())
+          onBtnClick: () => {
+            this.form.list.push(new Subject())
           }
         })
         IBestButton({
           text: "提交",
           type: 'primary',
           buttonSize: 'large',
-          onClickBtn: () => {
+          onBtnClick: () => {
             this.controller.validate((valid) => {
               if (valid) {
                 IBestToast.show("验证成功")
@@ -662,15 +661,13 @@ struct DemoPage {
     }
   }
 }
-@Component
+@ComponentV2
 struct subjectItem{
-  @ObjectLink item: Subject
-  @Prop index: number
-  @Prop formId: string
-  @State @Watch("typeChange") type: string = ""
-  @State @Watch("nameChange") name: string = ""
-  @State visible: boolean = false
-  @State @Watch("scoreChange") score: string = ""
+  @Param @Require item: Subject
+  @Param @Require index: number
+  @Param @Require formId: string
+  @Local visible: boolean = false
+  @Event delete: (index: number) => void = () => {}
   private options: IBestPickerOption[] = [
     { text: '语文', value: '1' },
     { text: '数学', value: '2' },
@@ -679,49 +676,27 @@ struct subjectItem{
     { text: '化学', value: '5' },
     { text: '生物', value: '6' }
   ]
-  delete: (index: number) => void = () => {}
   @Builder pickerBuilder(){
     IBestPicker({
       options: this.options,
       title: "请选择学科",
       visibleItemCount: 5,
-      value: $type,
-      onConfirm: (selectedValues: string[], selectTexts: string[]) => {
+      onConfirm: (selectedValues, selectTexts) => {
         this.visible = false
-        this.name = selectTexts.join('-')
+        this.item.type = selectedValues[0] as string
+        this.item.name = selectTexts.join('-')
       },
       onCancel: () => {
         this.visible = false
       }
     })
   }
-  aboutToAppear(): void {
-    let item = this.item
-    if(item.type){
-      this.type = item.type
-    }
-    if(item.name){
-      this.name = item.name
-    }
-    if(item.score){
-      this.score = item.score.toString()
-    }
-  }
-  typeChange(){
-    this.item.type = this.type
-  }
-  nameChange(){
-    this.item.name = this.name
-  }
-  scoreChange(){
-    this.item.score = Number(this.score)
-  }
 
   build() {
     IBestCellGroup({title: `学科${this.index+1}`, hasBorder: false}){
       Text("删除")
-        .fontColor("#969799")
-        .fontSize(14)
+        .fontColor(modeColor.textColor4)
+        .fontSize(FONT_SIZE.SM)
         .position({right: 0, top: 17})
         .onClick(() => {
           this.delete(this.index)
@@ -730,7 +705,7 @@ struct subjectItem{
         formId: this.formId,
         prop: `type.${this.index}`,
         label: '学科',
-        value: this.name,
+        value: this.item.name,
         placeholder: "请选择学科",
         isLink: true,
         onFieldClick: () => {
@@ -741,13 +716,13 @@ struct subjectItem{
         formId: this.formId,
         prop: `score.${this.index}`,
         label: "分数",
-        value: $score,
+        value: this.item.score!!,
         type: "number",
         placeholder: "请输入分数",
         hasBorder: false
       })
       IBestPopup({
-        visible: $visible,
+        visible: this.visible!!,
         popupAlign: "bottom",
         contentBuilder: (): void => this.pickerBuilder()
       })

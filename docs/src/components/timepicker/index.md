@@ -19,14 +19,14 @@ import { IBestTimePicker, IBestPickerOption } from "@ibestservices/ibest-ui-v2";
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State selectValue: string[] = ["10", "18", "18"]
+  @Local selectValue: string[] = ["10", "18", "18"]
   build() {
     Column(){
       IBestTimePicker({
         title: "选择时间",
-        value: $selectValue,
+        value: this.selectValue!!,
         onConfirm: (value: string[]) => {
           IBestToast.show(value.join(":"))
         },
@@ -47,15 +47,15 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State selectValue: string[] = ["10", "18"]
+  @Local selectValue: string[] = ["10", "18"]
   build() {
     Column(){
       IBestTimePicker({
         title: "选择时分",
         listType: ["hour", "minute"],
-        value: $selectValue,
+        value: this.selectValue!!,
         onConfirm: (value: string[]) => {
           IBestToast.show(value.join(":"))
         },
@@ -81,16 +81,16 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State selectValue: string[] = []
+  @Local selectValue: string[] = []
   build() {
     Column(){
       IBestTimePicker({
         title: "选择时间",
         minTime: "08:30:00",
         maxTime: "18:00:00",
-        value: $selectValue,
+        value: this.selectValue!!,
         onConfirm: (value: string[]) => {
           IBestToast.show(value.join(":"))
         },
@@ -111,15 +111,15 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State selectValue: string[] = []
+  @Local selectValue: string[] = []
   build() {
     Column(){
       IBestTimePicker({
         title: "选择时间",
         showUnit: true,
-        value: $selectValue,
+        value: this.selectValue!!,
         onConfirm: (value: string[]) => {
           IBestToast.show(value.join(":"))
         },
@@ -140,9 +140,9 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State selectValue: string[] = ["2024", "08"]
+  @Local selectValue: string[] = ["2024", "08"]
   filter(type: string, options: IBestPickerOption[]): IBestPickerOption[]{
     if (type === 'hour') {
         return options.filter((option) => Number(option.value) % 6 === 0)
@@ -154,7 +154,7 @@ struct DemoPage {
       IBestTimePicker({
         title: "选择日期",
         filter: this.filter,
-        value: $selectValue,
+        value: this.selectValue!!,
         onConfirm: (value: string[]) => {
           IBestToast.show(value.join(":"))
         },

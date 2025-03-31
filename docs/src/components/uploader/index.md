@@ -22,13 +22,13 @@ import { IBestUploader, IBestUploaderFile } from "@ibestservices/ibest-ui-v2";
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State imgList: IBestUploaderFile[] = []
+  @Local imgList: IBestUploaderFile[] = []
   build() {
     Column(){
       IBestUploader({
-        fileList: $imgList
+        fileList: this.imgList!!
       })
     }
   }
@@ -43,9 +43,9 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State imgList: IBestUploaderFile[] = [
+  @Local imgList: IBestUploaderFile[] = [
     new IBestUploaderFile({
       url: "https://img0.baidu.com/it/u=2229144304,3578627907&fm=253&fmt=auto&app=138&f=JPEG?w=467&h=300",
       isImage: true,
@@ -59,7 +59,7 @@ struct DemoPage {
   build() {
     Column(){
       IBestUploader({
-        fileList: $imgList
+        fileList: this.imgList!!
       })
     }
   }
@@ -74,9 +74,9 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State imgList: IBestUploaderFile[] = [
+  @Local imgList: IBestUploaderFile[] = [
     new IBestUploaderFile({
       url: "https://pic1.zhimg.com/80/v2-03cdb3bff2090e98885fe4951799a1f4_1440w.webp"
     })
@@ -84,7 +84,7 @@ struct DemoPage {
   build() {
     Column(){
       IBestUploader({
-        fileList: $imgList,
+        fileList: this.imgList!!,
         max: 1
       })
     }
@@ -100,9 +100,9 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State imgList: IBestUploaderFile[] = []
+  @Local imgList: IBestUploaderFile[] = []
   @Builder customUploader(){
 		Text("选择图片")
 			.width(100)
@@ -115,11 +115,11 @@ struct DemoPage {
   build() {
     Column({space: 20}){
       IBestUploader({
-        fileList: $imgList,
+        fileList: this.imgList!!,
         uploaderIcon: $r("app.media.icon_plus")
       })
       IBestUploader({
-        fileList: $imgList,
+        fileList: this.imgList!!,
         customUploader: (): void => this.customUploader()
       })
     }
@@ -135,9 +135,9 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State imgList: IBestUploaderFile[] = [
+  @Local imgList: IBestUploaderFile[] = [
 		new IBestUploaderFile({
 			url: "https://pic1.zhimg.com/80/v2-03cdb3bff2090e98885fe4951799a1f4_1440w.webp"
 		})
@@ -145,7 +145,7 @@ struct DemoPage {
   build() {
     Column(){
       IBestUploader({
-        fileList: $imgList,
+        fileList: this.imgList!!,
         previewSize: 120,
 				cornerRadius: 8
       })
@@ -162,9 +162,9 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State imgList: IBestUploaderFile[] = [
+  @Local imgList: IBestUploaderFile[] = [
 		new IBestUploaderFile({
 			url: "https://pic1.zhimg.com/80/v2-03cdb3bff2090e98885fe4951799a1f4_1440w.webp"
 		})
@@ -189,7 +189,7 @@ struct DemoPage {
   build() {
     Column(){
       IBestUploader({
-        fileList: $imgList,
+        fileList: this.imgList!!,
         customPreview: (file: IBestUploaderFile): void => this.previewItem(file)
       })
     }
@@ -205,9 +205,9 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State imgList: IBestUploaderFile[] = [
+  @Local imgList: IBestUploaderFile[] = [
 		new IBestUploaderFile({
 			url: "https://pic1.zhimg.com/80/v2-03cdb3bff2090e98885fe4951799a1f4_1440w.webp"
 		})
@@ -215,7 +215,7 @@ struct DemoPage {
   build() {
     Column(){
       IBestUploader({
-        fileList: $imgList,
+        fileList: this.imgList!!,
         disabled: true
       })
     }

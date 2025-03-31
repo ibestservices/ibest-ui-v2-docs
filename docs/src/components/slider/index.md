@@ -19,13 +19,13 @@ import { IBestSlider } from "@ibestservices/ibest-ui-v2";
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: number = 30
+  @Local value: number = 30
   build() {
     Column(){
       IBestSlider({
-        value: $value,
+        value: this.value!!,
         onChange: (val) => {
           console.log(val.toString())
         }
@@ -44,13 +44,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: [number, number] = [20, 60]
+  @Local value: [number, number] = [20, 60]
   build() {
     Column(){
       IBestSlider({
-        value: $value,
+        value: this.value!!,
         onChange: (val) => {
           console.log(val.toString())
         }
@@ -69,13 +69,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: number = 30
+  @Local value: number = 30
   build() {
     Column(){
       IBestSlider({
-        value: $value,
+        value: this.value!!,
         min: -50,
         max: 50,
         onChange: (val) => {
@@ -96,13 +96,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: number = 30
+  @Local value: number = 30
   build() {
     Column(){
       IBestSlider({
-        value: $value,
+        value: this.value!!,
         disabled: true
       })
     }
@@ -119,13 +119,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: number = 30
+  @Local value: number = 30
   build() {
     Column(){
       IBestSlider({
-        value: $value,
+        value: this.value!!,
         step: 10,
         onChange: (val) => {
           console.log(val.toString())
@@ -145,13 +145,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: number = 30
+  @Local value: number = 30
   build() {
     Column(){
       IBestSlider({
-        value: $value,
+        value: this.value!!,
         barHeight: 8,
         activeColor: "#ee0a24",
         onChange: (val) => {
@@ -172,9 +172,9 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: number = 30
+  @Local value: number = 30
   @Builder customBtn(){
     Text(this.value.toString())
       .height(18)
@@ -187,7 +187,7 @@ struct DemoPage {
   build() {
     Column(){
       IBestSlider({
-        value: $value,
+        value: this.value!!,
         customButton: (): void => this.customBtn(),
         onChange: (val) => {
           console.log(val.toString())
@@ -210,22 +210,22 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: number = 30
-  @State value1: [number, number] = [20, 60]
+  @Local value: number = 30
+  @Local value1: [number, number] = [20, 60]
   build() {
     Row({ space: 80 }){
       Row({ space: 30 }){
         IBestSlider({
-          value: $value,
+          value: this.value!!,
           vertical: true,
           onChange: (val) => {
             console.log(val.toString())
           }
         })
         IBestSlider({
-          value: $value,
+          value: this.value!!,
           vertical: true,
           reverse: true,
           onChange: (val) => {
@@ -235,14 +235,14 @@ struct DemoPage {
       }
       Row({ space: 30 }){
         IBestSlider({
-          value: $value1,
+          value: this.value1!!,
           vertical: true,
           onChange: (val) => {
             console.log(val.toString())
           }
         })
         IBestSlider({
-          value: $value1,
+          value: this.value1!!,
           vertical: true,
           reverse: true,
           onChange: (val) => {

@@ -22,7 +22,7 @@ import { IBestCell, IBestCellGroup } from "@ibestservices/ibest-ui-v2";
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     IBestCellGroup() {
@@ -50,7 +50,7 @@ struct DemoPage {
 
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Column(){
@@ -81,7 +81,7 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Column(){
@@ -113,7 +113,7 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Column(){
@@ -149,7 +149,7 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Column(){
@@ -177,7 +177,7 @@ struct DemoPage {
 
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   @Builder StarIcon() {
     Image($r('app.media.startIcon')).width(16)
@@ -219,11 +219,8 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @Builder StarIcon() {
-    Image($r('app.media.startIcon')).width(16)
-  }
   build(){
     Column(){
       IBestCellGroup() {
@@ -268,7 +265,7 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   @Builder InputContain() {
     TextInput({ placeholder: '请输入内容' })
@@ -300,7 +297,7 @@ struct DemoPage {
 
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   @Builder StarIcon(width = 16) {
     Image($r('app.media.app_icon')).width(width)
@@ -341,7 +338,7 @@ struct DemoPage {
 
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   @Builder StarIcon(height = 24) {
     Image($r('app.media.startIcon')).height(height).margin({ right: 10 })
@@ -360,21 +357,21 @@ struct DemoPage {
       IBestCell({
         title: '标题',
         value: '内容内容内容内容内容内容内容内容内容内容内容内容内容内容',
-        iconBuilder: () => this.StarIcon(16),
-        rightIconBuilder: this.Arrow,
+        iconBuilder: (): void => this.StarIcon(16),
+        rightIconBuilder: (): void => this.Arrow(),
         clickable: true
       })
       IBestCell({
-        titleBuilder: this.Title,
+        titleBuilder: (): void => this.Title(),
         value: '内容',
-        rightIconBuilder: this.Arrow,
+        rightIconBuilder: (): void => this.Arrow(),
         clickable: true
       })
       IBestCell({
         title: '标题',
-        iconBuilder: () => this.StarIcon(),
+        iconBuilder: (): void => this.StarIcon(),
         hasBorder: false,
-        rightIconBuilder: this.Arrow,
+        rightIconBuilder: (): void => this.Arrow(),
         clickable: true
       })
     }
@@ -388,8 +385,8 @@ struct DemoPage {
 ### CellGroup @Props
 
 | 参数   | 说明                   | 类型      | 默认值  |
-| ------ | ---------------------- | --------- | ------- |
-| title  | 分组标题               | _string_  |         |
+| ------ | ----------------------| --------- | ------- |
+| title  | 分组标题               | _ResourceStr_  |  `''`   |
 | inset  | 是否展示为圆角卡片风格   | _boolean_ | `false` |
 | border | 是否显示外边框          | _boolean_ | `true`  |
 | radius | 圆角大小, 仅inset为true时有效| _string_ \| _number_ | `8`   |
@@ -428,9 +425,9 @@ struct DemoPage {
 
 ### Events
 
-| 事件名      | 说明                 | 事件类型                         |
-| ----------- | -------------------- | -------------------------------- |
-| onClickCell | 点击单元格的回调事件 | (event?: _ClickEvent_) => _void_ |
+| 事件名       | 说明               | 回调参数                         |
+| ------------| ------------------| -------------------------------- |
+| onCellClick | 点击单元格的回调事件 | `-` |
 
 ### 插槽
 

@@ -19,13 +19,13 @@ import { IBestProgress } from "@ibestservices/ibest-ui-v2";
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: number = 50
+  @Local value: number = 50
   build() {
     Column(){
       IBestProgress({
-        value: this.value
+        value: this.value!!
       })
     }
   }
@@ -40,13 +40,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: number = 50
+  @Local value: number = 50
   build() {
     Column(){
       IBestProgress({
-        value: this.value,
+        value: this.value!!,
         lineWidth: 18,
         textInside: true
       })
@@ -63,20 +63,20 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: number = 50
+  @Local value: number = 50
   format(value: number){
 		return value < 100 ? `${value}%` : 'Full'
 	}
   build() {
     Column({space: 16}){
       IBestProgress({
-        value: this.value,
+        value: this.value!!,
         color: "#ee0a24"
       })
       IBestProgress({
-        value: this.value,
+        value: this.value!!,
         linearGradientColor:{
           angle: 90,
           colors: [['#be99ff', 0], ['#7232dd', 1]]
@@ -96,13 +96,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: number = 50
+  @Local value: number = 50
   build() {
     Column(){
       IBestProgress({
-        value: this.value,
+        value: this.value!!,
         inactive: true
       })
     }
@@ -118,7 +118,7 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Column({space: 16}){

@@ -22,13 +22,13 @@ import { IBestCanvasDrawer, IBestCanvasContent } from "@ibestservices/ibest-ui-v
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State canvasWidth: number = 360
-  @State canvasHeight: number = 160
-  @State canvasShow: boolean = false
-  @State pixelMap: PixelMap | null = null
-  @State contentList: IBestCanvasContent[] = []
+  @Local canvasWidth: number = 360
+  @Local canvasHeight: number = 160
+  @Local canvasShow: boolean = false
+  @Local pixelMap: PixelMap | null = null
+  @Local contentList: IBestCanvasContent[] = []
   aboutToAppear(){
     // 模拟异步
     setTimeout(() => {
@@ -74,16 +74,16 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State canvasWidth: number = 360
-  @State canvasHeight: number = 100
-  @State canvasShow: boolean = false
-  @State pixelMap: PixelMap | null = null
-  @State canvasShow1: boolean = false
-  @State pixelMap1: PixelMap | null = null
-  @State canvasShow2: boolean = false
-  @State pixelMap2: PixelMap | null = null
+  @Local canvasWidth: number = 360
+  @Local canvasHeight: number = 100
+  @Local canvasShow: boolean = false
+  @Local pixelMap: PixelMap | null = null
+  @Local canvasShow1: boolean = false
+  @Local pixelMap1: PixelMap | null = null
+  @Local canvasShow2: boolean = false
+  @Local pixelMap2: PixelMap | null = null
   aboutToAppear(){
     this.canvasShow = true
     this.canvasShow1 = true
@@ -149,13 +149,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State canvasWidth: number = 360
-  @State canvasHeight: number = 200
-  @State canvasShow: boolean = false
-  @State pixelMap: PixelMap | null = null
-  @State contentList: IBestCanvasContent[] = [
+  @Local canvasWidth: number = 360
+  @Local canvasHeight: number = 200
+  @Local canvasShow: boolean = false
+  @Local pixelMap: PixelMap | null = null
+  @Local contentList: IBestCanvasContent[] = [
     { type: "image", url: "https://img1.baidu.com/it/u=3367326055,3107318562&fm=253&fmt=auto&app=120&f=JPEG?w=500&h=500", width: 100, height: 100, left: 20, top: 20, borderRadius: 50 },
     { type: "image", url: "https://img1.baidu.com/it/u=1371594408,1235079511&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=539", left: 160, top: 30, width: 112, height: 120, deg: 45, borderRadius: 20 }
   ]
@@ -191,13 +191,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State canvasWidth: number = 360
-  @State canvasHeight: number = 200
-  @State canvasShow: boolean = false
-  @State pixelMap: PixelMap | null = null
-  @State contentList: IBestCanvasContent[] = [
+  @Local canvasWidth: number = 360
+  @Local canvasHeight: number = 200
+  @Local canvasShow: boolean = false
+  @Local pixelMap: PixelMap | null = null
+  @Local contentList: IBestCanvasContent[] = [
     { type: "text", text: $r("app.string.app_name"), fontSize: 20, left: 20, top: 10 },
     { type: "text", text: "IBest-UI", fontColor: "red", left: 120, top: 10 },
     { type: "text", text: "今人不见古时月, 今月曾经照古人", textDecoration: "underline", width: 150, maxLineNumber: 2, left: 20, top:40 },

@@ -19,16 +19,16 @@ import { IBestSideBar, IBestSideBarItem } from "@ibestservices/ibest-ui-v2";
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State groupId: string = "group"
-  @State active: number = 0
-  @State itemList: Array<string> = ["选项1", "选项2", "选项3"]
+  @Local groupId: string = "group"
+  @Local active: number = 0
+  @Local itemList: Array<string> = ["选项1", "选项2", "选项3"]
   build() {
     Column(){
       IBestSideBar({
         groupId: this.groupId,
-        active: $active
+        active: this.active!!
       }){
         ForEach(this.itemList, (item: string, index) => {
           IBestSideBarItem({
@@ -51,16 +51,16 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State groupId: string = "group"
-  @State active: number = 0
-  @State itemList: Array<string> = ["选项1", "选项2", "选项3"]
+  @Local groupId: string = "group"
+  @Local active: number = 0
+  @Local itemList: Array<string> = ["选项1", "选项2", "选项3"]
   build() {
     Column(){
       IBestSideBar({
         groupId: this.groupId,
-        active: $active,
+        active: this.active!!,
         leftBarColor: "#ee0a24",
         activeFontColor: "#3d8af2"
       }){
@@ -85,16 +85,16 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State groupId: string = "group"
-  @State active: number = 0
-  @State itemList: Array<string> = ["选项1", "选项2", "选项3"]
+  @Local groupId: string = "group"
+  @Local active: number = 0
+  @Local itemList: Array<string> = ["选项1", "选项2", "选项3"]
   build() {
     Column(){
       IBestSideBar({
         groupId: this.groupId,
-        active: $active
+        active: this.active!!
       }){
         ForEach(this.itemList, (item: string, index) => {
           IBestSideBarItem({
@@ -118,16 +118,16 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State groupId: string = "group"
-  @State active: number = 0
-  @State itemList: Array<string> = ["选项1", "选项2", "选项3"]
+  @Local groupId: string = "group"
+  @Local active: number = 0
+  @Local itemList: Array<string> = ["选项1", "选项2", "选项3"]
   build() {
     Column(){
       IBestSideBar({
         groupId: this.groupId,
-        active: $active,
+        active: this.active!!,
         onChange: (index: number) => {
           console.log(this.itemList[index])
         }

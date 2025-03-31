@@ -22,7 +22,7 @@ import { IBestTag } from "@ibestservices/ibest-ui-v2";
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Row({space: 16}){
@@ -65,9 +65,9 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Components
+@ComponentV2s
 struct TagPage {
-  @State showTag: boolean = true
+  @Local showTag: boolean = true
   build(){
     Row({space: 14}){
       IBestTag({
@@ -89,7 +89,7 @@ struct TagPage {
         text: '标签',
         type: 'primary',
         closeable: true,
-        show: this.showTag,
+        show: this.showTag!!,
         onClose: () => {
           this.showTag = false
         }
@@ -110,7 +110,7 @@ struct TagPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Row({space: 16}){
@@ -144,7 +144,7 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Row({space: 16}){
@@ -188,7 +188,7 @@ struct DemoPage {
 
 ### Events
 
-| 事件名     | 说明                   | 事件类型                        |
-| ---------- | ----------------------| ------------------------------- |
-| onClickTag | 点击标签的事件          | (event: _ClickEvent_) => _void_ |
-| onClose    | 点击标签关闭按钮的事件   | (event: _ClickEvent_) => _void_ |
+| 事件名     | 说明                   | 回调参数                       |
+| ---------- | ---------------------| ------------------------------- |
+| onTagClick | 点击标签的事件          | `-` |
+| onClose    | 点击标签关闭按钮的事件   | `-` |

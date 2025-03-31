@@ -20,10 +20,10 @@ import { IBestCalendar, IBestCalendarDialog, IBestCalendarConfirmResult } from "
 
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State visible: boolean = false
-  @State selectDate: string = "请选择日期"
+  @Local visible: boolean = false
+  @Local selectDate: string = "请选择日期"
   onDialogConfirm(value: IBestCalendarConfirmResult[]): void {
     console.log("onConfirm", JSON.stringify(value))
     this.selectDate = value.map(item => item.dateStr).join(",")
@@ -33,12 +33,12 @@ struct DemoPage {
       IBestCell({
         title: '选择单个日期',
         value: this.selectDate,
-        onClickCell: () => {
+        onCellClick: () => {
           this.visible = true
         }
       })
       IBestCalendarDialog({
-        visible: $visible,
+        visible: this.visible!!,
         onConfirm: (value): void => this.onDialogConfirm(value)
       })
     }
@@ -55,10 +55,10 @@ struct DemoPage {
 
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State visible: boolean = false
-  @State selectDate: string = "请选择日期"
+  @Local visible: boolean = false
+  @Local selectDate: string = "请选择日期"
   onDialogConfirm(value: IBestCalendarConfirmResult[]): void {
     console.log("onConfirm", JSON.stringify(value)) 
     this.selectDate = value.map(item => item.dateStr).join(",")
@@ -68,12 +68,12 @@ struct DemoPage {
       IBestCell({
         title: '选择多个日期',
         value: this.selectDate,
-        onClickCell: () => {
+        onCellClick: () => {
           this.visible = true
         }
       })
       IBestCalendarDialog({
-        visible: $visible,
+        visible: this.visible!!,
         type: "danger",
         selectType: "multiple",
         onConfirm: (value): void => this.onDialogConfirm(value)
@@ -93,10 +93,10 @@ struct DemoPage {
 
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State visible: boolean = false
-  @State selectDate: string = "请选择日期"
+  @Local visible: boolean = false
+  @Local selectDate: string = "请选择日期"
   onDialogConfirm(value: IBestCalendarConfirmResult[]): void {
     console.log("onConfirm", JSON.stringify(value)) 
     this.selectDate = value.map(item => item.dateStr).join(",")
@@ -106,12 +106,12 @@ struct DemoPage {
       IBestCell({
         title: '选择日期区间',
         value: this.selectDate,
-        onClickCell: () => {
+        onCellClick: () => {
           this.visible = true
         }
       })
       IBestCalendarDialog({
-        visible: $visible,
+        visible: this.visible!!,
         selectType: "range",
         onConfirm: (value): void => this.onDialogConfirm(value)
       })
@@ -134,10 +134,10 @@ struct DemoPage {
 
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State visible: boolean = false
-  @State selectDate: string = "请选择日期"
+  @Local visible: boolean = false
+  @Local selectDate: string = "请选择日期"
   onDialogConfirm(value: IBestCalendarConfirmResult[]): void {
     console.log("onConfirm", JSON.stringify(value)) 
     this.selectDate = value.map(item => item.dateStr).join(",")
@@ -147,12 +147,12 @@ struct DemoPage {
       IBestCell({
         title: '选择日期',
         value: this.selectDate,
-        onClickCell: () => {
+        onCellClick: () => {
           this.visible = true
         }
       })
       IBestCalendarDialog({
-        visible: $visible,
+        visible: this.visible!!,
         type: "danger",
         selectedColor: "#58db6b",
         onConfirm: (value): void => this.onDialogConfirm(value)
@@ -175,10 +175,10 @@ struct DemoPage {
 
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State visible: boolean = false
-  @State selectDate: string = "请选择日期"
+  @Local visible: boolean = false
+  @Local selectDate: string = "请选择日期"
   onDialogConfirm(value: IBestCalendarConfirmResult[]): void {
     console.log("onConfirm", JSON.stringify(value)) 
     this.selectDate = value.map(item => item.dateStr).join(",")
@@ -188,12 +188,12 @@ struct DemoPage {
       IBestCell({
         title: '选择日期',
         value: this.selectDate,
-        onClickCell: () => {
+        onCellClick: () => {
           this.visible = true
         }
       })
       IBestCalendarDialog({
-        visible: $visible,
+        visible: this.visible!!,
         isShowLunar: true,
         cornerRadius: 20,
         onConfirm: (value): void => this.onDialogConfirm(value)
@@ -216,10 +216,10 @@ struct DemoPage {
 
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State visible: boolean = false
-  @State selectDate: string = "请选择日期"
+  @Local visible: boolean = false
+  @Local selectDate: string = "请选择日期"
   onDialogConfirm(value: IBestCalendarConfirmResult[]): void {
     console.log("onConfirm", JSON.stringify(value)) 
     this.selectDate = value.map(item => item.dateStr).join(",")
@@ -229,12 +229,12 @@ struct DemoPage {
       IBestCell({
         title: '选择日期',
         value: this.selectDate,
-        onClickCell: () => {
+        onCellClick: () => {
           this.visible = true
         }
       })
       IBestCalendarDialog({
-        visible: $visible,
+        visible: this.visible!!,
         selectType: "multiple",
         selectedStyleType: "circle",
         minDate: new Date(),
@@ -261,10 +261,10 @@ struct DemoPage {
 
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State visible: boolean = false
-  @State selectDate: string = "请选择日期"
+  @Local visible: boolean = false
+  @Local selectDate: string = "请选择日期"
   onDialogConfirm(value: IBestCalendarConfirmResult[]): void {
     console.log("onConfirm", JSON.stringify(value)) 
     this.selectDate = value.map(item => item.dateStr).join(",")
@@ -274,12 +274,12 @@ struct DemoPage {
       IBestCell({
         title: '选择日期区间',
         value: this.selectDate,
-        onClickCell: () => {
+        onCellClick: () => {
           this.visible = true
         }
       })
       IBestCalendarDialog({
-        visible: $visible,
+        visible: this.visible!!,
         type: "danger",
         selectType: "range",
         maxRange: 7,
@@ -302,10 +302,10 @@ struct DemoPage {
 
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State visible: boolean = false
-  @State selectDate: string = "请选择日期"
+  @Local visible: boolean = false
+  @Local selectDate: string = "请选择日期"
   onDialogConfirm(value: IBestCalendarConfirmResult[]): void {
     console.log("onConfirm", JSON.stringify(value)) 
     this.selectDate = value.map(item => item.dateStr).join(",")
@@ -315,12 +315,12 @@ struct DemoPage {
       IBestCell({
         title: '选择日期',
         value: this.selectDate,
-        onClickCell: () => {
+        onCellClick: () => {
           this.visible = true
         }
       })
       IBestCalendarDialog({
-        visible: $visible,
+        visible: this.visible!!,
         weekFirstDay: 0,
         onConfirm: (value): void => this.onDialogConfirm(value)
       })
@@ -341,10 +341,10 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State visible: boolean = false
-  @State selectDate: string = "请选择日期"
+  @Local visible: boolean = false
+  @Local selectDate: string = "请选择日期"
   onDialogConfirm(value: IBestCalendarConfirmResult[]): void {
     console.log("onConfirm", JSON.stringify(value)) 
     this.selectDate = value.map(item => item.dateStr).join(",")
@@ -354,12 +354,12 @@ struct DemoPage {
       IBestCell({
         title: '选择日期',
         value: this.selectDate,
-        onClickCell: () => {
+        onCellClick: () => {
           this.visible = true
         }
       })
       IBestCalendarDialog({
-        visible: $visible,
+        visible: this.visible!!,
         weekFirstDay: "日",
         onConfirm: (value): void => this.onDialogConfirm(value)
       })
@@ -376,7 +376,7 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Column(){
@@ -412,15 +412,15 @@ struct DemoPage {
 ```ts
 import dayjs from "@hview/dayjs"
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State clockDate: string[] = [dayjs().startOf("month").format('YYYY-MM-DD')]
+  @Local clockDate: string[] = [dayjs().startOf("month").format('YYYY-MM-DD')]
   build() {
     Column({space: 14}){
       IBestButton({
         type: "primary",
         text: "打卡",
-        onClickBtn: () => {
+        onBtnClick: () => {
           this.clockDate.push(dayjs(this.clockDate[this.clockDate.length-1]).add(1, 'day').format("YYYY-MM-DD"))
         }
       })
@@ -460,7 +460,7 @@ struct DemoPage {
 | cornerRadius | 弹框圆角                                                 | _string_ \| _number_  | `10`|
 | clock        | 开启打卡模式                                              | _boolean_ | `false`  |
 | clockSuccessText | 打卡成功文案                                          | _ResourceStr_  | `已成功` |
-| isShowUnClock | 是否显示未打卡`                                          | _boolean_ | `true`  |
+| isShowUnClock | 是否显示未打卡                                           | _boolean_ | `true`  |
 | unClockText  | 未打卡文案                                                | _ResourceStr_  | `未打卡` |
 
 

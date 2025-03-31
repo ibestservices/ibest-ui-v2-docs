@@ -19,7 +19,7 @@ import { IBestNavBar } from "@ibestservices/ibest-ui-v2";
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Column(){
@@ -39,7 +39,7 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Column({space: 14}){
@@ -72,7 +72,7 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Column(){
@@ -93,7 +93,7 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Column({space: 14}){
@@ -126,7 +126,7 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   @Builder titleBuilder(){
 		TextInput({text: this.searchVal, placeholder: "请输入搜索内容"}).width("70%").height("70%")
@@ -149,7 +149,7 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   @Builder leftBuilder(){
 		Row({space: 14}){
@@ -193,7 +193,7 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Column(){
@@ -214,9 +214,9 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State navBarBgColor: string = "#3D8AF2"
+  @Local navBarBgColor: string = "#3D8AF2"
   getRandomColor(): string {
     return '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0')
   }

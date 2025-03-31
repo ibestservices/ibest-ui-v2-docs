@@ -11,7 +11,7 @@ import { IBestPopover, IBestPopoverAction } from "@ibestservices/ibest-ui-v2";
 ```
 ::: details 事例通用代码
 ```ts
-  @State textValue: string = ""
+  @Local textValue: string = ""
   @Builder triggerBuilder(type: string, text?: string){
     if(type == "button"){
       IBestButton({
@@ -61,9 +61,9 @@ import { IBestPopover, IBestPopoverAction } from "@ibestservices/ibest-ui-v2";
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State actions: IBestPopoverAction[] = [
+  @Local actions: IBestPopoverAction[] = [
     {
       text: '选项一'
     },
@@ -117,9 +117,9 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State actions: IBestPopoverAction[] = [
+  @Local actions: IBestPopoverAction[] = [
     {
       text: '选项一'
     },
@@ -162,9 +162,9 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State actions: IBestPopoverAction[] = [
+  @Local actions: IBestPopoverAction[] = [
     {
       text: '选项一',
       iconName: 'add-o'
@@ -178,7 +178,7 @@ struct DemoPage {
       icon: $r("app.media.app_icon")
     }
   ]
-  @State actions1: IBestPopoverAction[] = [
+  @Local actions1: IBestPopoverAction[] = [
     {
       text: '选项一',
       disabled: true
@@ -214,9 +214,9 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State actions: IBestPopoverAction[] = [
+  @Local actions: IBestPopoverAction[] = [
     {
       text: '选项一'
     },
@@ -273,7 +273,7 @@ struct DemoPage {
 ```ts
 import { IBestPopoverController } from "@ibestservices/ibest-ui-v2";
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   private controller: IBestPopoverController = new IBestPopoverController()
   @Builder popoverContent(){
@@ -286,7 +286,7 @@ struct DemoPage {
         type: "primary",
         buttonSize: "small",
         text: "确定",
-        onClickBtn: () => {
+        onBtnClick: () => {
           this.controller.close()
         }
       })
@@ -299,7 +299,7 @@ struct DemoPage {
       IBestButton({
         type: "primary",
         text: "打开popover",
-        onClickBtn: () => {
+        onBtnClick: () => {
           this.controller.open()
         }
       })

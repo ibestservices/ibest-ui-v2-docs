@@ -16,19 +16,19 @@ import { IBestField } from "@ibestservices/ibest-ui-v2";
 
 ![基础用法](./images/field-base.png)
 :::tip
-通过 `value` 属性可绑定输入框的值, 使用 `$` 可双向绑定。
+通过 `value` 属性可绑定输入框的值, 使用 `!!` 可双向绑定。
 :::
 
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: string = ""
+  @Local value: string = ""
   build() {
     Column(){
       IBestField({
-        value: $value,
+        value: this.value!!,
         label: "文本",
         placeholder: "请输入文本",
         hasBorder: false
@@ -49,38 +49,38 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value1: string = ""
-  @State value2: string = ""
-  @State value3: string = ""
-  @State value4: string = ""
+  @Local value1: string = ""
+  @Local value2: string = ""
+  @Local value3: string = ""
+  @Local value4: string = ""
   build() {
     Column(){
       // 密码
       IBestField({
-        value: $value1,
+        value: this.value1!!,
         label: "密码",
         placeholder: "请输入密码",
         type: "password"
       })
       // 手机号
       IBestField({
-        value: $value2,
+        value: this.value2!!,
         label: "手机号",
         placeholder: "请输入手机号",
         type: "phone"
       })
       // 整数数字
       IBestField({
-        value: $value3,
+        value: this.value3!!,
         label: "整数",
         placeholder: "请输入整数",
         type: "number"
       })
       // 小数
       IBestField({
-        value: $value4,
+        value: this.value4!!,
         label: "小数",
         hasBorder: false,
         placeholder: "请输入小数",
@@ -102,19 +102,19 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value1: string = '输入框只读'
-  @State value2: string = '输入框已禁用'
+  @Local value1: string = '输入框只读'
+  @Local value2: string = '输入框已禁用'
   build() {
     Column(){
       IBestField({
-        value: $value1,
+        value: this.value1!!,
         label: "文本",
         readOnly: true
       })
       IBestField({
-        value: $value2,
+        value: this.value2!!,
         label: "文本",
         hasBorder: false,
         disabled: true
@@ -132,13 +132,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: string = ''
+  @Local value: string = ''
   build() {
     Column(){
       IBestField({
-        value: $value,
+        value: this.value!!,
         label: "网址",
         prefix: "https://",
         suffix: ".com",
@@ -160,21 +160,21 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value1: string = ''
-  @State value2: string = '一蓑烟雨任平生'
+  @Local value1: string = ''
+  @Local value2: string = '一蓑烟雨任平生'
   build() {
     Column(){
       IBestField({
-        value: $value1,
+        value: this.value1!!,
         label: "文本",
         placeholder: "请输入文本",
         leftIcon: "https://ibestui.ibestservices.com/favicon.ico",
         rightIcon: $r("app.media.arrow_right")
       })
       IBestField({
-        value: $value2,
+        value: this.value2!!,
         label: "文本",
         placeholder: "请输入文本",
         hasBorder: false,
@@ -196,13 +196,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: string = ''
+  @Local value: string = ''
   build() {
     Column(){
       IBestField({
-        value: $value,
+        value: this.value!!,
         label: "文本",
         placeholder: "请输入文本",
         hasBorder: false,
@@ -225,17 +225,17 @@ struct DemoPage {
 ```ts
 import { IBestButton } from "@ibestservices/ibest-ui-v2";
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: string = ''
-  @State count: number = 60
-  @State timer: number = 0
+  @Local value: string = ''
+  @Local count: number = 60
+  @Local timer: number = 0
   @Builder sendCodeButton() {
     IBestButton({
       text: this.count == 60 ? '发送验证码' : `重新发送(${this.count})`,
       type: 'primary',
       buttonSize: 'mini',
-      onClickBtn: () => {
+      onBtnClick: () => {
           this.sendCode()
       }
     })
@@ -258,7 +258,7 @@ struct DemoPage {
   build() {
     Column(){
       IBestField({
-        value: $value,
+        value: this.value!!,
         label: "短信验证码",
         placeholder: "请输入验证码",
         hasBorder: false,
@@ -279,23 +279,23 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value1: string = ''
-  @State value2: string = ''
+  @Local value1: string = ''
+  @Local value2: string = ''
   formatValue(value: string){
     return value.replace(/\d/g, '')
   }
   build() {
     Column(){
       IBestField({
-        value: $value1,
+        value: this.value1!!,
         label: "文本",
         placeholder: "在输入时执行格式化",
         formatter: (value: string): string => this.formatValue(value)
       })
       IBestField({
-        value: $value2,
+        value: this.value2!!,
         label: "文本",
         placeholder: "在失焦时执行格式化",
         hasBorder: false,
@@ -317,13 +317,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: string = ''
+  @Local value: string = ''
   build() {
     Column(){
       IBestField({
-        value: $value,
+        value: this.value!!,
         label: "留言",
         placeholder: "请输入留言",
         hasBorder: false,
@@ -345,14 +345,14 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value1: string = ''
-  @State value2: string = ''
+  @Local value1: string = ''
+  @Local value2: string = ''
   build() {
     Column(){
       IBestField({
-        value: $value1,
+        value: this.value1!!,
         label: "文本",
         placeholder: "请输入文本",
         maxlength: 30,
@@ -360,7 +360,7 @@ struct DemoPage {
         showWordLimit: true
       })
       IBestField({
-        value: $value2,
+        value: this.value2!!,
         label: "文本",
         placeholder: "请输入文本",
         hasBorder: false,
@@ -385,13 +385,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: string = ''
+  @Local value: string = ''
   build() {
     Column(){
       IBestField({
-        value: $value,
+        value: this.value!!,
         label: "文本",
         placeholder: "输入框内容右对齐",
         hasBorder: false,
@@ -412,34 +412,34 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value1: string = ''
-  @State value2: string = ''
-  @State value3: string = ''
-  @State value4: string = ''
+  @Local value1: string = ''
+  @Local value2: string = ''
+  @Local value3: string = ''
+  @Local value4: string = ''
   build() {
     Column(){
       IBestField({
-        value: $value1,
+        value: this.value1!!,
         label: "文本",
         placeholder: "顶部对齐",
         labelPosition: "top"
       })
       IBestField({
-        value: $value2,
+        value: this.value2!!,
         label: "文本",
         placeholder: "左对齐",
         labelAlign: "left"
       })
       IBestField({
-        value: $value3,
+        value: this.value3!!,
         label: "文本",
         placeholder: "居中对齐",
         labelAlign: "center"
       })
       IBestField({
-        value: $value4,
+        value: this.value4!!,
         label: "文本",
         placeholder: "右对齐",
         labelAlign: "right",
@@ -460,13 +460,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: string = ''
+  @Local value: string = ''
   build() {
     Column(){
       IBestField({
-        value: $value,
+        value: this.value!!,
         label: "地区",
         placeholder: "点击选择地区",
         hasBorder: false,
@@ -491,34 +491,31 @@ struct DemoPage {
 ```ts
 import { IBestRadioGroup, IBestRadio } from "@ibestservices/ibest-ui-v2";
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: string = ''
+  @Local value: string = ''
   @Builder radioContent() {
     IBestRadioGroup({
-      group: 'group1',
-      onChange: val => {
-        console.log('group1', val)
-      }
-    })
-    Flex({ wrap: FlexWrap.Wrap, space: { main: 10 } }){
+      active: this.value!!,
+      group: 'group',
+      placeDirection: Axis.Horizontal
+    }){
       IBestRadio({
         label: '单选框1',
         name: '1',
-        group: 'group1'
+        group: 'group'
       })
       IBestRadio({
         label: '单选框2',
         name: '2',
-        group: 'group1'
+        group: 'group'
       })
     }
-    .width("100%")
   }
   build() {
     Column(){
       IBestField({
-        value: $value,
+        value: this.value,
         label: "文本",
         hasBorder: false,
         customRightContent: (): void => this.radioContent()
@@ -535,7 +532,7 @@ struct DemoPage {
 
 | 参数         | 说明                                                     | 类型      | 默认值     |
 | ------------| --------------------------------------------------------| --------- | ---------- |
-| value       | 当前输入的值, 支持双向绑定   | _string \| number \| boolean \| (string \| number)[]_ | `''`  |
+| value       | 当前输入的值, 支持双向绑定   | _string_ \| _number_ \| _boolean_ \| _(string \| number \| IBestUploaderFile)[]_ | `''`  |
 | formId      | 唯一id, 当组件用于验证时必传                               | _string_ \| _number_  | `''` |
 | prop        | 绑定value的属性名, 当组件用于验证时必传                     | _string_  | `''` |
 | rules       | 验证规则列表, 可由form统一配置                             | _IBestFormRuleItem[]_ |`[]`|
@@ -581,20 +578,18 @@ struct DemoPage {
 | caretColor   | 光标颜色                                                 | _ResourceColor_ | `''` |
 | min          | 最小值, type 为 `number` `decimal` 时有效                  | _number_ | `-1` |
 | max          | 最大值, type 为 `number` `decimal` 时有效                  | _number_ | `-1` |
-| verticalAlign | 垂直方向对齐方式, 仅 `labelPosition` 为left时有效, 可选值 `top` `center` | _string_ | `''` |
-| radius | 外部圆角 | _string_ \| _number_ | `0` |
-| prefix | 前缀内容 | _ResourceStr_ | `''` |
+| verticalAlign| 垂直方向对齐方式, 仅 `labelPosition` 为left时有效, 可选值 `top` `center` | _string_ | `''` |
+| radius       | 外部圆角 | _string_ \| _number_ | `0` |
+| prefix       | 前缀内容 | _ResourceStr_ | `''` |
 | prefixFontColor | 前缀内容颜色 | _ResourceColor_ | `#969799` |
-| suffix | 后缀内容 | _ResourceStr_ | `''` |
+| suffix       | 后缀内容 | _ResourceStr_ | `''` |
 | suffixFontColor | 后缀内容颜色 | _ResourceColor_ | `#969799` |
-
-
 
 ### Events
 
 | 事件名     | 说明                        | 回调参数                         |
 | ---------- | ------------------------- | -------------------------------- |
-| onChange  | value变化时触发              | `value: string \| number \| boolean \| (string \| number)[]` |
+| onChange  | value变化时触发              | `value: string \| number \| boolean \| (string \| number \| IBestUploaderFile)[]` |
 | onClear   | 点击清除按钮时触发            | `-` |
 | onFieldClick| 点击组件时触发             | `-` |
 | onFieldFocus| 输入框获得焦点时触发        | `-` |

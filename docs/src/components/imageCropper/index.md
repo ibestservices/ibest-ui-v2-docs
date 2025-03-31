@@ -23,12 +23,12 @@ import { IBestImageCropper, IBestImageCropperController } from "@ibestservices/i
 ```ts
 import { IBestDialogUtil } from "@ibestservices/ibest-ui-v2"
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State imgList: IBestUploaderFile[] = []
-  @State initImg: string = ""
+  @Local imgList: IBestUploaderFile[] = []
+  @Local initImg: string = ""
   private controller: IBestImageCropperController = new IBestImageCropperController()
-  @State previewUrl: PixelMap | string = ''
+  @Local previewUrl: PixelMap | string = ''
   @Builder imgBuilder() {
     Column() {
       Image(this.previewUrl)
@@ -45,7 +45,7 @@ struct DemoPage {
   build(){
     Column({ space: 20 }) {
       IBestUploader({
-        fileList: $imgList,
+        fileList: this.imgList!!,
         max: 1,
         onChange: (fileList: IBestUploaderFile[]) => {
           this.initImg = fileList[0].previewUri || ""
@@ -59,14 +59,14 @@ struct DemoPage {
       Row({space: 20}){
         IBestButton({
           text: "重选",
-          onClickBtn: () => {
+          onBtnClick: () => {
             this.imgList = []
           }
         })
         IBestButton({
           type: "primary",
           text: "获取结果",
-          onClickBtn: () => {
+          onBtnClick: () => {
             this.controller.getResult().then(res => {
               this.previewUrl = res
               this.showResult()
@@ -91,11 +91,11 @@ struct DemoPage {
 ```ts
 import { IBestDialogUtil } from "@ibestservices/ibest-ui-v2"
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State initImg: string = "https://img0.baidu.com/it/u=3217812679,2585737758&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500"
+  @Local initImg: string = "https://img0.baidu.com/it/u=3217812679,2585737758&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500"
   private controller: IBestImageCropperController = new IBestImageCropperController()
-  @State previewUrl: PixelMap | string = ''
+  @Local previewUrl: PixelMap | string = ''
   @Builder imgBuilder() {
     Column() {
       Image(this.previewUrl)
@@ -119,7 +119,7 @@ struct DemoPage {
       IBestButton({
         type: "primary",
         text: "获取结果",
-        onClickBtn: () => {
+        onBtnClick: () => {
           this.controller.getResult(res => {
             this.previewUrl = res
             this.showResult()
@@ -140,11 +140,11 @@ struct DemoPage {
 ```ts
 import { IBestDialogUtil } from "@ibestservices/ibest-ui-v2"
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State initImg: ResourceStr = $r("app.media.01")  // 此处替换为自己项目本地图片
+  @Local initImg: ResourceStr = $r("app.media.01")  // 此处替换为自己项目本地图片
   private controller: IBestImageCropperController = new IBestImageCropperController()
-  @State previewUrl: PixelMap | string = ''
+  @Local previewUrl: PixelMap | string = ''
   @Builder imgBuilder() {
     Column() {
       Image(this.previewUrl)
@@ -170,7 +170,7 @@ struct DemoPage {
       IBestButton({
         type: "primary",
         text: "获取结果",
-        onClickBtn: async () => {
+        onBtnClick: async () => {
           this.previewUrl = await this.controller.getResult()
           this.showResult()
         }

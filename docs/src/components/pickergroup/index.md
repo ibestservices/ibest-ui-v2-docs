@@ -29,26 +29,26 @@ import { IBestPickerGroup } from "@ibestservices/ibest-ui-v2";
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State groupId: string = "1"
-  @State tabs: string[] = ["选择地点", "选择星期"]
-  @State options1: IBestPickerOption[] = [
+  @Local groupId: string = "1"
+  @Local tabs: string[] = ["选择地点", "选择星期"]
+  @Local options1: IBestPickerOption[] = [
     { text: '南京', value: '南京' },
     { text: '苏州', value: '苏州' },
     { text: '常州', value: '常州' },
     { text: '扬州', value: '扬州' },
     { text: '镇江', value: '镇江' }
   ]
-  @State options2: IBestPickerOption[] = [
+  @Local options2: IBestPickerOption[] = [
     { text: '周一', value: '周一' },
     { text: '周二', value: '周二' },
     { text: '周三', value: '周三' },
     { text: '周四', value: '周四' },
     { text: '周五', value: '周五' }
   ]
-  @State selectValue1: string[] = []
-  @State selectValue2: string[] = []
+  @Local selectValue1: string[] = []
+  @Local selectValue2: string[] = []
   build() {
     Column(){
       IBestPickerGroup({
@@ -64,12 +64,12 @@ struct DemoPage {
         IBestPicker({
           groupId: this.groupId,
           options: this.options1,
-          value: $selectValue1
+          value: this.selectValue1!!
         })
         IBestPicker({
           groupId: this.groupId,
           options: this.options2,
-          value: $selectValue2
+          value: this.selectValue2!!
         })
       }
     }
@@ -88,26 +88,26 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State groupId: string = "1"
-  @State tabs: string[] = ["选择地点", "选择星期"]
-  @State options1: IBestPickerOption[] = [
+  @Local groupId: string = "1"
+  @Local tabs: string[] = ["选择地点", "选择星期"]
+  @Local options1: IBestPickerOption[] = [
     { text: '南京', value: '南京' },
     { text: '苏州', value: '苏州' },
     { text: '常州', value: '常州' },
     { text: '扬州', value: '扬州' },
     { text: '镇江', value: '镇江' }
   ]
-  @State options2: IBestPickerOption[] = [
+  @Local options2: IBestPickerOption[] = [
     { text: '周一', value: '周一' },
     { text: '周二', value: '周二' },
     { text: '周三', value: '周三' },
     { text: '周四', value: '周四' },
     { text: '周五', value: '周五' }
   ]
-  @State selectValue1: string[] = []
-  @State selectValue2: string[] = []
+  @Local selectValue1: string[] = []
+  @Local selectValue2: string[] = []
   build() {
     Column(){
       IBestPickerGroup({
@@ -124,12 +124,12 @@ struct DemoPage {
         IBestPicker({
           groupId: this.groupId,
           options: this.options1,
-          value: $selectValue1
+          value: this.selectValue1!!
         })
         IBestPicker({
           groupId: this.groupId,
           options: this.options2,
-          value: $selectValue2
+          value: this.selectValue2!!
         })
       }
     }
@@ -148,12 +148,12 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State groupId: string = "1"
-  @State tabs: string[] = ["开始日期", "结束日期"]
-  @State selectValue1: string[] = []
-  @State selectValue2: string[] = []
+  @Local groupId: string = "1"
+  @Local tabs: string[] = ["开始日期", "结束日期"]
+  @Local selectValue1: string[] = []
+  @Local selectValue2: string[] = []
   build() {
     Column(){
       IBestPickerGroup({
@@ -169,11 +169,11 @@ struct DemoPage {
       }){
         IBestDatePicker({
           groupId: this.groupId,
-          value: $selectValue5
+          value: this.selectValue1!!
         })
         IBestDatePicker({
           groupId: this.groupId,
-          value: $selectValue6
+          value: this.selectValue2!!
         })
       }
     }
@@ -192,27 +192,27 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State groupId: string = "1"
-  @State tabs: string[] = ["选择地点", "选择星期"]
-  @State options1: IBestPickerOption[] = [
+  @Local groupId: string = "1"
+  @Local tabs: string[] = ["选择地点", "选择星期"]
+  @Local options1: IBestPickerOption[] = [
     { text: '南京', value: '南京' },
     { text: '苏州', value: '苏州' },
     { text: '常州', value: '常州' },
     { text: '扬州', value: '扬州' },
     { text: '镇江', value: '镇江' }
   ]
-  @State options2: IBestPickerOption[] = [
+  @Local options2: IBestPickerOption[] = [
     { text: '周一', value: '周一' },
     { text: '周二', value: '周二' },
     { text: '周三', value: '周三' },
     { text: '周四', value: '周四' },
     { text: '周五', value: '周五' }
   ]
-  @State selectValue1: string[] = []
-  @State selectValue2: string[] = []
-  @State currentName: number = 0
+  @Local selectValue1: string[] = []
+  @Local selectValue2: string[] = []
+  @Local currentName: number = 0
   changeName(){
     this.currentName = this.currentName === 0 ? 1 : 0
   }
@@ -222,7 +222,7 @@ struct DemoPage {
         text: `点击切换tab 当前为${this.currentName}`,
         type: "primary",
         buttonSize: "small",
-        onClickBtn: () => {
+        onBtnClick: () => {
           this.changeName()
         }
       })
@@ -244,12 +244,12 @@ struct DemoPage {
         IBestPicker({
           groupId: this.groupId,
           options: this.options1,
-          value: $selectValue1
+          value: this.selectValue1!!
         })
         IBestPicker({
           groupId: this.groupId,
           options: this.options2,
-          value: $selectValue2
+          value: this.selectValue2!!
         })
       }
     }
@@ -268,7 +268,7 @@ struct DemoPage {
 | title        | 标题                                       						   | _ResourceStr_ |  `''`  |
 | tabs         | 顶部标签栏列表                                             | _ResourceStr[]_ | `[]`  |
 | nextStepText | 下一步按钮文案                                             | _ResourceStr_ | ``  |
-| currentName  | 当前标签页名称                                             | _string_ | `0`  |
+| currentName  | 当前标签页名称                                             | _number_ | `0`  |
 | showToolBar   | 是否显示顶部栏                                 						| _boolean_ | `true` |
 | confirmText   | 确认按钮文字                                   						| _ResourceStr_ |  `确定`  |
 | cancelText    | 取消按钮文字                                   						| _ResourceStr_ |  `取消`  |

@@ -20,9 +20,9 @@ import {IBestTabs, IBestTabItem, IBestTabItemType} from "@ibestservices/ibest-ui
 
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State tabsList: IBestTabItemType[] = [
+  @Local tabsList: IBestTabItemType[] = [
     {
       label: "标签一",
       name: "1"
@@ -44,12 +44,12 @@ struct DemoPage {
       name: "5"
     }
   ]
-  @State curTabName: string = "1"
+  @Local curTabName: string = "1"
   build() {
     Column(){
       IBestTabs({
         tabsList: this.tabsList,
-        currentName: $curTabName
+        currentName: this.curTabName!!
       })
     }
   }
@@ -65,9 +65,9 @@ struct DemoPage {
 
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State tabsList: IBestTabItemType[] = [
+  @Local tabsList: IBestTabItemType[] = [
     {
       label: "标签一",
       name: "1"
@@ -89,13 +89,13 @@ struct DemoPage {
       name: "5"
     }
   ]
-  @State curTabName: string = "1"
+  @Local curTabName: string = "1"
   build() {
     Column(){
       IBestTabs({
         tabsList: this.tabsList,
         type: "card",
-        currentName: $curTabName
+        currentName: this.curTabName!!
       })
     }
   }
@@ -114,9 +114,9 @@ struct DemoPage {
 
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State tabsList: IBestTabItemType[] = [
+  @Local tabsList: IBestTabItemType[] = [
     {
       label: "标签一",
       name: "1"
@@ -138,7 +138,7 @@ struct DemoPage {
       name: "5"
     }
   ]
-  @State tabsList1: IBestTabItem[] = [
+  @Local tabsList1: IBestTabItem[] = [
     new IBestTabItem({
       label: "标签一",
       name: "1"
@@ -180,35 +180,35 @@ struct DemoPage {
       name: "10"
     })
   ]
-  @State curTabName: string = "1"
-  @State curTabName1: string = "1"
+  @Local curTabName: string = "1"
+  @Local curTabName1: string = "1"
   build() {
     Column({space: 20}){
       IBestTabs({
         tabHeight: 60,
         tabWidthType: "auto",
         tabsList: this.tabsList,
-        currentName: $curTabName
+        currentName: this.curTabName!!
       })
       IBestTabs({
         tabHeight: 60,
         tabWidthType: "auto",
         tabsList: this.tabsList1,
-        currentName: $curTabName
+        currentName: this.curTabName!!
       })
       IBestTabs({
         tabHeight: 60,
         tabWidthType: "auto",
         type: "card",
         tabsList: this.tabsList,
-        currentName: $curTabName1
+        currentName: this.curTabName1!!
       })
       IBestTabs({
         tabHeight: 60,
         tabWidthType: "auto",
         type: "card",
         tabsList: this.tabsList1,
-        currentName: $curTabName1
+        currentName: this.curTabName1!!
       })
     }
     .alignItems(HorizontalAlign.Start)
@@ -228,9 +228,9 @@ struct DemoPage {
 
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State tabsList: IBestTabItemType[] = [
+  @Local tabsList: IBestTabItemType[] = [
     {
       label: "标签一",
       name: "1"
@@ -252,7 +252,7 @@ struct DemoPage {
       name: "5"
     }
   ]
-  @State curTabName: string = "1"
+  @Local curTabName: string = "1"
   build() {
     Column(){
       IBestTabs({
@@ -261,7 +261,7 @@ struct DemoPage {
         isTabLineWidthFixed: true,
         tabLineWidth: 30,
         lineOffsetY: 10,
-        currentName: $curTabName
+        currentName: this.curTabName!!
       })
     }
   }
@@ -281,9 +281,9 @@ struct DemoPage {
 ```ts
 import { IBestButton } from '@ibestservices/ibest-ui'
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State tabsList: IBestTabItem[] = [
+  @Local tabsList: IBestTabItem[] = [
     new IBestTabItem({
       label: "标签一",
       name: "1"
@@ -298,17 +298,17 @@ struct DemoPage {
       name: "3"
     })
   ]
-  @State curTabName: string = "1"
+  @Local curTabName: string = "1"
   build() {
     Column({space: 20}){
       IBestTabs({
         tabsList: this.tabsList,
-        currentName: $curTabName
+        currentName: this.curTabName!!
       })
       IBestButton({
         text: "禁用标签3",
         buttonSize: "small",
-        onClickBtn: () => {
+        onBtnClick: () => {
           this.tabsList[2].isDisable = !this.tabsList[2].isDisable
         }
       })
@@ -330,9 +330,9 @@ struct DemoPage {
 ```ts
 import { IBestButton } from '@ibestservices/ibest-ui'
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State tabsList: IBestTabItem[] = [
+  @Local tabsList: IBestTabItem[] = [
     new IBestTabItem({
       label: "标签一",
       name: "1",
@@ -348,19 +348,19 @@ struct DemoPage {
       name: "3"
     })
   ]
-  @State curTabName: string = "1"
+  @Local curTabName: string = "1"
   build() {
     Column({space: 20}){
       IBestTabs({
         tabsList: this.tabsList,
-        currentName: $curTabName
+        currentName: this.curTabName!!
       })
       IBestButton({
         text: "修改数字",
         buttonSize: "small",
-        onClickBtn: () => {
-          if(this.tabsList4[1].number != undefined){
-            this.tabsList4[1].number += 1
+        onBtnClick: () => {
+          if(this.tabsList[1].number != undefined){
+            this.tabsList[1].number += 1
           }
         }
       })
@@ -379,9 +379,9 @@ struct DemoPage {
 ```ts
 import { IBestToast } from '@ibestservices/ibest-ui'
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State tabsList: IBestTabItemType[] = [
+  @Local tabsList: IBestTabItemType[] = [
     {
       label: "标签一",
       name: "1"
@@ -403,69 +403,14 @@ struct DemoPage {
       name: "5"
     }
   ]
-  @State curTabName: string = "1"
+  @Local curTabName: string = "1"
   build() {
     Column(){
       IBestTabs({
         tabsList: this.tabsList,
-        currentName: $curTabName,
+        currentName: this.curTabName!!,
         onChange: name => {
           IBestToast.show("当前点击的是：" + name)
-        }
-      })
-    }
-  }
-}
-```
-:::
-
-### controller切换
-
-![controller切换](./images/tab-controller.gif)
-
-::: details 点我查看代码
-
-```ts
-import { IBestButton } from '@ibestservices/ibest-ui'
-@Entry
-@Component
-struct DemoPage {
-  @State tabsList: IBestTabItemType[] = [
-    {
-      label: "标签一",
-      name: "1"
-    },
-    {
-      label: "标签二",
-      name: "2"
-    },
-    {
-      label: "标签三",
-      name: "3"
-    },
-    {
-      label: "标签四",
-      name: "4"
-    },
-    {
-      label: "标签五",
-      name: "5"
-    }
-  ]
-  @State curTabName: string = "1"
-  private tabController: IBestTabController = new IBestTabController()
-  build() {
-    Column({space: 20}){
-      IBestTabs({
-        tabsList: this.tabsList,
-        currentName: $curTabName,
-        tabController: this.tabController
-      })
-      IBestButton({
-        text: "跳转标签3",
-        buttonSize: "small",
-        onClickBtn: () => {
-          this.tabController.changeTab("3")
         }
       })
     }
@@ -480,12 +425,12 @@ struct DemoPage {
 
 | 参数                 | 说明                                        | 类型             | 默认值       |
 | ------------------- | --------------------------------------------| --------------- | ------------ |
-| type                | 样式类型，可选值为 `line` `card`               | _string_        | `line`    |
+| currentName         | 当前选中标签的标识符, 支持双向绑定                | _number_ \| _string_ | `''`|
+| type                | 样式类型，可选值为 `line` `card`               | _string_   | `line`    |
 | tabHeight           | 默认高度                                      | _number_ \| _string_  | `35`   |
 | tabWidthType        | tab宽度类型，可选值为 `auto` `flex`             | _string_        | `flex`       |
 | tabsList            | 展示的tab列表                                  | _(IBestTabItemType \| IBestTabItem)[]_|`[]` |
 | tabPadding          | 单个tab内边距                                  | _number_ \| _string_ | `5`     |
-| currentName         | 当前选中标签的标识符, 支持双向绑定                 | _string_        |  `''`    |
 | isTabLineWidthFixed | 标记线宽度是否固定                               | _boolean_      |  `false` |
 | tabLineWidth        | 标记线宽度，默认为tab内容宽度                     | _number_ \| _string_ |  `0` |
 | tabLineHeight       | 标记线高度                                     | _number_ \| _string_ |    `2`   |
@@ -509,7 +454,6 @@ struct DemoPage {
 | number        | 自定义显示数量         | _number_ | `-`|
 | icon          | 自定义显示图片         | _ResourceStr_ | `-` |
 | isDisable     | 控制是否禁用          | _boolean_ | `false` |
-| tabController | 实例控制器            | _IBestTabController_ | `-` |
 
 ### Events
 
@@ -517,12 +461,3 @@ struct DemoPage {
 | --------- | ------------------------ | ---------------------- |
 | onChange  | tab切换后的回调            | `name: string \| number` |
 | onTabClick| 点击tab后的回调            | `name: string \| number` |
-
-### 实例方法
-::: tip
-通过传入 `tabController` 属性可调用组件实例方法
-:::
-
-| 方法名    | 说明                      | 参数类型                |
-| --------- | ------------------------| ---------------------- |
-| changeTab | 切换到name对应的tab       | `name: string \| number` |

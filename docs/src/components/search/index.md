@@ -22,13 +22,13 @@ import { IBestSearch } from "@ibestservices/ibest-ui-v2";
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: string = ""
+  @Local value: string = ""
   build() {
     Column(){
       IBestSearch({
-        value: $value,
+        value: this.value!!,
         placeholder: "请输入关键词",
         autoFocus: true
       })
@@ -45,13 +45,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: string = ""
+  @Local value: string = ""
   build() {
     Column(){
       IBestSearch({
-        value: $value,
+        value: this.value!!,
         placeholder: "请输入关键词",
         radius: 12
       })
@@ -68,13 +68,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: string = ""
+  @Local value: string = ""
   build() {
     Column(){
       IBestSearch({
-        value: $value,
+        value: this.value!!,
         placeholder: "请输入关键词",
         disabled: true
       })
@@ -91,13 +91,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: string = ""
+  @Local value: string = ""
   build() {
     Column(){
       IBestSearch({
-        value: $value,
+        value: this.value!!,
         placeholder: "请输入关键词",
         isRound: true,
         outBgColor: "#4fc08d",
@@ -117,13 +117,13 @@ struct DemoPage {
 ```ts
 import { IBestToast } from "@ibestservices/ibest-ui-v2";
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: string = ""
+  @Local value: string = ""
   build() {
     Column(){
       IBestSearch({
-        value: $value,
+        value: this.value!!,
         placeholder: "请输入关键词",
         showRightButton: true,
         clearable: true,
@@ -156,9 +156,9 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: string = ""
+  @Local value: string = ""
   @Builder customBtn(){
     Text("自定义按钮")
       .height("100%")
@@ -168,14 +168,14 @@ struct DemoPage {
   build() {
     Column({ space: 20 }){
       IBestSearch({
-        value: $value,
+        value: this.value!!,
         placeholder: "请输入关键词",
         label: "地址",
         showRightButton: true,
         rightButtonText: "搜索"
       })
       IBestSearch({
-        value: $value,
+        value: this.value!!,
         label: "地址",
         customRightButton: (): void => this.customBtn()
       })

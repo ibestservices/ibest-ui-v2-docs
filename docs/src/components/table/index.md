@@ -27,10 +27,10 @@ interface TableData{
   desc: string
 }
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State tableId: string = "table"
-  @State data: TableData[] = [
+  @Local tableId: string = "table"
+  @Local data: TableData[] = [
     { date: '2025-03-10', name: 'IBest-UI', desc: '一个轻量、简单易用、可定制主题、支持深色模式和浅色模式的鸿蒙开源UI组件库。' },
     { date: '2025-03-09', name: 'IBest-UI', desc: '一个轻量、简单易用、可定制主题、支持深色模式和浅色模式的鸿蒙开源UI组件库。' },
     { date: '2025-03-08', name: 'IBest-UI', desc: '一个轻量、简单易用、可定制主题、支持深色模式和浅色模式的鸿蒙开源UI组件库。' }
@@ -60,10 +60,10 @@ interface TableData{
   desc: string
 }
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State tableId: string = "table"
-  @State data: TableData[] = [
+  @Local tableId: string = "table"
+  @Local data: TableData[] = [
     { date: '2025-03-10', name: 'IBest-UI', desc: '一个轻量、简单易用、可定制主题、支持深色模式和浅色模式的鸿蒙开源UI组件库。' },
     { date: '2025-03-09', name: 'IBest-UI', desc: '一个轻量、简单易用、可定制主题、支持深色模式和浅色模式的鸿蒙开源UI组件库。' },
     { date: '2025-03-08', name: 'IBest-UI', desc: '一个轻量、简单易用、可定制主题、支持深色模式和浅色模式的鸿蒙开源UI组件库。' }
@@ -93,10 +93,10 @@ interface TableData{
   desc: string
 }
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State tableId: string = "table"
-  @State data: TableData[] = [
+  @Local tableId: string = "table"
+  @Local data: TableData[] = [
     { date: '2025-03-10', name: 'IBest-UI', desc: '一个轻量、简单易用、可定制主题、支持深色模式和浅色模式的鸿蒙开源UI组件库。' },
     { date: '2025-03-09', name: 'IBest-UI', desc: '一个轻量、简单易用、可定制主题、支持深色模式和浅色模式的鸿蒙开源UI组件库。' },
     { date: '2025-03-08', name: 'IBest-UI', desc: '一个轻量、简单易用、可定制主题、支持深色模式和浅色模式的鸿蒙开源UI组件库。' }
@@ -126,10 +126,10 @@ interface TableData{
   desc: string
 }
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State tableId: string = "table"
-  @State data: TableData[] = [
+  @Local tableId: string = "table"
+  @Local data: TableData[] = [
     { date: '2025-03-10', name: 'IBest-UI', desc: '一个轻量、简单易用、可定制主题、支持深色模式和浅色模式的鸿蒙开源UI组件库。' },
     { date: '2025-03-09', name: 'IBest-UI', desc: '一个轻量、简单易用、可定制主题、支持深色模式和浅色模式的鸿蒙开源UI组件库。' },
     { date: '2025-03-08', name: 'IBest-UI', desc: '一个轻量、简单易用、可定制主题、支持深色模式和浅色模式的鸿蒙开源UI组件库。' }
@@ -161,11 +161,11 @@ interface TableData{
   desc: string
 }
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State tableId: string = "table"
-  @State showDate: boolean = true
-  @State data: TableData[] = [
+  @Local tableId: string = "table"
+  @Local showDate: boolean = true
+  @Local data: TableData[] = [
     { date: '2025-03-10', name: 'IBest-UI', desc: '一个轻量、简单易用、可定制主题、支持深色模式和浅色模式的鸿蒙开源UI组件库。' },
     { date: '2025-03-09', name: 'IBest-UI', desc: '一个轻量、简单易用、可定制主题、支持深色模式和浅色模式的鸿蒙开源UI组件库。' },
     { date: '2025-03-08', name: 'IBest-UI', desc: '一个轻量、简单易用、可定制主题、支持深色模式和浅色模式的鸿蒙开源UI组件库。' }
@@ -175,7 +175,7 @@ struct DemoPage {
       IBestButton({
         type: "primary",
         text: "切换日期列显示",
-        onClickBtn: () => {
+        onBtnClick: () => {
           this.showDate = !this.showDate
         }
       })
@@ -202,10 +202,10 @@ interface TableData{
   desc: string
 }
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State tableId: string = "table"
-  @State data: TableData[] = [
+  @Local tableId: string = "table"
+  @Local data: TableData[] = [
     { date: '2025-03-10', name: 'IBest-UI', desc: '一个轻量、简单易用、可定制主题、支持深色模式和浅色模式的鸿蒙开源UI组件库。' },
     { date: '2025-03-09', name: 'IBest-UI', desc: '一个轻量、简单易用、可定制主题、支持深色模式和浅色模式的鸿蒙开源UI组件库。' },
     { date: '2025-03-08', name: 'IBest-UI', desc: '一个轻量、简单易用、可定制主题、支持深色模式和浅色模式的鸿蒙开源UI组件库。' }
@@ -247,10 +247,10 @@ interface TableData{
   desc: string
 }
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State tableId: string = "table"
-  @State data: TableData[] = [
+  @Local tableId: string = "table"
+  @Local data: TableData[] = [
     { date: '2025-03-10', name: 'IBest-UI', desc: '一个轻量、简单易用、可定制主题、支持深色模式和浅色模式的鸿蒙开源UI组件库。' },
     { date: '2025-03-09', name: 'IBest-UI', desc: '一个轻量、简单易用、可定制主题、支持深色模式和浅色模式的鸿蒙开源UI组件库。' },
     { date: '2025-03-08', name: 'IBest-UI', desc: '一个轻量、简单易用、可定制主题、支持深色模式和浅色模式的鸿蒙开源UI组件库。' }
@@ -277,7 +277,7 @@ struct DemoPage {
       IBestButton({
         type: "primary",
         text: "操作",
-        onClickBtn: () => {
+        onBtnClick: () => {
           IBestToast.show(`当前点击的行数据为${row.date} ${row.name}`)
         }
       })
@@ -324,10 +324,10 @@ interface TableData{
   amount5: number
 }
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State tableId: string = "table"
-  @State data: TableData[] = [
+  @Local tableId: string = "table"
+  @Local data: TableData[] = [
     { name: "数据1", amount1: 100, amount2: 98.6, amount3: 87.5, amount4: 98.6, amount5: 94.2 },
     { name: "数据2", amount1: 68.8, amount2: 100, amount3: 96.6, amount4: 76.5, amount5: 77.4 },
     { name: "数据3", amount1: 98.5, amount2: 87.4, amount3: 86.9, amount4: 87.3, amount5: 76.4 },

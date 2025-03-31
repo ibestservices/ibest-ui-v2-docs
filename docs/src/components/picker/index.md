@@ -19,22 +19,22 @@ import { IBestPicker, IBestPickerOption } from "@ibestservices/ibest-ui-v2";
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State options: IBestPickerOption[] = [
+  @Local options: IBestPickerOption[] = [
     { text: '南京', value: 'Nanjing' },
     { text: '苏州', value: 'Suzhou' },
     { text: '常州', value: 'Chazhou' },
     { text: '扬州', value: 'Yangzhou' },
     { text: '镇江', value: 'Zhejiang' }
   ]
-  @State selectValue: string[] = []
+  @Local selectValue: string[] = []
   build() {
     Column(){
       IBestPicker({
         options: this.options,
         title: "标题",
-        value: $selectValue,
+        value: this.selectValue!!,
         onConfirm: (selectedValues, selectTexts) => {
           IBestToast.show(selectTexts.join('-'))
         },
@@ -56,11 +56,11 @@ struct DemoPage {
 ```ts
 import { IBestField, IBestPopup } from '@ibestservices/ibest-ui'
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State selectValue: string[] = []
-  @State filedValue: string = ""
-  @State options: IBestPickerOption[] = [
+  @Local selectValue: string[] = []
+  @Local filedValue: string = ""
+  @Local options: IBestPickerOption[] = [
     { text: '南京', value: 'Nanjing' },
     { text: '苏州', value: 'Suzhou' },
     { text: '常州', value: 'Chazhou' },
@@ -72,7 +72,7 @@ struct DemoPage {
       options: this.options,
       title: "标题",
       visibleItemCount: 5,
-      value: $selectValue,
+      value: this.selectValue!!,
       onChange: (selectedValues, selectTexts, columnIndex) => {
         IBestToast.show(selectTexts.join('-'))
       },
@@ -85,12 +85,12 @@ struct DemoPage {
       }
     })
   }
-  @State visible: boolean = false
+  @Local visible: boolean = false
   build() {
     Column(){
       IBestField({
         label: '城市',
-        value: $filedValue,
+        value: this.filedValue,
         placeholder: "请选择城市",
         isLink: true,
         hasBorder: false,
@@ -100,7 +100,7 @@ struct DemoPage {
       })
       // 弹出层
       IBestPopup({
-        visible: $visible,
+        visible: this.visible!!,
         popupAlign: "bottom",
         contentBuilder: (): void => this.pickerBuilder()
       })
@@ -117,10 +117,10 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State selectValue: string[] = ["Suzhou"]
-  @State options: IBestPickerOption[] = [
+  @Local selectValue: string[] = ["Suzhou"]
+  @Local options: IBestPickerOption[] = [
     { text: '南京', value: 'Nanjing' },
     { text: '苏州', value: 'Suzhou' },
     { text: '常州', value: 'Chazhou' },
@@ -132,7 +132,7 @@ struct DemoPage {
       IBestPicker({
         options: this.options,
         title: "标题",
-        value: $selectValue,
+        value: this.selectValue!!,
         onConfirm: (selectedValues, selectTexts) => {
           IBestToast.show(selectTexts.join('-'))
         },
@@ -153,9 +153,9 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State options: IBestPickerOption[][] = [
+  @Local options: IBestPickerOption[][] = [
     [
       { text: '周一', value: 'Monday' },
       { text: '周二', value: 'Tuesday' },
@@ -169,13 +169,13 @@ struct DemoPage {
       { text: '晚上', value: 'Evening' }
     ]
   ]
-  @State selectValue: string[] = []
+  @Local selectValue: string[] = []
   build() {
     Column(){
       IBestPicker({
         options: this.options,
         title: "标题",
-        value: $selectValue,
+        value: this.selectValue!!,
         onConfirm: (selectedValues, selectTexts) => {
           IBestToast.show(selectTexts.join('-'))
         },
@@ -195,9 +195,9 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State options: IBestPickerOption[] = [
+  @Local options: IBestPickerOption[] = [
     {
       text: "江苏省",
       value: "320000",
@@ -267,13 +267,13 @@ struct DemoPage {
       ]
     }
   ]
-  @State selectValue: string[] = []
+  @Local selectValue: string[] = []
   build() {
     Column(){
       IBestPicker({
         options: this.options,
         title: "标题",
-        value: $selectValue,
+        value: this.selectValue!!,
         onConfirm: (selectedValues, selectTexts) => {
           IBestToast.show(selectTexts.join('-'))
         },

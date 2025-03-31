@@ -19,13 +19,13 @@ import { IBestActionSheet } from "@ibestservices/ibest-ui-v2";
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Column(){
       IBestButton({
         text: '基础用法',
-        onClickBtn: () => {
+        onBtnClick: () => {
           IBestActionSheet.show({
             actions: ["选项一", "选项二", "选项三"],
             onSelect: (index: number) => {
@@ -47,13 +47,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Column(){
       IBestButton({
         text: '展示图标',
-        onClickBtn: () => {
+        onBtnClick: () => {
           IBestActionSheet.show({
             actions: [
               { name: '选项一', icon: $r("app.media.icon_like") },// 替换为自己项目的资源
@@ -76,13 +76,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Column(){
       IBestButton({
         text: '展示取消按钮',
-        onClickBtn: () => {
+        onBtnClick: () => {
           IBestActionSheet.show({
             actions: [
               { name: '选项一' },
@@ -109,13 +109,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Column(){
       IBestButton({
         text: '展示标题、描述信息',
-        onClickBtn: () => {
+        onBtnClick: () => {
           IBestActionSheet.show({
             customTitle: $r("app.string.app_name"),// 替换为自己项目的资源
             description: '这是一段描述信息',
@@ -141,13 +141,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Column(){
       IBestButton({
         text: '选项状态',
-        onClickBtn: () => {
+        onBtnClick: () => {
           IBestActionSheet.show({
             description: '这是一段描述信息',
             actions: [
@@ -175,13 +175,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Column(){
       IBestButton({
         text: '指定选项标识',
-        onClickBtn: () => {
+        onBtnClick: () => {
           IBestActionSheet.show({
             actions: [
               { name: '选项一', value: '1' },
@@ -210,13 +210,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Column(){
       IBestButton({
         text: '多行选项',
-        onClickBtn: () => {
+        onBtnClick: () => {
           IBestActionSheet.show({
             actions: [
               [
@@ -254,7 +254,7 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   @Builder defaultContent(){
     Scroll(){
@@ -300,7 +300,7 @@ struct DemoPage {
     Column(){
       IBestButton({
         text: '展示自定义内容',
-        onClickBtn: () => {
+        onBtnClick: () => {
           IBestActionSheet.show({
             customTitle: '琵琶行',
             height: 500,
@@ -321,13 +321,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Column(){
       IBestButton({
         text: '展示原生标题',
-        onClickBtn: () => {
+        onBtnClick: () => {
           IBestActionSheet.show({
             title: {
               title: "原生标题",
@@ -383,14 +383,14 @@ struct DemoPage {
 | onClose         | 面板关闭后触发                                          | _() => void_ |  `-`  |
 | cancelTextColor | 取消按钮文字颜色        | _ResourceColor_ |  `#646566`  |
 | beforeClose     | 关闭前的回调函数，返回 false 可阻止关闭，支持返回 Promise    | _() => Promise\<boolean\> \| boolean_ |  `-`  |
-| itemHeight      | 选项高度 | _number_ \| _string_ |  `50`  |
+| itemHeight      | 选项高度     | _number_ \| _string_ |  `50`  |
 | radius          | 面板圆角     | _number_ |  `16`  |
 
 ### IBestActionType 数据结构
 | 参数         | 说明                                          | 类型      |
 | ------------ | --------------------------------------------- | --------- |
 | name         | 选项文案, 必填                                 | _ResourceStr_  |
-| value        | 选项标识                                       | _string_  |
+| value        | 选项标识                                       | _string_ \| _number_  |
 | subName      | 选项描述                                       | _ResourceStr_ |
 | color        | 选项字体颜色                                   | _ResourceColor_ |
 | icon         | 选项图标                                       | _ResourceStr_ |

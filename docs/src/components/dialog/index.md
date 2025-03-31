@@ -22,20 +22,17 @@ import { IBestDialogUtil, IBestDialog } from "@ibestservices/ibest-ui-v2";
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build(){
     Column(){
       IBestButton({
         text: '打开弹窗',
         type: 'primary',
-        onClickBtn: () => {
+        onBtnClick: () => {
           IBestDialogUtil.open({
             title: "提示",
-            message: "代码是写出来给人看的，附带能在机器上运行。",
-            onConfirm: () => {
-              console.log("点击确定")
-            }
+            message: "代码是写出来给人看的，附带能在机器上运行。"
           })
         }
       })
@@ -52,14 +49,14 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build(){
     Column(){
       IBestButton({
         text: '打开弹窗',
         type: 'primary',
-        onClickBtn: () => {
+        onBtnClick: () => {
           IBestDialogUtil.open({
             message: "生命远不止连轴转和忙到极限，人类的体验远比这辽阔、丰富得多。"
           })
@@ -78,14 +75,14 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build(){
     Column(){
       IBestButton({
         text: '打开弹窗',
         type: 'primary',
-        onClickBtn: () => {
+        onBtnClick: () => {
           IBestDialogUtil.open({
             title: "提示",
             message: "生命远不止连轴转和忙到极限，人类的体验远比这辽阔、丰富得多。",
@@ -110,14 +107,14 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build(){
     Column(){
       IBestButton({
         text: '圆角按钮样式',
         type: 'primary',
-        onClickBtn: () => {
+        onBtnClick: () => {
           IBestDialogUtil.open({
             title: "提示",
             message: "生命远不止连轴转和忙到极限，人类的体验远比这辽阔、丰富得多。",
@@ -138,7 +135,7 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   @Builder imageBgBuilder() {
 		Column()
@@ -152,7 +149,7 @@ struct DemoPage {
         title: '背景图片',
         isLink: true,
         hasBorder: false,
-        onClickCell: () => {
+        onCellClick: () => {
           IBestDialogUtil.open({
             bgImage: "https://img0.baidu.com/it/u=3217812679,2585737758&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500",
             showConfirmButton: false,
@@ -177,14 +174,14 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build(){
     Column(){
       IBestButton({
         text: '打开弹窗',
         type: 'primary',
-        onClickBtn: () => {
+        onBtnClick: () => {
           IBestDialogUtil.open({
             title: textData.title,
             message: textData.life,
@@ -223,9 +220,9 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State uniId: number = 0
+  @Local uniId: number = 0
 	private uiContext = this.getUIContext()
   @Builder customComponentContent() {
     Column({space: 20}){
@@ -256,7 +253,7 @@ struct DemoPage {
       IBestButton({
         text: '打开弹窗',
         type: 'primary',
-        onClickBtn: () => {
+        onBtnClick: () => {
           IBestDialogUtil.open({
             title: textData.title,
             message: textData.life,
@@ -281,18 +278,18 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State inputValue: string = ''
-  @State formInputError: boolean = false
-  @State dialogVisible: boolean = false
-  @State dialogWidth: string = "90%"
+  @Local inputValue: string = ''
+  @Local formInputError: boolean = false
+  @Local dialogVisible: boolean = false
+  @Local dialogWidth: string = "90%"
   @Builder formInputContain() {
     Column({ space: 20 }) {
       IBestButton({
         type: 'primary',
         text: "切换宽度",
-        onClickBtn: () => {
+        onBtnClick: () => {
           this.dialogWidth = this.dialogWidth === "90%" ? "80%" : "90%"
         }
       })
@@ -313,7 +310,7 @@ struct DemoPage {
   build(){
     Column(){
       IBestDialog({
-        visible: $dialogVisible,
+        visible: this.dialogVisible!!,
         title: "提示",
         showCancelButton: true,
         defaultBuilder: (): void => this.formInputContain(),
@@ -329,7 +326,7 @@ struct DemoPage {
       IBestButton({
         text: '打开弹窗',
         type: 'primary',
-        onClickBtn: () => {
+        onBtnClick: () => {
           this.dialogVisible = true
         }
       })
@@ -348,6 +345,7 @@ struct DemoPage {
 | visible               | 弹窗是否可见, 支持双向绑定       | _boolean_ | `false` |
 | dialogWidth           | 弹窗的宽度                     | _number_ \| _string_  | `320`|
 | dialogBorderRadius    | 弹窗的圆角                     | _number_ \| _string_  | `16` |
+| bgImage               | 弹框背景图片 | _ResourceStr_ | `''` |
 | title                 | 弹窗的标题                     | _ResourceStr_  |    ``   |
 | titleColor            | 弹窗的标题文字颜色              | _ResourceColor_ | `#323233` |
 | titleFontSize         | 标题的文字大小                  | _number_ \| _string_  | `16` |
@@ -385,15 +383,14 @@ struct DemoPage {
 | alignment             | 弹窗在竖直方向上的对齐方式, 可选值 `top` `center` `bottom` | _string_ | `center`|
 | offsetX               | 弹窗相对alignment所在位置的横向偏移量            | _number_ \| _string_ | `0` |
 | offsetY               | 弹窗相对alignment所在位置的纵向偏移量            | _number_ \| _string_ | `0` |
-| beforeClose           | 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 `Promise` | _(action: cancel \| confirm) => Promise\<boolean\> \| boolean_ | `-` |
-| bgImage               | 弹框背景图片 | _ResourceStr_ | `''` |
 | keyboardAvoidDistance | 弹窗避让键盘后，和键盘之间的距离 | _<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-graphics#lengthmetrics" target="_blank">LengthMetrics</a>_ | `16vp` |
 | levelMode             | 弹窗显示层级 | _<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-promptaction#levelmode15%E6%9E%9A%E4%B8%BE%E8%AF%B4%E6%98%8E" target="_blank">LevelMode</a>_ | `0` |
 | levelUniqueId         | 页面级弹窗需要显示的层级下的节点 uniqueId, 仅当levelMode属性设置为LevelMode.EMBEDDED时生效 | _number_ | `-` |
+| beforeClose           | 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 `Promise` | _(action: cancel \| confirm) => Promise\<boolean\> \| boolean_ | `-` |
 
 ### Events
 
-| 事件名      | 说明                                     | 参数类型                   |
+| 事件名      | 说明                                     | 回调参数                   |
 | ----------- | --------------------------------------- | ------------------------ |
 | onOpen      | 打开弹窗的回调                            | `-` |
 | onClose     | 关闭弹窗的回调                            | `-` |

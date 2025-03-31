@@ -20,10 +20,10 @@ import { IBestNumberKeyboard } from "@ibestservices/ibest-ui-v2";
 ```ts
 import { IBestCellGroup, IBestCell } from "@ibestservices/ibest-ui-v2"
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State visible: boolean = false
-  @State value: string = ''
+  @Local visible: boolean = false
+  @Local value: string = ''
   build() {
     Column(){
       IBestCellGroup({ inset: true }) {
@@ -31,14 +31,14 @@ struct DemoPage {
           title: "默认键盘",
           value: this.value,
           clickable: true,
-          onClickCell: () => {
+          onCellClick: () => {
             this.visible = true
           }
         })
       }
       IBestNumberKeyboard({
-        visible: $visible,
-        value: $value,
+        visible: this.visible!!,
+        value: this.value!!,
         onInput: (value: string) => {
           console.log("输入：" + value)
         },
@@ -63,10 +63,10 @@ struct DemoPage {
 ```ts
 import { IBestCellGroup, IBestCell } from "@ibestservices/ibest-ui-v2"
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State visible: boolean = false
-  @State value: string = ''
+  @Local visible: boolean = false
+  @Local value: string = ''
   build() {
     Column(){
       IBestCellGroup({ inset: true }) {
@@ -74,14 +74,14 @@ struct DemoPage {
           title: "带右侧栏的键盘",
           value: this.value,
           clickable: true,
-          onClickCell: () => {
+          onCellClick: () => {
             this.visible = true
           }
         })
       }
       IBestNumberKeyboard({
-        visible: $visible,
-        value: $value,
+        visible: this.visible!!,
+        value: this.value!!,
         styleType: "custom",
         extraKey: ".",
         closeBtnText: "完成"
@@ -100,10 +100,10 @@ struct DemoPage {
 ```ts
 import { IBestCellGroup, IBestCell } from "@ibestservices/ibest-ui-v2"
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State visible: boolean = false
-  @State value: string = ''
+  @Local visible: boolean = false
+  @Local value: string = ''
   build() {
     Column(){
       IBestCellGroup({ inset: true }) {
@@ -111,14 +111,14 @@ struct DemoPage {
           title: "身份证号键盘",
           value: this.value,
           clickable: true,
-          onClickCell: () => {
+          onCellClick: () => {
             this.visible = true
           }
         })
       }
       IBestNumberKeyboard({
-        visible: $visible,
-        value: $value,
+        visible: this.visible!!,
+        value: this.value!!,
         extraKey: "X"
       })
     }
@@ -138,10 +138,10 @@ struct DemoPage {
 ```ts
 import { IBestCellGroup, IBestCell } from "@ibestservices/ibest-ui-v2"
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State visible: boolean = false
-  @State value: string = ''
+  @Local visible: boolean = false
+  @Local value: string = ''
   build() {
     Column(){
       IBestCellGroup({ inset: true }) {
@@ -149,14 +149,14 @@ struct DemoPage {
           title: "带标题的键盘",
           value: this.value,
           clickable: true,
-          onClickCell: () => {
+          onCellClick: () => {
             this.visible = true
           }
         })
       }
       IBestNumberKeyboard({
-        visible: $visible,
-        value: $value,
+        visible: this.visible!!,
+        value: this.value!!,
         title: "键盘标题",
         extraKey: "."
       })
@@ -177,10 +177,10 @@ struct DemoPage {
 ```ts
 import { IBestCellGroup, IBestCell } from "@ibestservices/ibest-ui-v2"
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State visible: boolean = false
-  @State value: string = ''
+  @Local visible: boolean = false
+  @Local value: string = ''
   build() {
     Column(){
       IBestCellGroup({ inset: true }) {
@@ -188,14 +188,14 @@ struct DemoPage {
           title: "配置多个按键的键盘",
           value: this.value,
           clickable: true,
-          onClickCell: () => {
+          onCellClick: () => {
             this.visible = true
           }
         })
       }
       IBestNumberKeyboard({
-        visible: $visible,
-        value: $value,
+        visible: this.visible!!,
+        value: this.value!!,
         deleteButtonText: "删除",
         styleType: "custom",
         extraKey: ["00", "."],
@@ -215,10 +215,10 @@ struct DemoPage {
 ```ts
 import { IBestCellGroup, IBestCell } from "@ibestservices/ibest-ui-v2"
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State visible: boolean = false
-  @State value: string = ''
+  @Local visible: boolean = false
+  @Local value: string = ''
   build() {
     Column(){
       IBestCellGroup({ inset: true }) {
@@ -226,14 +226,14 @@ struct DemoPage {
           title: "配置随机数字的键盘",
           value: this.value,
           clickable: true,
-          onClickCell: () => {
+          onCellClick: () => {
             this.visible = true
           }
         })
       }
       IBestNumberKeyboard({
-        visible: $visible,
-        value: $value,
+        visible: this.visible!!,
+        value: this.value!!,
         isRandomKeyOrder: true
       })
     }
@@ -250,26 +250,26 @@ struct DemoPage {
 ```ts
 import { IBestCellGroup, IBestField } from "@ibestservices/ibest-ui-v2"
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State visible: boolean = false
-  @State value: string = ''
+  @Local visible: boolean = false
+  @Local value: string = ''
   build() {
     Column(){
-      IBestField({
-        label: "最大长度",
-        value: $value,
-        readOnly: true,
-        clickable: true,
-        placeholder: "点此输入",
-        hasBorder: false,
-        onFieldClick: () => {
-          this.visible = true
-        }
-      })
+      IBestCellGroup({ inset: true }) {
+        IBestCell({
+          title: '最大长度',
+          value: this.value || "点此输入",
+          clickable: true,
+          hasBorder: false,
+          onCellClick: () => {
+            this.visible = true
+          }
+        })
+      }
       IBestNumberKeyboard({
-        visible: $visible,
-        value: $value,
+        visible: this.visible!!,
+        value: this.value!!,
         maxLength: 6
       })
     }

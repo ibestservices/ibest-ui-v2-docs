@@ -19,7 +19,7 @@ import { IBestNotify } from "@ibestservices/ibest-ui-v2";
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Column(){
@@ -27,7 +27,7 @@ struct DemoPage {
         title: '基础用法',
         isLink: true,
         hasBorder: false,
-        onClickCell: () => {
+        onCellClick: () => {
           IBestNotify.show({
             message: '我们嘲笑过少年的无知，也嘲笑过岁月的苍老。我们行走在路上，理想宏大，眼窝却浅显。'
           })
@@ -49,7 +49,7 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Column(){
@@ -57,7 +57,7 @@ struct DemoPage {
         title: '通知类型',
         isLink: true,
         hasBorder: false,
-        onClickCell: () => {
+        onCellClick: () => {
           IBestNotify.show({
             message: '我们嘲笑过少年的无知，也嘲笑过岁月的苍老。我们行走在路上，理想宏大，眼窝却浅显。',
             type: 'primary'
@@ -80,14 +80,14 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Column(){
       IBestCell({
         title: '自定义配置',
         isLink: true,
-        onClickCell: () => {
+        onCellClick: () => {
           IBestNotify.show({
             message: '通知内容',
             color: '#ad0000',
@@ -98,7 +98,7 @@ struct DemoPage {
       IBestCell({
         title: '自定义文字大小',
         isLink: true,
-        onClickCell: () => {
+        onCellClick: () => {
           IBestNotify.show({
             message: '如果你爱上了某个星球的一朵花。那么，只要在夜晚仰望星空，就会觉得漫天的繁星就像一朵朵盛开的花。',
             fontSize: 34
@@ -109,7 +109,7 @@ struct DemoPage {
         title: '自定义时长',
         isLink: true,
         hasBorder: false,
-        onClickCell: () => {
+        onCellClick: () => {
           IBestNotify.show({
             message: '通知内容',
             duration: 3000
@@ -129,7 +129,7 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   @Builder customContent(){
 		Row({space: 10}){
@@ -146,7 +146,7 @@ struct DemoPage {
       IBestCell({
         title: '自定义内容',
         isLink: true,
-        onClickCell: () => {
+        onCellClick: () => {
           IBestNotify.show({
             customContent: (): void => this.customContent()
           })

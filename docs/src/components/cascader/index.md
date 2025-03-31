@@ -20,12 +20,12 @@ import { IBestCascader, IBestCascaderOption } from "@ibestservices/ibest-ui-v2";
 ```ts
 import { IBestCell } from "@ibestservices/ibest-ui-v2";
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State visible: boolean = false
-  @State fieldValue: string = '请选择地区'
-	@State selectValue: string[] = []
-  @State data: IBestCascaderOption[] = [
+  @Local visible: boolean = false
+  @Local fieldValue: string = '请选择地区'
+	@Local selectValue: string[] = []
+  @Local data: IBestCascaderOption[] = [
     {
       text: "江苏省",
       value: "320000",
@@ -101,14 +101,14 @@ struct DemoPage {
         title: '地区',
         value: this.fieldValue,
         isLink: true,
-        onClickCell: () => {
+        onCellClick: () => {
           this.visible = true
         }
       })
       IBestCascader({
-        visible: $visible,
+        visible: this.visible!!,
         options: this.data,
-        value: $selectValue,
+        value: this.selectValue!!,
         itemHeight: 100,
         onConfirm: (value: IBestCascaderOption[]) => {
           this.fieldValue = value.map(item => item.text).join(',')
@@ -128,12 +128,12 @@ struct DemoPage {
 ```ts
 import { IBestCell } from "@ibestservices/ibest-ui-v2";
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State visible: boolean = false
-  @State fieldValue: string = '江苏省,南京市,雨花台区'
-	@State selectValue: string[] = ["320000", "320100", "320114"]
-  @State data: IBestCascaderOption[] = [
+  @Local visible: boolean = false
+  @Local fieldValue: string = '江苏省,南京市,雨花台区'
+	@Local selectValue: string[] = ["320000", "320100", "320114"]
+  @Local data: IBestCascaderOption[] = [
     {
       text: "江苏省",
       value: "320000",
@@ -210,14 +210,14 @@ struct DemoPage {
         value: this.fieldValue,
         isLink: true,
         hasBorder: false,
-        onClickCell: () => {
+        onCellClick: () => {
           this.visible = true
         }
       })
       IBestCascader({
-        visible: $visible,
+        visible: this.visible!!,
         options: this.data,
-        value: $selectValue,
+        value: this.selectValue!!,
         activeColor: '#ee0a24',
         onConfirm: (value: IBestCascaderOption[]) => {
           this.fieldValue = value.map(item => item.text).join(',')
@@ -242,12 +242,12 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State visible: boolean = false
-  @State fieldValue: string = '请选择地区'
-	@State selectValue: string[] = []
-  @State data: IBestCascaderOption[] = [
+  @Local visible: boolean = false
+  @Local fieldValue: string = '请选择地区'
+	@Local selectValue: string[] = []
+  @Local data: IBestCascaderOption[] = [
     {
       text: "江苏省",
       value: "320000"
@@ -295,14 +295,14 @@ struct DemoPage {
         title: '地区',
         value: this.fieldValue,
         isLink: true,
-        onClickCell: () => {
+        onCellClick: () => {
           this.visible = true
         }
       })
       IBestCascader({
-        visible: $visible,
+        visible: this.visible!!,
         options: this.data,
-        value: $selectValue,
+        value: this.selectValue!!,
         lazy: true,
         lazyLoad: this.lazyLoad,
         onConfirm: (value: IBestCascaderOption[]) => {
@@ -325,12 +325,12 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State visible: boolean = false
-  @State fieldValue: string = '请选择地区'
-  @State selectValue: string[] = []
-  @State data: IBestCascaderOption[] = [
+  @Local visible: boolean = false
+  @Local fieldValue: string = '请选择地区'
+  @Local selectValue: string[] = []
+  @Local data: IBestCascaderOption[] = [
 		{
 			text: "江苏省",
 			value: "320000",
@@ -408,14 +408,14 @@ struct DemoPage {
         title: '地区',
         value: this.fieldValue,
         isLink: true,
-        onClickCell: () => {
+        onCellClick: () => {
           this.visible = true
         }
       })
       IBestCascader({
-        visible: $visible,
+        visible: this.visible!!,
         options: this.data,
-        value: $selectValue,
+        value: this.selectValue!!,
         onConfirm: (value: IBestCascaderOption[]) => {
           this.fieldValue = value.map(item => item.text).join(',')
         }
@@ -434,10 +434,10 @@ struct DemoPage {
 ```ts
 import { IBestCascaderContent } from "@ibestservices/ibest-ui-v2";
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State selectValue: string[] = []
-  @State data: IBestCascaderOption[] = [
+  @Local selectValue: string[] = []
+  @Local data: IBestCascaderOption[] = [
 		{
 			text: "江苏省",
 			value: "320000",
@@ -512,7 +512,7 @@ struct DemoPage {
   build() {
     Column(){
       IBestCascaderContent({
-        value: $selectValue,
+        value: this.selectValue!!,
         options: this.data
       })
     }

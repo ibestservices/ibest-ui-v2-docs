@@ -19,13 +19,13 @@ import { IBestCollapse, IBestCollapseItem } from "@ibestservices/ibest-ui-v2";
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State activeName: string[] = ['1']
-  @State groupId: string = 'group'
+  @Local activeName: string[] = ['1']
+  @Local groupId: string = 'group'
   build() {
     Column(){
-      IBestCollapse({groupId: this.groupId, activeName: this.activeName}){
+      IBestCollapse({groupId: this.groupId, activeName: this.activeName!!}){
         IBestCollapseItem({
           groupId: this.groupId,
           name: '1',
@@ -64,13 +64,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State activeName: number = 1
-  @State groupId: string = 'group'
+  @Local activeName: number = 1
+  @Local groupId: string = 'group'
   build() {
     Column(){
-      IBestCollapse({groupId: this.groupId, activeName: this.activeName, accordion: true}){
+      IBestCollapse({groupId: this.groupId, activeName: this.activeName!!, accordion: true}){
         IBestCollapseItem({
           groupId: this.groupId,
           name: 1,
@@ -109,13 +109,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State activeName: string[] = ['2']
-  @State groupId: string = 'group'
+  @Local activeName: string[] = ['2']
+  @Local groupId: string = 'group'
   build() {
     Column(){
-      IBestCollapse({groupId: this.groupId, activeName: this.activeName}){
+      IBestCollapse({groupId: this.groupId, activeName: this.activeName!!}){
         IBestCollapseItem({
           groupId: this.groupId,
           name: '1',
@@ -155,13 +155,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State activeName: string[] = ['1']
-  @State groupId: string = 'group'
+  @Local activeName: string[] = ['1']
+  @Local groupId: string = 'group'
   build() {
     Column(){
-      IBestCollapse({groupId: this.groupId, activeName: this.activeName}){
+      IBestCollapse({groupId: this.groupId, activeName: this.activeName!!}){
         IBestCollapseItem({
           groupId: this.groupId,
           name: '1',
@@ -188,16 +188,16 @@ struct DemoPage {
 import { IBestCollapseController } from '@ibestservices/ibest-ui';
 
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State activeName: number[] = [2]
-  @State groupId: string = 'group'
+  @Local activeName: number[] = [2]
+  @Local groupId: string = 'group'
   private controller: IBestCollapseController = new IBestCollapseController()
   build() {
     Column(){
       IBestCollapse({
         groupId: this.groupId,
-        activeName: this.activeName,
+        activeName: this.activeName!!,
         controller: this.controller
       }){
         IBestCollapseItem({
@@ -232,7 +232,7 @@ struct DemoPage {
             type: "primary",
             text: "全部展开",
             buttonSize: "small",
-            onClickBtn: () => {
+            onBtnClick: () => {
               this.controller.toggleAll(true)
             }
           })
@@ -240,7 +240,7 @@ struct DemoPage {
             type: "primary",
             text: "全部收起",
             buttonSize: "small",
-            onClickBtn: () => {
+            onBtnClick: () => {
               this.controller.toggleAll(false)
             }
           })
@@ -248,7 +248,7 @@ struct DemoPage {
             type: "primary",
             text: "切换",
             buttonSize: "small",
-            onClickBtn: () => {
+            onBtnClick: () => {
               this.controller.toggleAll()
             }
           })
@@ -259,7 +259,7 @@ struct DemoPage {
             type: "primary",
             text: "跳过禁用展开",
             buttonSize: "small",
-            onClickBtn: () => {
+            onBtnClick: () => {
               this.controller.toggleAll({
                 expanded: true,
                 skipDisabled: true
@@ -270,7 +270,7 @@ struct DemoPage {
             type: "primary",
             text: "跳过禁用收起",
             buttonSize: "small",
-            onClickBtn: () => {
+            onBtnClick: () => {
               this.controller.toggleAll({
                 expanded: false,
                 skipDisabled: true
@@ -281,7 +281,7 @@ struct DemoPage {
             type: "primary",
             text: "跳过禁用切换",
             buttonSize: "small",
-            onClickBtn: () => {
+            onBtnClick: () => {
               this.controller.toggleAll({
                 skipDisabled: true
               })

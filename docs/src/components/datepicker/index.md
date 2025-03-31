@@ -7,7 +7,7 @@
 ## 引入
 
 ```ts
-import { IBestDatePicker, IBestDatePickerResultType, IBestPickerOption } from "@ibestservices/ibest-ui-v2";
+import { IBestDatePicker, IBestDatePickerResult, IBestPickerOption } from "@ibestservices/ibest-ui-v2";
 ```
 
 ## 代码演示
@@ -24,20 +24,20 @@ import { IBestDatePicker, IBestDatePickerResultType, IBestPickerOption } from "@
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State selectValue: string[] = ["2024", "08", "10"]
+  @Local selectValue: string[] = ["2024", "08", "10"]
   build() {
     Column(){
       IBestDatePicker({
         title: "选择日期",
         minDate: new Date("2020-05-01"),
         maxDate: new Date("2028-05-01"),
-        value: $selectValue,
-        onConfirm: (value: IBestDatePickerResultType) => {
+        value: this.selectValue!!,
+        onConfirm: (value: IBestDatePickerResult) => {
           IBestToast.show(this.selectValue.join("-") , value.dateStr)
         },
-        onChange: (value: IBestDatePickerResultType) => {
+        onChange: (value: IBestDatePickerResult) => {
           IBestToast.show(this.selectValue.join("-") , value.dateStr)
         }
       })
@@ -54,9 +54,9 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State selectValue: string[] = ["2024", "08"]
+  @Local selectValue: string[] = ["2024", "08"]
   build() {
     Column(){
       IBestDatePicker({
@@ -64,11 +64,11 @@ struct DemoPage {
         minDate: new Date("2020-05"),
         maxDate: new Date("2028-05"),
         isShowDay: false,
-        value: $selectValue,
-        onConfirm: (value: IBestDatePickerResultType) => {
+        value: this.selectValue!!,
+        onConfirm: (value: IBestDatePickerResult) => {
           IBestToast.show(this.selectValue.join("-") , value.dateStr)
         },
-        onChange: (value: IBestDatePickerResultType) => {
+        onChange: (value: IBestDatePickerResult) => {
           IBestToast.show(this.selectValue.join("-") , value.dateStr)
         }
       })
@@ -85,9 +85,9 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State selectValue: string[] = ["2024", "08", "18"]
+  @Local selectValue: string[] = ["2024", "08", "18"]
   build() {
     Column(){
       IBestDatePicker({
@@ -95,11 +95,11 @@ struct DemoPage {
         minDate: new Date("2020-05-01"),
         maxDate: new Date("2028-05-01"),
         showUnit: true,
-        value: $selectValue,
-        onConfirm: (value: IBestDatePickerResultType) => {
+        value: this.selectValue!!,
+        onConfirm: (value: IBestDatePickerResult) => {
           IBestToast.show(this.selectValue.join("-") , value.dateStr)
         },
-        onChange: (value: IBestDatePickerResultType) => {
+        onChange: (value: IBestDatePickerResult) => {
           IBestToast.show(this.selectValue.join("-") , value.dateStr)
         }
       })
@@ -116,9 +116,9 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State selectValue: string[] = ["2024", "08"]
+  @Local selectValue: string[] = ["2024", "08"]
   filter(type: string, options: IBestPickerOption[]): IBestPickerOption[]{
     if (type === 'month') {
       return options.filter((option) => Number(option.value) % 6 === 0)
@@ -133,11 +133,11 @@ struct DemoPage {
         maxDate: new Date("2028-05"),
         isShowDay: false,
         filter: this.filter,
-        value: $selectValue,
-        onConfirm: (value: IBestDatePickerResultType) => {
+        value: this.selectValue!!,
+        onConfirm: (value: IBestDatePickerResult) => {
           IBestToast.show(this.selectValue.join("-") , value.dateStr)
         },
-        onChange: (value: IBestDatePickerResultType) => {
+        onChange: (value: IBestDatePickerResult) => {
           IBestToast.show(this.selectValue.join("-") , value.dateStr)
         }
       })
@@ -175,11 +175,11 @@ struct DemoPage {
 
 | 事件名     | 说明         | 回调参数             |
 | ----------| ------------------------------ | -------------------------------- |
-| onChange | 某一列选项变更后触发 | `value: IBestDatePickerResultType` |
-| onConfirm | 点击确定按钮时触发 | `value: IBestDatePickerResultType` |
+| onChange | 某一列选项变更后触发 | `value: IBestDatePickerResult` |
+| onConfirm | 点击确定按钮时触发 | `value: IBestDatePickerResult` |
 | onCancel |  点击取消按钮时触发 | `-` |
 
-### IBestDatePickerResultType 数据结构
+### IBestDatePickerResult 数据结构
 | 参数         | 说明                                          | 类型      |
 | ------------ | ---------------------------------------------| --------- |
 | dateStr      | 选中的日期字符串                                | _string_  |

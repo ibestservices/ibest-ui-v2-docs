@@ -23,13 +23,13 @@ import { IBestRadio, IBestRadioGroup } from "@ibestservices/ibest-ui-v2";
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State group: string = "group"
-  @State active: string = "1"
+  @Local group: string = "group"
+  @Local active: string = "1"
   build() {
     Column(){
-      IBestRadioGroup({ group: this.group, active: $active }){
+      IBestRadioGroup({ group: this.group, active: this.active!! }){
         IBestRadio({
           group: this.group,
           label: '单选框1',
@@ -54,13 +54,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State group: string = "group"
-  @State active: string = "1"
+  @Local group: string = "group"
+  @Local active: string = "1"
   build() {
     Column(){
-      IBestRadioGroup({ group: this.group, active: $active, placeDirection: Axis.Horizontal }){
+      IBestRadioGroup({ group: this.group, active: this.active!!, placeDirection: Axis.Horizontal }){
         IBestRadio({
           group: this.group,
           label: '单选框1',
@@ -88,13 +88,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State group: string = "group"
-  @State active: string = "1"
+  @Local group: string = "group"
+  @Local active: string = "1"
   build() {
     Column(){
-      IBestRadioGroup({ group: this.group, active: $active }){
+      IBestRadioGroup({ group: this.group, active: this.active!! }){
         IBestRadio({
           group: this.group,
           label: '单选框1',
@@ -123,13 +123,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State group: string = "group"
-  @State active: string = "1"
+  @Local group: string = "group"
+  @Local active: string = "1"
   build() {
     Column(){
-      IBestRadioGroup({ group: this.group, active: $active }){
+      IBestRadioGroup({ group: this.group, active: this.active!! }){
         IBestRadio({
           group: this.group,
           label: '单选框1',
@@ -159,13 +159,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State group: string = "group"
-  @State active: string = "1"
+  @Local group: string = "group"
+  @Local active: string = "1"
   build() {
     Row({space: SPACE.XL}){
-      IBestRadioGroup({ group: this.group, active: $active }){
+      IBestRadioGroup({ group: this.group, active: this.active!! }){
         IBestRadio({
           group: this.group,
           label: '单选框',
@@ -179,7 +179,7 @@ struct DemoPage {
           name: '2'
         })
       }
-      IBestRadioGroup({ group: this.group, active: $active }){
+      IBestRadioGroup({ group: this.group, active: this.active!! }){
         IBestRadio({
           group: this.group,
           label: '单选框',
@@ -211,13 +211,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State group: string = "group"
-  @State active: string = "1"
+  @Local group: string = "group"
+  @Local active: string = "1"
   build() {
     Column(){
-      IBestRadioGroup({ group: this.group, active: $active }){
+      IBestRadioGroup({ group: this.group, active: this.active!! }){
         IBestRadio({
           group: this.group,
           label: '自定义大小',
@@ -247,13 +247,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State group: string = "group"
-  @State active: string = "1"
+  @Local group: string = "group"
+  @Local active: string = "1"
   build() {
     Column(){
-      IBestRadioGroup({ group: this.group, active: $active }){
+      IBestRadioGroup({ group: this.group, active: this.active!! }){
         IBestRadio({
           group: this.group,
           label: '单选框',
@@ -283,13 +283,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State group: string = "group"
-  @State active: number = 1
+  @Local group: string = "group"
+  @Local active: number = 1
   build() {
     Column(){
-      IBestRadioGroup({ group: this.group, active: $active }){
+      IBestRadioGroup({ group: this.group, active: this.active!! }){
         IBestRadio({
           group: this.group,
           label: '单选框',
@@ -316,13 +316,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State group: string = "group"
-  @State active: number = 1
+  @Local group: string = "group"
+  @Local active: number = 1
   build() {
     Column(){
-      IBestRadioGroup({ group: this.group, active: $active, beforeChange: () => {
+      IBestRadioGroup({ group: this.group, active: this.active!!, beforeChange: () => {
         return new Promise((resolve, reject) => {
           IBestDialogUtil.open({
             title: "提示",
@@ -365,21 +365,21 @@ struct DemoPage {
 ```ts
 import { IBestCell } from '@ibestservices/ibset-ui'
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State group: string = "group"
-  @State active: boolean = true
+  @Local group: string = "group"
+  @Local active: boolean = true
   @Builder CellRadio(name: boolean, group: string) {
     IBestRadio({ name, group })
   }
   build() {
     Column(){
-      IBestRadioGroup({ group: this.group, active: $active }){
+      IBestRadioGroup({ group: this.group, active: this.active!! }){
         IBestCell({
           title: '是',
           rightIconBuilder: () => this.CellRadio(true, this.group),
           clickable: true,
-          onClickCell: () => {
+          onCellClick: () => {
             this.active = true
           }
         })
@@ -388,7 +388,7 @@ struct DemoPage {
           rightIconBuilder: () => this.CellRadio(false, this.group),
           hasBorder: false,
           clickable: true,
-          onClickCell: () => {
+          onCellClick: () => {
             this.active = false
           }
         })

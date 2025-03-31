@@ -19,7 +19,7 @@ import { IBestSwipeCell } from "@ibestservices/ibest-ui-v2";
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   @Builder cellContent(){
     IBestCell({
@@ -67,7 +67,7 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   @Builder cellContent(){
     IBestCell({

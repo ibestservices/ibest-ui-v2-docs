@@ -22,13 +22,13 @@ import { IBestPasswordInput } from "@ibestservices/ibest-ui-v2";
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: string = '123'
+  @Local value: string = '123'
   build() {
     Column(){
       IBestPasswordInput({
-        value: $value,
+        value: this.value!!,
         numberKeyboardConfig:{
           extraKey: ".",
           styleType: "custom"
@@ -47,13 +47,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: string = '123'
+  @Local value: string = '123'
   build() {
     Column(){
       IBestPasswordInput({
-        value: $value,
+        value: this.value!!,
         inputLength: 4
       })
     }
@@ -75,13 +75,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: string = '123'
+  @Local value: string = '123'
   build() {
     Column(){
       IBestPasswordInput({
-        value: $value,
+        value: this.value!!,
         space: 20
       })
     }
@@ -97,13 +97,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: string = '123'
+  @Local value: string = '123'
   build() {
     Column(){
       IBestPasswordInput({
-        value: $value,
+        value: this.value!!,
         isHidden: false
       })
     }
@@ -119,18 +119,18 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: string = '123'
+  @Local value: string = '123'
   build() {
     Column({space: 14}){
       IBestPasswordInput({
-        value: $value,
+        value: this.value!!,
         bdColor: '#3d8af2',
         cellTextColor: '#3d8af2'
       })
       IBestPasswordInput({
-        value: $value,
+        value: this.value!!,
         space: 12,
         cellBgColor: "#1c1c1e",
         cellTextColor: "#fff"
@@ -148,10 +148,11 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State @Watch("valueChange") value: string = '123'
-  @State errorTip: string = ''
+  @Local value: string = '123'
+  @Local errorTip: string = ''
+  @Monitor("value")
   valueChange(){
     if (this.value.length === 6 && this.value !== '123456') {
       this.errorTip = '密码错误'
@@ -162,7 +163,7 @@ struct DemoPage {
   build() {
     Column(){
       IBestPasswordInput({
-        value: $value,
+        value: this.value!!,
         tip: "密码为6位数字",
         errorTip: this.errorTip
       })

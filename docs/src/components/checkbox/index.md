@@ -23,17 +23,14 @@ import { IBestCheckbox, IBestCheckboxGroup } from "@ibestservices/ibest-ui-v2";
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State isChecked: boolean = true
+  @Local isChecked: boolean = true
   build() {
     Column(){
       IBestCheckbox({
-        value: this.isChecked,
-        label: this.isChecked + "",
-        onChange: (checked: boolean) => {
-          this.isChecked = checked
-        }
+        value: this.isChecked!!,
+        label: this.isChecked + ""
       })
     }
   }
@@ -51,7 +48,7 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Column(){
@@ -81,18 +78,15 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State isChecked: boolean = true
+  @Local isChecked: boolean = true
   build() {
     Column(){
       IBestCheckbox({
-        value: this.isChecked,
+        value: this.isChecked!!,
         shape: 'square',
-        label: "自定义形状",
-        onChange: (checked: boolean) => {
-          this.isChecked = checked
-        }
+        label: "自定义形状"
       })
     }
   }
@@ -110,18 +104,15 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State isChecked: boolean = true
+  @Local isChecked: boolean = true
   build() {
     Column({ space: 20 }) {
       IBestCheckbox({
-        value: this.isChecked,
+        value: this.isChecked!!,
         checkedColor: '#ee0a24',
-        label: '自定义颜色',
-        onChange: checked => {
-          this.isChecked = checked
-        }
+        label: '自定义颜色'
       })
       IBestCheckbox({
         value: false,
@@ -145,18 +136,15 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State isChecked: boolean = true
+  @Local isChecked: boolean = true
   build() {
     Column(){
       IBestCheckbox({
-        value: this.isChecked,
+        value: this.isChecked!!,
         iconSize: 30,
-        label: '自定义大小',
-        onChange: (checked: boolean) => {
-          this.isChecked = checked
-        }
+        label: '自定义大小'
       })
     }
   }
@@ -174,18 +162,15 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State isChecked: boolean = true
+  @Local isChecked: boolean = true
   build() {
     Column(){
       IBestCheckbox({
-        value: this.isChecked,
+        value: this.isChecked!!,
         labelPosition: 'left',
-        label: '左侧文本',
-        onChange: (checked: boolean) => {
-          this.isChecked = checked
-        }
+        label: '左侧文本'
       })
     }
   }
@@ -203,18 +188,15 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State isChecked: boolean = true
+  @Local isChecked: boolean = true
   build() {
     Column(){
       IBestCheckbox({
-        value: this.isChecked,
+        value: this.isChecked!!,
         label: '左侧文本',
-        labelDisabled: true,
-        onChange: (checked: boolean) => {
-          this.isChecked = checked
-        }
+        labelDisabled: true
       })
     }
   }
@@ -229,13 +211,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State isChecked: boolean = true
+  @Local isChecked: boolean = true
   build() {
     Column(){
       IBestCheckbox({
-        value: this.isChecked,
+        value: this.isChecked!!,
         label: '复选框',
         beforeChange: () => {
           return new Promise((resolve, reject) => {
@@ -251,9 +233,6 @@ struct DemoPage {
               }
             })
           })
-        },
-        onChange: checked => {
-          this.isChecked = checked
         }
       })
     }
@@ -269,13 +248,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State group: string = "group"
-  @State activeList: string[] = ["1", "2"]
+  @Local group: string = "group"
+  @Local activeList: string[] = ["1", "2"]
   build() {
     Column(){
-      IBestCheckboxGroup({ group: this.group, activeList: $activeList, beforeChange: () => {
+      IBestCheckboxGroup({ group: this.group, activeList: this.activeList!!, beforeChange: () => {
         return new Promise((resolve, reject) => {
           IBestDialogUtil.open({
             title: "提示",
@@ -314,13 +293,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State group: string = "group"
-  @State activeList: number[] = [1, 2]
+  @Local group: string = "group"
+  @Local activeList: number[] = [1, 2]
   build() {
     Column(){
-      IBestCheckboxGroup({ group: this.group, activeList: $activeList, placeDirection: Axis.Horizontal }){
+      IBestCheckboxGroup({ group: this.group, activeList: this.activeList!!, placeDirection: Axis.Horizontal }){
         IBestCheckbox({
           group: this.group,
           label: '复选框1',
@@ -348,13 +327,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State group: string = "group"
-  @State activeList: string[] = ["1", "2"]
+  @Local group: string = "group"
+  @Local activeList: string[] = ["1", "2"]
   build() {
     Column(){
-      IBestCheckboxGroup({ group: this.group, activeList: $activeList, max: 2 }){
+      IBestCheckboxGroup({ group: this.group, activeList: this.activeList!!, max: 2 }){
         IBestCheckbox({
           group: this.group,
           label: '复选框1',
@@ -388,14 +367,14 @@ struct DemoPage {
 ```ts
 import { IBestCheckboxGroupController } from '@ibestservices/ibset-ui'
 @Entry
-@Component
+@ComponentV2
 struct CheckboxPage {
-  @State group: string = "group"
-  @State activeList: string[] = ["1"]
+  @Local group: string = "group"
+  @Local activeList: string[] = ["1"]
   private controller: IBestCheckboxGroupController = new IBestCheckboxGroupController()
   build(){
     Column(){
-      IBestCheckboxGroup({ group: this.group, activeList: $activeList, controller: this.controller }){
+      IBestCheckboxGroup({ group: this.group, activeList: this.activeList!!, controller: this.controller }){
         IBestCheckbox({
           group: this.group,
           label: '复选框1',
@@ -416,20 +395,20 @@ struct CheckboxPage {
         IBestButton({
           text: '全选',
           type: 'primary',
-          onClickBtn: ()=>{
+          onBtnClick: ()=>{
             this.controller.toggleAll(true)
           }
         })
         IBestButton({
           text: '反选',
           type: 'warning',
-          onClickBtn: ()=>{
+          onBtnClick: ()=>{
             this.controller.toggleAll()
           }
         })
         IBestButton({
           text: '取消选中',
-          onClickBtn: ()=>{
+          onBtnClick: ()=>{
             this.controller.toggleAll(false)
           }
         })
@@ -451,12 +430,12 @@ struct CheckboxPage {
 ```ts
 import { IBestCheckboxGroupController } from '@ibestservices/ibset-ui'
 @Entry
-@Component
+@ComponentV2
 struct CheckboxPage {
-  @State group: string = "group"
-  @State activeList: string[] = ["2"]
-  @State isIndeterminate: boolean = true
-  @State isIndeterminateCheckAll: boolean = false
+  @Local group: string = "group"
+  @Local activeList: string[] = ["2"]
+  @Local isIndeterminate: boolean = true
+  @Local isIndeterminateCheckAll: boolean = false
   private controller: IBestCheckboxGroupController = new IBestCheckboxGroupController()
   build(){
     Column() {
@@ -470,7 +449,7 @@ struct CheckboxPage {
       })
       IBestCheckboxGroup({
         group: this.group,
-        activeList: $activeList,
+        activeList: this.activeList!!,
         controller: this.controller,
         onChange: checkedNames => {
           const length = checkedNames.length
@@ -502,15 +481,15 @@ struct CheckboxPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct CheckboxPage {
-  @State group: string = "group"
-  @State activeList: string[] = []
-  @State cellCheckedMaxNum: number = 2
+  @Local group: string = "group"
+  @Local activeList: string[] = []
+  @Local cellCheckedMaxNum: number = 2
   @Builder CellCheckbox(name, group){
     IBestCheckbox({ name, group })
   }
-  handleClickCell(name){
+  handleCellClick(name){
     const index = this.activeList.indexOf(name)
     if(index > -1){
       this.activeList.splice(index, 1)
@@ -522,7 +501,7 @@ struct CheckboxPage {
     Column() {
       IBestCheckboxGroup({
         group: this.group,
-        activeList: $activeList,
+        activeList: this.activeList!!,
         max: this.cellCheckedMaxNum,
         space: 0
       }){
@@ -531,14 +510,14 @@ struct CheckboxPage {
           title: '复选框1',
           disabled: this.activeList.length >= this.cellCheckedMaxNum && !this.activeList.includes('1'),
           rightIconBuilder: (): void => this.CellCheckbox('1', this.group),
-          onClickCell: (): void => this.handleClickCell('1')
+          onCellClick: (): void => this.handleCellClick('1')
         })
         IBestCell({
           clickable: true,
           title: '复选框2',
           disabled: this.activeList.length >= this.cellCheckedMaxNum && !this.activeList.includes('2'),
           rightIconBuilder: (): void => this.CellCheckbox('2', this.group),
-          onClickCell: (): void => this.handleClickCell('2')
+          onCellClick: (): void => this.handleCellClick('2')
         })
         IBestCell({
           clickable: true,
@@ -546,7 +525,7 @@ struct CheckboxPage {
           disabled: this.activeList.length >= this.cellCheckedMaxNum && !this.activeList.includes('3'),
           hasBorder: false,
           rightIconBuilder: (): void => this.CellCheckbox('3', this.group),
-          onClickCell: (): void => this.handleClickCell('3')
+          onCellClick: (): void => this.handleCellClick('3')
         })
       }
     }
@@ -559,20 +538,20 @@ struct CheckboxPage {
 
 ### Checkbox @Props
 
-| 参数          | 说明                                                                 | 类型   | 默认值  |
-| ------------- | --------------------------------------------------------------------|-------| ------- |
-| group         | 标识符，通常为一个唯一的字符串，需具备`全局唯一性`或已入栈的页面`唯一性`  | _string_ \| _number_  |  `''`   |
+| 参数          | 说明                                                              | 类型   | 默认值  |
+| ------------- | -----------------------------------------------------------------|-------| ------- |
+| group         | 标识符，通常为一个唯一的字符串，需具备`全局唯一性`或已入栈的页面`唯一性`    | _string_ \| _number_  |  `''`   |
 | name          | 标识符，通常为一个唯一的字符串或数字，同一 `group` 的 `name` 不可重复    | _string_ \| _number_ | `''` |
-| label         | 显示的文本                                                           | _ResourceStr_   |  `''`   |
-| value         | 默认是否选中 非双向绑定，如果要获取最新的值请从 `onChange` 回调中获取    | _boolean_       | `false` |
-| iconSize      | 图标大小                                                             | _number_ \| _string_ | `18`|
-| shape         | 形状，可选值为 `square` `round`                                      | _string_        | `round` |
-| disabled      | 是否为禁用状态                                                       | _boolean_       | `false` |
-| labelDisabled | 是否禁用文本内容点击                                                 | _boolean_       | `false` |
-| labelPosition | 文本位置，可选值为 `left`                                            | _string_        | `right` |
-| checkedColor  | 选中状态颜色                                                         | _ResourceColor_ | `#1989fa`  |
-| indeterminate | 是否为不确定状态                                                     | _boolean_     | `false` |
-| labelFontSize | 文本字体大小                                                         | _number_ \| _string_ | `16`|
+| label         | 显示的文本                                                        | _ResourceStr_   |  `''`   |
+| value         | 默认是否选中 非双向绑定，如果要获取最新的值请从 `onChange` 回调中获取     | _boolean_       | `false` |
+| iconSize      | 图标大小                                                          | _number_ \| _string_ | `18`|
+| shape         | 形状，可选值为 `square` `round`                                    | _string_        | `round` |
+| disabled      | 是否为禁用状态                                                     | _boolean_       | `false` |
+| labelDisabled | 是否禁用文本内容点击                                                | _boolean_       | `false` |
+| labelPosition | 文本位置，可选值为 `left`                                           | _string_        | `right` |
+| checkedColor  | 选中状态颜色                                                       | _ResourceColor_ | `#1989fa`  |
+| indeterminate | 是否为不确定状态                                                    | _boolean_       | `false` |
+| labelFontSize | 文本字体大小                                                       | _number_ \| _string_ | `16`|
 | bgColor       | 默认背景色     | _ResourceColor_ | `''` |
 | bdColor       | 默认边框色     | _ResourceColor_ | `#ebedf0` |
 | beforeChange  | 改变前的回调     | _(value: boolean) => Promise\<boolean\> \| boolean_ | `-` |

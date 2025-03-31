@@ -19,7 +19,7 @@ import { IBestDivider } from "@ibestservices/ibest-ui-v2";
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Column(){
@@ -37,7 +37,7 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   @Builder textBuilder(){
     Row({space: 10}){
@@ -50,7 +50,7 @@ struct DemoPage {
       IBestDivider({ text: '细线' })
       IBestDivider({text: '非细线', hairline: false})
       IBestDivider({
-        textBuilder: this.textBuilder
+        textBuilder: (): void => this.textBuilder()
       })
     }.padding({top: 16, bottom: 16})
   }
@@ -65,7 +65,7 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Column({space: 16}){
@@ -90,7 +90,7 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Column(){
@@ -111,7 +111,7 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Column(){
@@ -134,7 +134,7 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Row(){

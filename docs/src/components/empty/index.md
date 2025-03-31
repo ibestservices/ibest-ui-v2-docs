@@ -19,7 +19,7 @@ import { IBestEmpty } from "@ibestservices/ibest-ui-v2";
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Column(){
@@ -43,7 +43,7 @@ Empty 组件内置了多种占位图片类型，可以在不同业务场景下�
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Column(){
@@ -79,7 +79,7 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
   build() {
     Column(){
@@ -104,7 +104,7 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct EmptyPage {
   @Builder Arrow() {
     Image($r('app.media.title_back'))
@@ -133,7 +133,7 @@ struct EmptyPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct EmptyPage {
   @Builder Btn() {
     IBestButton({ text: '按钮', type: 'primary' })
@@ -159,7 +159,7 @@ struct EmptyPage {
 | emptyImage          | 类型，可选值为 `error` `network` `search` | _string_      | `default`    |
 | imageSize           | 图片大小                                 | _string_ \| _number_ | `160` |
 | description         | 图片下方的描述文字                         | _ResourceStr_ |   |
-| descriptionFontSize | 图片下方的描述文字的大小                    | _string_ | `14` |
+| descriptionFontSize | 图片下方的描述文字的大小                    | _string_ \| _number_ | `14` |
 | descriptionColor    | 图片下方的描述文字的颜色                    | _ResourceColor_ | `#969799` |
 | emptyImageUrl       | 自定义占位图                              | _ResourceStr_ |  `''`  |
 

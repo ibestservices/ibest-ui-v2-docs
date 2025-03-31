@@ -19,9 +19,9 @@ import { IBestSignature } from "@ibestservices/ibest-ui-v2";
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State imgUrl: string = ""
+  @Local imgUrl: string = ""
   build() {
     Column({ space: 20 }){
       IBestSignature({
@@ -45,9 +45,9 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State imgUrl: string = ""
+  @Local imgUrl: string = ""
   build() {
     Column({ space: 20 }){
       IBestSignature({
@@ -74,9 +74,9 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State imgUrl: string = ""
+  @Local imgUrl: string = ""
   build() {
     Column({ space: 20 }){
       IBestSignature({
@@ -103,9 +103,9 @@ struct DemoPage {
 ```ts
 import { IBestSignatureController } from "@ibestservices/ibest-ui-v2";
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State imgUrl: string = ""
+  @Local imgUrl: string = ""
   private controller: IBestSignatureController = new IBestSignatureController()
   build() {
     Column({ space: 20 }){
@@ -122,14 +122,14 @@ struct DemoPage {
       Row({ space: 10 }){
         IBestButton({
           text: '清空',
-          onClickBtn: () => {
+          onBtnClick: () => {
             this.controller.clear()
           }
         })
         IBestButton({
           text: '确认',
           type: 'primary',
-          onClickBtn: () => {
+          onBtnClick: () => {
             this.controller.confirm()
           }
         })

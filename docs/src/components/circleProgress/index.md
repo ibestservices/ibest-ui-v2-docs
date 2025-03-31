@@ -19,13 +19,13 @@ import { IBestCircleProgress } from "@ibestservices/ibest-ui-v2";
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: number = 30
+  @Local value: number = 30
   build() {
     Column(){
       IBestCircleProgress({
-        value: $value,
+        value: this.value!!,
         text: `${this.value}%`
       })
     }
@@ -41,30 +41,30 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: number = 30
+  @Local value: number = 30
   build() {
     Flex({wrap: FlexWrap.Wrap, space: { main: LengthMetrics.vp(20), cross: LengthMetrics.vp(20) }}){
       IBestCircleProgress({
-        value: $value,
+        value: this.value!!,
         strokeWidth: 6,
         text: "宽度定制"
       })
       IBestCircleProgress({
-        value: $value,
+        value: this.value!!,
         color: "#ee0a24",
         bgColor: "#ebedf0",
         text: "颜色定制"
       })
       IBestCircleProgress({
-        value: $value,
+        value: this.value!!,
         clockwise: false,
         text: "逆时针",
         color: "#07c160"
       })
       IBestCircleProgress({
-        value: $value,
+        value: this.value!!,
         diameter: 120,
         clockwise: false,
         text: "大小定制",
@@ -83,40 +83,40 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: number = 30
+  @Local value: number = 30
   build() {
     Flex({wrap: FlexWrap.Wrap, space: { main: LengthMetrics.vp(20), cross: LengthMetrics.vp(20) }}){
       IBestCircleProgress({
-        value: $value,
+        value: this.value!!,
         startPosition: "left",
         text: "左侧"
       })
       IBestCircleProgress({
-        value: $value,
+        value: this.value!!,
         startPosition: "right",
         text: "右侧"
       })
       IBestCircleProgress({
-        value: $value,
+        value: this.value!!,
         startPosition: "bottom",
         text: "底部"
       })
       IBestCircleProgress({
-        value: $value,
+        value: this.value!!,
         startPosition: "left",
         clockwise: false,
         text: "左侧逆时针"
       })
       IBestCircleProgress({
-        value: $value,
+        value: this.value!!,
         startPosition: "right",
         clockwise: false,
         text: "右侧逆时针"
       })
       IBestCircleProgress({
-        value: $value,
+        value: this.value!!,
         startPosition: "bottom",
         clockwise: false,
         text: "底部逆时针"

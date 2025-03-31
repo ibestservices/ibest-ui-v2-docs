@@ -23,11 +23,11 @@ import { IBestPullRefresh } from "@ibestservices/ibest-ui-v2";
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State isLoading: boolean = false
+  @Local isLoading: boolean = false
 	private listScroller: ListScroller = new ListScroller()
-  @State arr: String[] = ['0', '1', '2', '3', '4','5','6','7','8','9','10']
+  @Local arr: String[] = ['0', '1', '2', '3', '4','5','6','7','8','9','10']
   @Builder customContent() {
     List({scroller: this.listScroller }) {
       ForEach(this.arr, (item: string) => {
@@ -47,7 +47,7 @@ struct DemoPage {
   build() {
     Column(){
       IBestPullRefresh({
-        loading: $isLoading,
+        loading: this.isLoading!!,
         scroller: this.listScroller,
         defaultContent: (): void => this.customContent("1"),
         onRefresh: (): void => this.onRefresh()
@@ -68,11 +68,11 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State isLoading: boolean = false
+  @Local isLoading: boolean = false
 	private scroller: Scroller = new Scroller()
-  @State arr: String[] = ['0', '1', '2', '3', '4','5','6','7','8','9','10']
+  @Local arr: String[] = ['0', '1', '2', '3', '4','5','6','7','8','9','10']
   @Builder customContent() {
     Scroll(this.scroller){
       Column(){
@@ -98,7 +98,7 @@ struct DemoPage {
   build() {
     Column(){
       IBestPullRefresh({
-        loading: $isLoading,
+        loading: this.isLoading!!,
         scroller: this.scroller,
         defaultContent: (): void => this.customContent(),
         onRefresh: (): void => this.onRefresh()
@@ -117,11 +117,11 @@ struct DemoPage {
 ```ts
 import { IBestRefreshContentParams } from "@ibestservices/ibest-ui-v2"
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State isLoading: boolean = false
+  @Local isLoading: boolean = false
 	private scroller: Scroller = new Scroller()
-  @State arr: String[] = ['0', '1', '2', '3', '4','5','6','7','8','9','10']
+  @Local arr: String[] = ['0', '1', '2', '3', '4','5','6','7','8','9','10']
   @Builder customPullingContent($$: IBestRefreshContentParams){
 		Image($r("app.media.icon_loading_point_static"))
 			.width(60)
@@ -160,7 +160,7 @@ struct DemoPage {
   build() {
     Column(){
       IBestPullRefresh({
-        loading: $isLoading,
+        loading: this.isLoading!!,
         defaultContent: (): void => this.customContent(),
         pullingContent: this.customPullingContent,
         loosingContent: this.customLoosingContent,

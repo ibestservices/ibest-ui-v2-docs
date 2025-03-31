@@ -22,13 +22,13 @@ import { IBestSwitch } from "@ibestservices/ibest-ui-v2";
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: boolean = false
+  @Local value: boolean = false
   build() {
     Column(){
       IBestSwitch({
-        value: $value
+        value: this.value!!
       })
     }
   }
@@ -46,18 +46,18 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value1: boolean = true
-	@State value2: boolean = false
+  @Local value1: boolean = true
+	@Local value2: boolean = false
   build() {
     Column({space: 14}){
       IBestSwitch({
-        value: $value1,
+        value: this.value1!!,
         disabled: true
       })
       IBestSwitch({
-        value: $value2,
+        value: this.value2!!,
         disabled: true
       })
     }
@@ -76,18 +76,18 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value1: boolean = true
-	@State value2: boolean = false
+  @Local value1: boolean = true
+	@Local value2: boolean = false
   build() {
     Column({space: 14}){
       IBestSwitch({
-        value: $value1,
+        value: this.value1!!,
         loading: true
       })
       IBestSwitch({
-        value: $value2,
+        value: this.value2!!,
         loading: true,
         activeColor: '#07c160'
       })
@@ -107,13 +107,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: boolean = true
+  @Local value: boolean = true
   build() {
     Column(){
       IBestSwitch({
-        value: $value,
+        value: this.value!!,
         switchSize: 20
       })
     }
@@ -132,10 +132,10 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: boolean = true
-  @State arrowDirection: 'left' | 'right' = 'left'
+  @Local value: boolean = true
+  @Local arrowDirection: 'left' | 'right' = 'left'
   @Builder Arrow(){
     Row(){
       Image($r('app.media.arrow'))
@@ -151,7 +151,7 @@ struct DemoPage {
   build(){
     Column(){
       IBestSwitch({
-        value: $value,
+        value: this.value!!,
         activeColor: '#db3131',
         nodeBuilder: () => this.Arrow(),
         onChange: value => {
@@ -174,13 +174,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: boolean = true
+  @Local value: boolean = true
   build() {
     Column(){
       IBestSwitch({
-        value: $value,
+        value: this.value!!,
         onBeforeChange: () => {
           return new Promise((resolve, reject) => {
             IBestDialogUtil.open({
@@ -224,7 +224,7 @@ struct DemoPage {
 | -------------- | ---------------------------| -------------------------------------- |
 | onChange       | 开关状态改变的回调事件         | `value: boolean`   |
 | onBeforeChange | 开关状态改变前的回调事件，value 为将要改变的状态, 接收一个 `Promise` 对象，如果 `Promise` 状态为 `resolve` ，则按钮状态变化将继续进行；如果状态为 `reject` ，则将阻止按钮状态的变化。 | `(value: boolean) => Promise<boolean>` |
-| onClickSwitch  | 点击开关的回调事 | `event: ClickEvent`  |
+| onSwitchClick  | 点击开关的回调事 | `-`  |
 
 ### 插槽
 

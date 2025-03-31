@@ -23,9 +23,9 @@ import { IBestPopup } from "@ibestservices/ibest-ui-v2";
 ```ts
 import { IBestCell } from "@ibestservices/ibest-ui-v2"
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State visible: boolean = false
+  @Local visible: boolean = false
   @Builder centerBuilder() {
     Row() {
       Text("内容")
@@ -40,12 +40,12 @@ struct DemoPage {
         title: '展示弹出层',
         isLink: true,
         hasBorder: false,
-        onClickCell: () => {
+        onCellClick: () => {
           this.visible = true
         }
       })
       IBestPopup({
-        visible: $visible,
+        visible: this.visible!!,
         popupWidth: 300,
         contentBuilder: (): void => this.centerBuilder()
       })
@@ -78,12 +78,12 @@ import { IBestCellGroup } from "@ibestservices/ibest-ui-v2"
 }
 
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State upVisible: boolean = false
-  @State downVisible: boolean = false
-  @State leftVisible: boolean = false
-  @State rightVisible: boolean = false
+  @Local upVisible: boolean = false
+  @Local downVisible: boolean = false
+  @Local leftVisible: boolean = false
+  @Local rightVisible: boolean = false
   build() {
     Column(){
       IBestCellGroup({ inset: true }) {
@@ -125,19 +125,19 @@ struct DemoPage {
         .backgroundColor("#fff")
       }
       IBestPopup({
-        visible: $upVisible,
+        visible: this.upVisible!!,
         popupAlign: "top"
       })
       IBestPopup({
-        visible: $downVisible,
+        visible: this.downVisible!!,
         popupAlign: "bottom"
       })
       IBestPopup({
-        visible: $leftVisible,
+        visible: this.leftVisible!!,
         popupAlign: "left"
       })
       IBestPopup({
-        visible: $rightVisible,
+        visible: this.rightVisible!!,
         popupAlign: "right"
       })
     }
@@ -157,10 +157,10 @@ struct DemoPage {
 ```ts
 import { IBestCellGroup, IBestCell } from "@ibestservices/ibest-ui-v2"
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State visible1: boolean = false
-  @State visible2: boolean = false
+  @Local visible1: boolean = false
+  @Local visible2: boolean = false
   @Builder centerBuilder() {
     Row() {
       Text("内容")
@@ -176,7 +176,7 @@ struct DemoPage {
           IBestCell({
             title: '显示标题',
             isLink: true,
-            onClickCell: () => {
+            onCellClick: () => {
               this.visible1 = true
             }
           })
@@ -184,14 +184,14 @@ struct DemoPage {
             title: '自定义关闭图标',
             isLink: true,
             hasBorder: false,
-            onClickCell: () => {
+            onCellClick: () => {
               this.visible2 = true
             }
           })
         }
       }
       IBestPopup({
-        visible: $visible1,
+        visible: this.visible1!!,
         popupWidth: 300,
         cornerRadius: 20,
         isShowHeader: true,
@@ -199,7 +199,7 @@ struct DemoPage {
         contentBuilder: (): void => this.centerBuilder()
       })
       IBestPopup({
-        visible: $visible2,
+        visible: this.visible2!!,
         popupAlign: "bottom",
         isShowHeader: true,
         title: "标题",
@@ -223,10 +223,10 @@ struct DemoPage {
 ```ts
 import { IBestCellGroup, IBestCell } from "@ibestservices/ibest-ui-v2"
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State visible1: boolean = false
-  @State visible2: boolean = false
+  @Local visible1: boolean = false
+  @Local visible2: boolean = false
   @Builder centerBuilder() {
     Row() {
       Text("内容")
@@ -242,7 +242,7 @@ struct DemoPage {
           IBestCell({
             title: '圆角弹窗(居中)',
             isLink: true,
-            onClickCell: () => {
+            onCellClick: () => {
               this.visible1 = true
             }
           })
@@ -250,20 +250,20 @@ struct DemoPage {
             title: '圆角弹窗(底部)',
             isLink: true,
             hasBorder: false,
-            onClickCell: () => {
+            onCellClick: () => {
               this.visible2 = true
             }
           })
         }
       }
       IBestPopup({
-        visible: $visible1,
+        visible: this.visible1!!,
         popupWidth: 300,
         cornerRadius: 10,
-        contentBuilder: this.centerBuilder
+        contentBuilder: (): void => this.centerBuilder()
       })
       IBestPopup({
-        visible: $visible2,
+        visible: this.visible2!!,
         popupAlign: "bottom",
         cornerRadius: 30
       })
@@ -281,13 +281,11 @@ struct DemoPage {
 ```ts
 import { IBestCell } from "@ibestservices/ibest-ui-v2"
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State visible: boolean = false
+  @Local visible: boolean = false
   @Builder centerBuilder() {
-    Row() {
-      Text("内容").fontColor("#fff")
-    }
+    Row()
     .width("100%")
     .height("100%")
     .justifyContent(FlexAlign.Center)
@@ -298,12 +296,12 @@ struct DemoPage {
         title: '背景图片',
         isLink: true,
         hasBorder: false,
-        onClickCell: () => {
+        onCellClick: () => {
           this.visible = true
         }
       })
       IBestPopup({
-        visible: $visible,
+        visible: this.visible!!,
         popupWidth: 300,
         popupHeight: 200,
         bgImage: "https://img1.baidu.com/it/u=1502587040,2600645085&fm=253&fmt=auto&app=120&f=JPEG?w=1422&h=800",
@@ -323,16 +321,16 @@ struct DemoPage {
 ```ts
 import { IBestCell } from "@ibestservices/ibest-ui-v2"
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State visible: boolean = false
-  @State popupHeight: number = 150
+  @Local visible: boolean = false
+  @Local popupHeight: number = 150
   @Builder cusHeightBuilder() {
     Column() {
       IBestButton({
         text: "切换高度",
         type: "primary",
-        onClickBtn: () => {
+        onBtnClick: () => {
           this.popupHeight = this.popupHeight == 150 ? 300 : 150
         }
       })
@@ -346,12 +344,12 @@ struct DemoPage {
       IBestCell({
         title: '切换高度',
         isLink: true,
-        onClickCell: () => {
+        onCellClick: () => {
           this.visible = true
         }
       })
       IBestPopup({
-        visible: $visible,
+        visible: this.visible!!,
         popupWidth: 300,
         popupHeight: this.popupHeight,
         contentBuilder: (): void => this.cusHeightBuilder()
@@ -376,21 +374,21 @@ struct DemoPage {
 ```ts
 import { IBestCell, IBestToast } from "@ibestservices/ibest-ui-v2"
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State visible: boolean = false
+  @Local visible: boolean = false
   build() {
     Column(){
       IBestCell({
         title: '监听显示事件',
         isLink: true,
         hasBorder: false,
-        onClickCell: () => {
+        onCellClick: () => {
           this.visible = true
         }
       })
       IBestPopup({
-        visible: $visible,
+        visible: this.visible!!,
         popupAlign: "bottom",
         onOpen: () => {
           IBestToast.show("open")
@@ -416,9 +414,9 @@ struct DemoPage {
 ```ts
 import { IBestCell } from "@ibestservices/ibest-ui-v2"
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State visible: boolean = false
+  @Local visible: boolean = false
   @Builder safeBuilder() {
     Column(){
       Text("内容")
@@ -434,14 +432,14 @@ struct DemoPage {
         title: '安全区域适配',
         isLink: true,
         hasBorder: false,
-        onClickCell: () => {
+        onCellClick: () => {
           this.visible = true
         }
       })
       IBestPopup({
-        visible: $visible,
+        visible: this.visible!!,
         popupAlign: "left",
-        contentBuilder: this.safeBuilder,
+        contentBuilder: (): void => this.safeBuilder(),
         safeAreaInsetTop: true,
         safeAreaInsetBottom: true
       })

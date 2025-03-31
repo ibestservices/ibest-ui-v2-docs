@@ -19,13 +19,13 @@ import { IBestRate } from "@ibestservices/ibest-ui-v2";
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: number = 3
+  @Local value: number = 3
   build() {
     Column(){
       IBestRate({
-        value: $value
+        value: this.value!!
       })
     }
   }
@@ -43,13 +43,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: number = 3
+  @Local value: number = 3
   build() {
     Column(){
       IBestRate({
-        value: $value,
+        value: this.value!!,
         activeIcon: $r("app.media.icon_like_o"),
         inactiveIcon: $r("app.media.icon_like")
       })
@@ -66,13 +66,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: number = 3
+  @Local value: number = 3
   build() {
     Column(){
       IBestRate({
-        value: $value,
+        value: this.value!!,
         iconSize: 60,
         space: 16,
         activeColor: '#ffd21e',
@@ -95,13 +95,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: number = 3.5
+  @Local value: number = 3.5
   build() {
     Column(){
       IBestRate({
-        value: $value,
+        value: this.value!!,
         allowHalf: true
       })
     }
@@ -117,13 +117,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: number = 3
+  @Local value: number = 3
   build() {
     Column(){
       IBestRate({
-        value: $value,
+        value: this.value!!,
         count: 6
       })
     }
@@ -139,13 +139,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: number = 3
+  @Local value: number = 3
   build() {
     Column(){
       IBestRate({
-        value: $value,
+        value: this.value!!,
         clearable: true
       })
     }
@@ -164,13 +164,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: number = 3
+  @Local value: number = 3
   build() {
     Column(){
       IBestRate({
-        value: $value,
+        value: this.value!!,
         disabled: true
       })
     }
@@ -186,13 +186,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: number = 3
+  @Local value: number = 3
   build() {
     Column(){
       IBestRate({
-        value: $value,
+        value: this.value!!,
         readOnly: true
       })
     }
@@ -208,13 +208,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: number = 3
+  @Local value: number = 3
   build() {
     Column(){
       IBestRate({
-        value: $value,
+        value: this.value!!,
         readOnly: true,
         allowHalf: true
       })
@@ -231,13 +231,13 @@ struct DemoPage {
 ::: details 点我查看代码
 ```ts
 @Entry
-@Component
+@ComponentV2
 struct DemoPage {
-  @State value: number = 3
+  @Local value: number = 3
   build() {
     Column(){
       IBestRate({
-        value: $value,
+        value: this.value!!,
         onChange: (value: number) => {
           console.log(`${value}`)
         }
