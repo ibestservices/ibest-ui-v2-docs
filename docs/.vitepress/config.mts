@@ -119,6 +119,7 @@ export default defineConfig({
         text: "导航组件",
         items: [
           { text: "NavBar 导航栏", link: "/components/navBar/" },
+          { text: "Pagination 分页", link: "/components/pagination/" },
           { text: "SideBar 侧边导航", link: "/components/sideBar/" },
           { text: "Tab 标签页", link: "/components/tab/" },
         ],

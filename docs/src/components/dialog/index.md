@@ -243,10 +243,12 @@ struct DemoPage {
     .padding(20)
   }
   onDidBuild(): void {
-		let uniId = this.uiContext.getAttachedFrameNodeById("main")?.getUniqueId()
-		if(uniId){
-			this.uniId = uniId
-		}
+    setTimeout(() => {
+      let uniId = this.uiContext.getAttachedFrameNodeById("main")?.getUniqueId()
+      if(uniId){
+        this.uniId = uniId
+      }
+    }, 50)
 	}
   build(){
     Column(){
