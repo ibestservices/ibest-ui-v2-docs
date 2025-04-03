@@ -10,6 +10,14 @@ title: "IBest-UI-V2"
 
 <p align="center">轻量、可定制的 HarmonyOS Next 组件库</p>
 
+<p align="center">
+    <a href="https://ohpm.openharmony.cn/#/cn/detail/@ibestservices%2Fibest-ui-v2">三方库中心仓</a>
+    &nbsp;
+    ·
+    &nbsp;
+    <a href="https://github.com/ibestservices/ibest-ui-v2">Github</a>
+</p>
+
 ## 介绍
 
 {{ $frontmatter.title }}是一个**轻量、简单易用、可定制主题、支持深色模式和浅色模式**的鸿蒙开源UI组件库, 包含Button、Calendar、Form、Field、Picker、Popup、Toast、Dialog、ImageCropper等50+个优质组件。
@@ -44,8 +52,7 @@ title: "IBest-UI-V2"
 |:-----------|:------------|:----------|
 | @ibestservices/area-data | 中国省市区数据，适用于鸿蒙 arkui的 TextPicker 和 {{ $frontmatter.title }} 的 IBestCascader 等组件。 | <a href="https://ohpm.openharmony.cn/#/cn/detail/@ibestservices%2Farea-data">地址</a> |
 
-## 链接
-- [Github](https://github.com/ibestservices/ibest-ui-v2)
+## 其它链接
 - [Gitee](https://gitee.com/ibestservices/ibest-ui-v2)
 - [更新日志](https://github.com/ibestservices/ibest-ui-v2/releases)
 
