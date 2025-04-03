@@ -11,11 +11,11 @@ title: "IBest-UI-V2"
 <p align="center">轻量、可定制的 HarmonyOS Next 组件库</p>
 
 <p align="center">
-    <a href="https://ohpm.openharmony.cn/#/cn/detail/@ibestservices%2Fibest-ui-v2">三方库中心仓</a>
+    <a href="https://ohpm.openharmony.cn/#/cn/detail/@ibestservices%2Fibest-ui-v2" target="_blank">三方库中心仓</a>
     &nbsp;
     ·
     &nbsp;
-    <a href="https://github.com/ibestservices/ibest-ui-v2">Github</a>
+    <a href="https://github.com/ibestservices/ibest-ui-v2" target="_blank">Github</a>
 </p>
 
 ## 介绍
