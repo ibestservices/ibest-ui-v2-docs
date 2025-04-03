@@ -72,8 +72,8 @@ title: "IBest-UI-V2"
 
 感谢以下同学对 `{{ $frontmatter.title }}` 做的贡献:   
 
-<a target="_blank" href="https://github.com/ibestservices/ibest-ui-v2/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=ibestservices/ibest-ui-v2" />
+<a href="https://github.com/ibestservices/ibest-ui/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=ibestservices/ibest-ui" />
 </a>
 
 ## 开源协议
