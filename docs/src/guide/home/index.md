@@ -11,18 +11,18 @@ title: "IBest-UI-V2"
 <p align="center">轻量、可定制的 HarmonyOS Next 组件库</p>
 
 <p align="center">
-    <a href="https://ohpm.openharmony.cn/#/cn/detail/@ibestservices%2Fibest-ui-v2">三方库中心仓</a>
+    <a href="https://ohpm.openharmony.cn/#/cn/detail/@ibestservices%2Fibest-ui-v2" target="_blank">三方库中心仓</a>
     &nbsp;
     ·
     &nbsp;
-    <a href="https://github.com/ibestservices/ibest-ui-v2">Github</a>
+    <a href="https://github.com/ibestservices/ibest-ui-v2" target="_blank">Github</a>
 </p>
 
 ## 介绍
 
 {{ $frontmatter.title }}是一个**轻量、简单易用、可定制主题、支持深色模式和浅色模式**的鸿蒙开源UI组件库, 包含Button、Calendar、Form、Field、Picker、Popup、Toast、Dialog、ImageCropper等50+个优质组件。
 
-目前 ibestservices 官方提供了 <a href="https://ibestui.ibestservices.com/guide/home/" target="_blank">V1</a> 和 <a href="https://ibestuiv2.ibestservices.com/guide/home/" target="_blank">V2</a> 版本, 当前文档为状态管理V2版本，请根据自己项目使用的**状态管理版本**选择对应的版本使用。
+目前 ibestservices 官方提供了 <a href="https://ibestui.ibestservices.com/guide/home/" target="_blank">V1</a> 和 <a href="https://ibestui-v2.ibestservices.com/guide/home/" target="_blank">V2</a> 版本, 当前文档为状态管理V2版本，请根据自己项目使用的**状态管理版本**选择对应的版本使用。
 
 <div style="display: flex;justify-content: space-between;">
   <img src="./IBest-UI-Light.png" alt="IBest-UI-Light" style="width: 48%;">
