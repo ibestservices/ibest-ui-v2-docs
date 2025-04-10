@@ -138,11 +138,9 @@ struct DemoPage {
 @ComponentV2
 struct DemoPage {
   @Builder imageBgBuilder() {
-		Column()
+    Column()
       .height(200)
-      .padding(20)
-      .justifyContent(FlexAlign.Center)
-	}
+  }
   build(){
     Column(){
       IBestCell({
@@ -223,22 +221,22 @@ struct DemoPage {
 @ComponentV2
 struct DemoPage {
   @Local uniId: number = 0
-	private uiContext = this.getUIContext()
+  private uiContext = this.getUIContext()
   @Builder customComponentContent() {
     Column({space: 20}){
       Text("如果解决方法是丑陋的，那就肯定还有更好的解决方法，只是还没有发现而已。")
       IBestButton({
-				type: 'primary',
-				text: "跳转页面",
-				onBtnClick: () => {
-					router.pushUrl({
-						url: "pages/base/Button",
-						params: {
-							title: "Button 按钮"
-						}
-					})
-				}
-			})
+        type: 'primary',
+        text: "跳转页面",
+        onBtnClick: () => {
+          router.pushUrl({
+            url: "pages/base/Button",
+            params: {
+              title: "Button 按钮"
+            }
+          })
+        }
+      })
     }
     .padding(20)
   }
@@ -249,7 +247,7 @@ struct DemoPage {
         this.uniId = uniId
       }
     }, 50)
-	}
+  }
   build(){
     Column(){
       IBestButton({
@@ -261,7 +259,7 @@ struct DemoPage {
             message: textData.life,
             showCancelButton: true,
             levelMode: 1,
-						levelUniqueId: this.uniId,
+            levelUniqueId: this.uniId,
             defaultBuilder: (): void => this.customComponentContent()
           })
         }

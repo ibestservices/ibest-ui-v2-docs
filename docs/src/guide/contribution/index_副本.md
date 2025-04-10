@@ -337,7 +337,7 @@ struct DemoPage {
 | showArrow    | 是否显示箭头                           | _boolean_ |  `true`  |
 | arrowWidth   | 箭头宽度                               | _string_ \| _number_ | `12` |
 | arrowHeight  | 箭头高度                               | _string_ \| _number_ | `6` |
-| popoverMask  | 设置气泡是否有遮罩层及遮罩颜色。如果设置为false，则没有遮罩层；如果设置为true，则设置有遮罩层并且颜色为透明色；如果设置为Color，则为遮罩层的颜色。 | _boolean_ \| _IBestPopoverMask_ | `true` |
+| popoverMask  | 是否显示遮罩                            | _boolean_ | _PopoverMask_ | `true` |
 | space        | 气泡与目标的间隙                         | _string_ \| _number_ | `4` |
 | radius       | 气泡圆角                               | _string_ \| _number_ | `8` |
 | popoverShadow| 气泡阴影                               | _ShadowOptions_ \| _ShadowStyle_ | `ShadowStyle.OUTER_DEFAULT_MD` |
@@ -346,17 +346,13 @@ struct DemoPage {
 | maxHeight    | 内容最大高度   | _string_ \| _number_ | `auto` |
 | scrollBarState | 滚动条状态 | _<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V14/ts-appendix-enums-V14#barstate" target="__blank">BarState</a>_ | `Auto` |
 
-### IBestPopoverMask 数据类型
-| 属性名       | 说明                               | 类型      | 默认值     |
-| ------------| ----------------------------------| --------- | ---------- |
-| color       | 蒙层颜色值                          | _ResourceColor_ | `-` |
 
 ### Events
 
 | 事件名     | 说明                           | 回调参数                         |
 | ----------| -----------------------------| --------------------------------|
 | onSelect  | 点击通知栏回调                 | `action: IBestPopoverAction, index: number` |
-| onOpen    | 打开气泡框回调                 | `-` |
+| onOpen|
 
 ### 插槽
 
@@ -373,7 +369,7 @@ struct DemoPage {
 | icon          | 自定义文字左侧图标                      | _ResourceStr_ | `''` |
 | color         | 左侧图标颜色                           | _ResourceColor_ | `''` |
 | disabled      | 是否禁用                              | _boolean_ | `''` |
-| value         | 选项标识                              | _string_ | `''` |    
+| value| 选项标识     | _string_ | `''` |    
 
 ### IBestPopoverController 实例
 | 方法名         | 说明                                 | 参数类型   |
