@@ -24,7 +24,7 @@ struct DemoPage {
   build() {
     Column(){
       IBestNoticeBar({
-        leftIconName: "volume-o",
+        leftIcon: "volume-o",
         text:"无论我们能活多久，我们能够享受的只有无法分割的此刻，此外别无其他。"
       })
     }
@@ -122,7 +122,7 @@ struct DemoPage {
   build() {
     Column(){
       IBestNoticeBar({
-        leftIconName: "info-o",
+        leftIcon: "info-o",
         leftIconColor: "#1989fa",
         bgColor: "#ecf9ff",
         text: "今人不见古时月, 今月曾经照古人。",
@@ -146,7 +146,7 @@ struct DemoPage {
   build() {
     Column(){
       IBestNoticeBar({
-        leftIconName: "volume-o",
+        leftIcon: "volume-o",
         vertical: true,
         verticalTextList: [
             "今人不见古时月, 今月曾经照古人。",
@@ -172,13 +172,11 @@ struct DemoPage {
 | barHeight    | 通知栏高度                            | _string_ \| _number_ | `40` |
 | bgColor      | 背景色                                | _ResourceColor_ | `#fffbe8` |
 | leftRightPadding| 左右内边距                          | _string_ \| _number_ | `16` |
-| leftIconName    | 左侧图标名称                        | _string_ |  `''`  |
 | leftIcon     | 自定义左侧图标                         | _ResourceStr_ |  `''`  |
 | leftIconSize | 左侧图标大小                           | _string_ \| _number_ | `16` |
 | leftIconColor| 左侧图标颜色                           | _ResourceColor_ | `#ed6a0c` |
 | textColor    | 文本颜色                              | _ResourceColor_ | `#ed6a0c` |
 | textFontSize | 文本字体大小                           | _string_ \| _number_ | `16` |
-| rightIconName | 右侧图标名称                          | _string_ |  `''`  |
 | rightIcon    | 自定义右侧图标                         | _ResourceStr_ |  `''`  |
 | rightIconSize | 右侧图标大小                          | _string_ \| _number_ | `16` |
 | rightIconColor | 右侧图标颜色                         | _ResourceColor_ | `#ed6a0c` |
