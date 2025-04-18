@@ -16,7 +16,12 @@
 • 如果想使用之前的某个版本, 请先**使用以下命令安装IBest-UI-V2**, 然后在根目录下 oh-package.json5 中, 将 dependencies 中 "@ibestservices/ibest-ui-v2" 后面的版本号修改为想要使用的版本号, 点击右上角 `Sync now` 即可;   
 • 不建议使用 `ohpm install @ibestservices/ibest-ui-v2@版本号` 的方式安装对应版本。
 
- ![components](./images/change-version.png)
+![components](./images/change-version.png)
+
+• **组件库版本与api版本对应关系**
+| 组件库版本        | sdk版本      |
+|:----------------|:------------|
+| v0.0.1及以上     | `api15` 以上  |
 :::
 
 ```shell

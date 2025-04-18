@@ -169,7 +169,7 @@ struct DemoPage {
 | ------------ | ----------------------------------- | --------- | ---------- |
 | text         | 显示文本                              | _ResourceStr_ | `''` |  
 | textColor    | 文本颜色                              | _ResourceColor_ | `#323233` |
-| textFontSize | 左侧图标颜色                           | _string_ \| _number_ | `16` |
+| textFontSize | 文字大小                              | _string_ \| _number_ | `16` |
 | lineHeight   | 行高                                  | _string_ \| _number_  | `20` |
 | rows         | 展示的行数                             | _number_ | `1` |
 | showAction   | 是否显示操作                           | _boolean_ |  `false`  |
@@ -178,3 +178,9 @@ struct DemoPage {
 | omitContent  | 省略号内容                             | _ResourceStr_ |  `…`  |
 | actionColor  | 操作文字颜色                           | _ResourceColor_ |  `#3D8AF2`  |
 | omitPosition | 省略位置，可选值 `start` `middle` `end` | _string_ |  `end`  |
+
+### Events
+
+| 事件名         | 说明                                             | 回调参数                         |
+| --------------| ------------------------------------------------| -------------------------------- |
+| onActionClick <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.3</span>| 点击操作文字时触发, isExpand 为点击后状态, true 为展开, false 为折叠 | `isExpand: boolean` |

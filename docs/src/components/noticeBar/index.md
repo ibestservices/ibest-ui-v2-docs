@@ -189,6 +189,7 @@ struct DemoPage {
 | vertical     | 是否开启垂直滚动                         | _boolean_ | `false` |
 | verticalTextList | 垂直滚动文本列表                     | _string[]_ | `[]` |
 | verticalInterval | 垂直滚动文本间隔时间，单位秒           | _number_ | `3` |
+| radius <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">2.0.9</span>| 圆角                            | _number_ | `0` |
 
 ### Events
 

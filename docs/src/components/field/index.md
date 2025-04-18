@@ -584,6 +584,7 @@ struct DemoPage {
 | prefixFontColor | 前缀内容颜色 | _ResourceColor_ | `#969799` |
 | suffix       | 后缀内容 | _ResourceStr_ | `''` |
 | suffixFontColor | 后缀内容颜色 | _ResourceColor_ | `#969799` |
+| messageTextAlign <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.3</span>| 验证信息对齐方式, 可选值 `left` `center` `right`, 默认与输入框文字对齐方式一致 | _string_ | `left` |
 
 ### Events
 

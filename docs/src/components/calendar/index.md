@@ -401,6 +401,51 @@ struct DemoPage {
 ```
 :::
 
+### 自定义单个日期样式
+
+![自定义单个日期样式](./images/custom-day.png)
+
+::: details 点我查看代码
+```ts
+import { IBestCalendarDayItem } from "@ibestservices/ibest-ui-v2";
+@Entry
+@ComponentV2
+struct DemoPage {
+  @Builder itemBuilder($$: IBestCalendarDayItem){
+    Column({space: 6}){
+      Text($$.day)
+        .fontSize(12)
+        .fontColor($$.isSelected ? "#1989fa" : "#333")
+      Text($$.lunarDay)
+        .fontSize(12)
+        .fontColor($$.isSelected ? "#1989fa" : "#333")
+    }
+    .width(50)
+    .aspectRatio(1)
+    .justifyContent(FlexAlign.Center)
+    .backgroundImage($$.isSelected ? "https://img95.699pic.com/xsj/0w/ev/jl.jpg%21/fh/300" : "")
+    .backgroundImageSize(ImageSize.FILL)
+    .backgroundImagePosition(Alignment.Center)
+  }
+  build() {
+    Column(){
+      IBestCalendar({
+        selectType: "multiple",
+        dayItemBuilder: this.itemBuilder,   // 此处较为特殊, 只能这样传递, 否则UI不刷新
+        onConfirm: (value: IBestCalendarConfirmResult[]) => {
+          let text = value.map(item => item.dateStr).join(",")
+          promptAction.showDialog({
+            message: `当前日期为：${text}`,
+            alignment: DialogAlignment.Center
+          })
+        }
+      })
+    }
+  }
+}
+```
+:::
+
 ### 打卡模式
 
 ![打卡模式](./images/clock.png)
@@ -475,11 +520,33 @@ CalendarDialog包含Calendar除 `isShowConfirmBtn` 以外所有属性，Calendar
 | offsetY      | 弹框底部偏移量                                            | _number_ | `0`  |
 | cornerRadius | 弹框圆角                                                 | _string_ \| _number_  | `10`|
 
+### 插槽
+
+| 插槽名             | 说明               | 类型             |
+| ------------------| ------------------| ----------------|
+| dayItemBuilder <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.3</span>| 单个日期的插槽      | `($$: IBestCalendarDayItem) => void` |
+
 ### Events
 
 | 事件名     | 说明                                             | 回调参数                         |
 | ----------| ------------------------------------------------ | -------------------------------- |
 | onConfirm | 选择日期后的回调，`selectType` 为 `multiple` 时需点击按钮触发 | `value: IBestCalendarConfirmResult[]` |
+
+### IBestCalendarDayItem 数据类型
+| 参数          | 说明                                       | 类型      |
+| ------------ | ------------------------------------------| --------- |
+| date         | 日期                                       | _Date_    |
+| dateStr      | 日期字符串                                  | _string_  |
+| year         | 年份                                       | _string_  |
+| month        | 月份                                       | _string_  |
+| day          | 天                                         | _string_  |
+| weekNum      | 星期                                       | _number_  |
+| lunarMonth   | 农历月份                                    | _string_ |
+| lunarDay     | 农历天                                      | _string_ |
+| isCurMonthDay| 是否为当前月份的日期                          | _boolean_ |
+| isSelected   | 是否选中                                    | _boolean_ |
+| isDisabled   | 是否禁用                                    | _boolean_ |
+| isClock      | 是否打卡                                    | _boolean_ |
 
 ### IBestCalendarConfirmResult 数据类型
 | 参数          | 说明                                          | 类型      |

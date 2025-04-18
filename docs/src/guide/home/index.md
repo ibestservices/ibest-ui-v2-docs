@@ -22,7 +22,7 @@ title: "IBest-UI-V2"
 
 {{ $frontmatter.title }}是一个**轻量、简单易用、可定制主题、支持深色模式和浅色模式**的鸿蒙开源UI组件库, 包含Button、Calendar、Form、Field、Picker、Popup、Toast、Dialog、ImageCropper等50+个优质组件。
 
-目前 ibestservices 官方提供了 <a href="https://ibestui.ibestservices.com/guide/home/" target="_blank">V1</a> 和 <a href="https://ibestui-v2.ibestservices.com/guide/home/" target="_blank">V2</a> 版本, 当前文档为状态管理V2版本，请根据自己项目使用的**状态管理版本**选择对应的版本使用。
+目前 <a href="https://www.ibestservices.com/" title="安徽百得思维信息科技有限公司" target="_blank">ibestservices 官方</a> 提供了 <a href="https://ibestui.ibestservices.com/guide/home/" target="_blank">V1</a> 和 <a href="https://ibestui-v2.ibestservices.com/guide/home/" target="_blank">V2</a> 版本, 当前文档为状态管理V2版本，请根据自己项目使用的**状态管理版本**选择对应的版本使用。
 
 <div style="display: flex;justify-content: space-between;">
   <img src="./IBest-UI-Light.png" alt="IBest-UI-Light" style="width: 48%;">
@@ -50,7 +50,7 @@ title: "IBest-UI-V2"
 
 | 项目        | 描述         |          |
 |:-----------|:------------|:----------|
-| @ibestservices/area-data | 中国省市区数据，适用于鸿蒙 arkui的 TextPicker 和 {{ $frontmatter.title }} 的 IBestCascader 等组件。 | <a href="https://ohpm.openharmony.cn/#/cn/detail/@ibestservices%2Farea-data">地址</a> |
+| @ibestservices/area-data | 中国省市区数据，适用于鸿蒙 ArkUI 的 TextPicker 和 {{ $frontmatter.title }} 的 IBestCascader 等组件。 | <a href="https://ohpm.openharmony.cn/#/cn/detail/@ibestservices%2Farea-data">地址</a> |
 
 ## 其它链接
 - [Gitee](https://gitee.com/ibestservices/ibest-ui-v2)
