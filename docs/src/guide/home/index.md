@@ -20,9 +20,9 @@ title: "IBest-UI-V2"
 
 ## 介绍
 
-{{ $frontmatter.title }}是一个**轻量、简单易用、可定制主题、支持深色模式和浅色模式**的鸿蒙开源UI组件库, 包含Button、Calendar、Form、Field、Picker、Popup、Toast、Dialog、ImageCropper等50+个优质组件。
+`{{ $frontmatter.title }}` 由 <a href="https://www.ibestservices.com/" target="_blank">安徽百得思维信息科技有限公司</a> 开源，是一个**轻量、简单易用、可定制主题、支持深色模式和浅色模式**的鸿蒙开源UI组件库, 包含 Button、Calendar、Form、Field、Picker、Popup、Toast、Dialog、ImageCropper 等50+个优质组件，上手简单，使用方便，可大大提高鸿蒙开发者的开发效率。
 
-目前 <a href="https://www.ibestservices.com/" title="安徽百得思维信息科技有限公司" target="_blank">ibestservices 官方</a> 提供了 <a href="https://ibestui.ibestservices.com/guide/home/" target="_blank">V1</a> 和 <a href="https://ibestui-v2.ibestservices.com/guide/home/" target="_blank">V2</a> 版本, 当前文档为状态管理V2版本，请根据自己项目使用的**状态管理版本**选择对应的版本使用。
+目前 <a href="https://www.ibestservices.com/" target="_blank">ibestservices 官方</a> 提供了 <a href="https://ibestui.ibestservices.com/guide/home/" target="_blank">V1</a> 和 <a href="https://ibestui-v2.ibestservices.com/guide/home/" target="_blank">V2</a> 版本，当前文档为状态管理**V2**版本，开发者可根据自己项目使用的**状态管理版本**选择对应的版本进行开发。
 
 <div style="display: flex;justify-content: space-between;">
   <img src="./IBest-UI-Light.png" alt="IBest-UI-Light" style="width: 48%;">
