@@ -46,7 +46,6 @@ struct DemoPage {
     Column(){
       IBestWatermark({
         text: 'IBest-UI',
-        fontSize: 14,
         gapX: 40,
         gapY: 40
       }){
@@ -180,6 +179,35 @@ struct DemoPage {
 }
 ```
 :::
+
+### 自定义层级
+
+![自定义倾斜角度](./images/zindex.png)
+::: tip
+通过 `waterMarkZIndex` 属性来控制水印的层级，以禁止内容的交互。
+:::
+
+::: details 点我查看代码
+```ts
+@Entry
+@ComponentV2
+struct DemoPage {
+  build() {
+    Column(){
+      IBestWatermark({
+        text: 'IBest-UI',
+        gapX: 40,
+        gapY: 40,
+        waterMarkZIndex: 1
+      }) {
+        this.content()
+      }
+    }
+  }
+}
+```
+:::
+
 
 ## API
 

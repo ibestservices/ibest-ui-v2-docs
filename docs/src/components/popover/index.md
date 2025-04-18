@@ -167,11 +167,11 @@ struct DemoPage {
   @Local actions: IBestPopoverAction[] = [
     {
       text: '选项一',
-      iconName: 'add-o'
+      icon: 'add-o'
     },
     {
       text: '选项二',
-      iconName: 'music-o'
+      icon: 'music-o'
     },
     {
       text: '选项三',
@@ -369,7 +369,6 @@ struct DemoPage {
 | 属性名         | 说明                                 | 类型      | 默认值     |
 | ------------  | ----------------------------------- | --------- | ---------- |
 | text          | 选项文字                              | _string_ | `''` |
-| iconName      | 文字左侧图标名称                       | _string_ | `''` |
 | icon          | 自定义文字左侧图标                      | _ResourceStr_ | `''` |
 | color         | 左侧图标颜色                           | _ResourceColor_ | `''` |
 | disabled      | 是否禁用                              | _boolean_ | `''` |

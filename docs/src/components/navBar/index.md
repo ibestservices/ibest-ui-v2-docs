@@ -171,7 +171,7 @@ struct DemoPage {
         title: "IBest-UI",
         leftLabel: "返回",
         isShowRight: true,
-        rightIconName: "wap-nav",
+        rightIcon: "wap-nav",
         rightLabel: "更多"
       })
       IBestNavBar({
