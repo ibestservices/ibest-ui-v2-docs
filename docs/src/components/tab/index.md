@@ -520,7 +520,7 @@ struct DemoPage {
 ### 插槽
 | 插槽名     | 说明                      | 类型             |
 | --------- | ------------------------ | ----------------|
-| tabContentBuilder <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.3</span>| 自定义tab内容      | _CustomBuilder_ |
+| tabContentBuilder <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.4</span>| 自定义tab内容      | _CustomBuilder_ |
 
 ### Events
 
