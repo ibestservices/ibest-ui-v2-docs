@@ -34,7 +34,7 @@ export default defineConfig({
       { text: "首页", link: "/" },
       { text: "指南", link: "/guide/home/", activeMatch: "/guide/" },
       { text: "组件", link: "/components/button/", activeMatch: "/components/" },
-      { text: "v0.0.4", link: "" },
+      { text: "v0.0.5", link: "" },
     ],
     sidebar: [
       {
@@ -103,6 +103,7 @@ export default defineConfig({
           { text: "CircleProgress 环形进度条", link: "/components/circleProgress/" },
           { text: "Collapse 折叠面板", link: "/components/collapse/" },
           { text: "CountDown 倒计时", link: "/components/countDown/" },
+          { text: `CountTo 数字滚动 <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.5</span>`, link: "/components/countTo/" },
           { text: "Divider 分割线", link: "/components/divider/" },
           { text: "Empty 空状态", link: "/components/empty/" },
           { text: "Highlight 高亮文本", link: "/components/highlight/" },
@@ -110,6 +111,8 @@ export default defineConfig({
           { text: "NoticeBar 通知栏", link: "/components/noticeBar/" },
           { text: "Popover 气泡弹出框", link: "/components/popover/" },
           { text: "Progress 进度条", link: "/components/progress/" },
+          { text: `Skeleton 骨架屏 <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.5</span>`, link: "/components/skeleton/" },
+          { text: `Steps 步骤条 <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.5</span>`, link: "/components/steps/" },
           { text: "TextEllipsis 文本省略", link: "/components/textEllipsis/" },
           { text: "Table 表格", link: "/components/table/" },
           { text: "Tag 标签", link: "/components/tag/" },

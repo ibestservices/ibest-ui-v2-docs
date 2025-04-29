@@ -360,6 +360,63 @@ struct DemoPage {
 ```
 :::
 
+### 内部跳转
+
+![内部跳转](./images/inner-jump.png)
+
+::: details 点我查看代码
+```ts
+import { IBestCell } from "@ibestservices/ibest-ui-v2"
+@Entry
+@ComponentV2
+struct DemoPage {
+  @Local visible: boolean = false
+  @Local uniId: number = 0
+  private uiContext = this.getUIContext()
+  @Builder innerBuilder(){
+    Column() {
+      IBestButton({
+        type: 'primary',
+        text: "跳转页面",
+        onBtnClick: () => {
+          RouterUtil.push("Button", "Button 按钮")
+        }
+      })
+    }
+    .width("100%")
+    .height("100%")
+    .justifyContent(FlexAlign.Center)
+  }
+  onDidBuild(): void {
+    setTimeout(() => {
+      let uniId = this.uiContext.getAttachedFrameNodeById("main")?.getUniqueId()
+      if(uniId){
+        this.uniId = uniId
+      }
+    }, 50)
+  }
+  build() {
+    Column(){
+      IBestCell({
+        title: '内部跳转',
+        isLink: true,
+        onCellClick: () => {
+          this.visible = true
+        }
+      })
+      IBestPopup({
+        visible: this.visible!!,
+        popupAlign: "bottom",
+        levelMode: 1,
+        levelUniqueId: this.uniId,
+        contentBuilder: (): void => this.innerBuilder()
+      })
+    }.id("main")
+  }
+}
+```
+:::
+
 ### 事件监听
 
 ![事件监听](./images/popup-event.gif)
@@ -474,6 +531,11 @@ struct DemoPage {
 | safeAreaInsetTop    | 是否开启顶部安全区适配                                       | _boolean_ | `false` |
 | safeAreaInsetBottom | 是否开启底部安全区适配                                       | _boolean_ | `false` |
 | bgImage             | 弹框背景图片 | _ResourceStr_ | `''` |
+| bgColor             | 弹框背景颜色 | _ResourceColor_ | `#fff` |
+| keyboardAvoidMode <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.5</span>| 设置弹窗是否在拉起软键盘时进行自动避让| _<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#keyboardavoidmode12%E6%9E%9A%E4%B8%BE%E8%AF%B4%E6%98%8E" target="_blank">KeyboardAvoidMode</a>_ | `DEFAULT` |
+| keyboardAvoidDistance <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.5</span>| 弹窗避让键盘后，和键盘之间的距离 | _<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-graphics#lengthmetrics" target="_blank">LengthMetrics</a>_ | `16vp` |
+| levelMode <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.5</span>| 弹窗显示层级 | _<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-promptaction#levelmode15%E6%9E%9A%E4%B8%BE%E8%AF%B4%E6%98%8E" target="_blank">LevelMode</a>_ | `0` |
+| levelUniqueId <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.5</span>| 页面级弹窗需要显示的层级下的节点 uniqueId, 仅当levelMode属性设置为LevelMode.EMBEDDED时生效 | _number_ | `-` |
 
 ### Events
 
