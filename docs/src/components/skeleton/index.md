@@ -84,7 +84,7 @@ import { IBestSwitch } from "@ibestservices/ibest-ui-v2";
 @Entry
 @ComponentV2
 struct DemoPage {
-  @State loading: boolean = true
+  @Local loading: boolean = true
   build() {
     Column({ space: 12}){
       IBestSwitch({

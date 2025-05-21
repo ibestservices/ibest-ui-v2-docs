@@ -183,4 +183,4 @@ struct DemoPage {
 
 | 事件名         | 说明                                             | 回调参数                         |
 | --------------| ------------------------------------------------| -------------------------------- |
-| onActionClick <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.4</span>| 点击操作文字时触发, isExpand 为点击后状态, true 为展开, false 为折叠 | `isExpand: boolean` |
+| onActionClick | 点击操作文字时触发, isExpand 为点击后状态, true 为展开, false 为折叠 | `isExpand: boolean` |

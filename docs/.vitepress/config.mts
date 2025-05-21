@@ -1,4 +1,6 @@
 import { defineConfig } from "vitepress";
+import llmstxt from "vitepress-plugin-llms";
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "IBest-UI-V2",
@@ -34,7 +36,7 @@ export default defineConfig({
       { text: "首页", link: "/" },
       { text: "指南", link: "/guide/home/", activeMatch: "/guide/" },
       { text: "组件", link: "/components/button/", activeMatch: "/components/" },
-      { text: "v0.0.5", link: "" },
+      { text: "v0.0.6", link: "" },
     ],
     sidebar: [
       {
@@ -64,10 +66,12 @@ export default defineConfig({
         text: "表单组件",
         items: [
           { text: "Calendar 日历", link: "/components/calendar/" },
+          { text: `CarInput 车牌输入框 <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.6</span>`, link: "/components/carInput/" },
+          { text: `CarKeyboard 车牌键盘 <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.6</span>`, link: "/components/carkeyboard/" },
           { text: "Cascader 级联选择器", link: "/components/cascader/" },
           { text: "Checkbox 复选框", link: "/components/checkbox/" },
           { text: "DatePicker 日期选择", link: "/components/datepicker/" },
-          { text: `DateTimePicker 日期时间选择 <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.4</span>`, link: "/components/datetimepicker/" },
+          { text: "DateTimePicker 日期时间选择", link: "/components/datetimepicker/" },
           { text: "Field 输入框", link: "/components/field/" },
           { text: "Form 表单", link: "/components/form/" },
           { text: "NumberKeyboard 数字键盘", link: "/components/numberkeyboard/" },
@@ -90,6 +94,7 @@ export default defineConfig({
         items: [
           { text: "ActionSheet 动作面板", link: "/components/actionsheet/" },
           { text: "Dialog 弹出框", link: "/components/dialog/" },
+          { text: `FloatBubble 浮动气泡 <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.6</span>`, link: "/components/floatbubble/" },
           { text: "Loading 加载", link: "/components/loading/" },
           { text: "Notify 消息通知", link: "/components/notify/" },
           { text: "PullRefresh 下拉刷新", link: "/components/pullrefresh/" },
@@ -132,7 +137,7 @@ export default defineConfig({
         text: "业务组件",
         items: [
           { text: "CanvasDrawer 画布绘制", link: "/components/canvasDrawer/" },
-          { text: `ColorPicker 颜色选择 <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.4</span>`, link: "/components/colorPicker/" },
+          { text: "ColorPicker 颜色选择", link: "/components/colorPicker/" },
           { text: "ImageCropper 图片裁剪", link: "/components/imageCropper/" },
         ],
       },
@@ -151,5 +156,8 @@ export default defineConfig({
     search: {
       provider: "local",
     },
+  },
+  vite: {
+    plugins: [llmstxt()],
   },
 });

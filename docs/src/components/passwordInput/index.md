@@ -197,7 +197,10 @@ struct DemoPage {
 | cellTextColor| 格子文字颜色                                   | _ResourceColor_ |  `#323233`  |
 | dotFontSize  | 黑点大小                                       | _number_ \| _string_ |  `40`    |
 | textFontSize | 明文展示时文字大小                               | _number_ \| _string_ |  `20`    |
-| tipFontSize  | 提示文字大小                                     | _number_ \| _string_ |  `16`    |
+| tipFontSize  | 提示文字大小                                    | _number_ \| _string_ |  `16`    |
+| autoFocus <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.6</span>| 自动聚焦                                       | _boolean_ |  `false`  |
+| showCursor <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.6</span>| 是否显示闪烁光标                                | _boolean_ |  `true`  |
+| highlightType <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.6</span>| 格子高亮类型, 可选值为 `shadow` `border`        | _string_ |  `border`  |
 
 ### NumberKeyboardConfig 数据结构
 | 参数              | 说明                              | 类型      | 默认值     |
