@@ -434,7 +434,7 @@ struct DemoPage {
 | placeDirection | 排列方向                                  | _<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V13/ts-appendix-enums-V13#axis" target="__blank">Axis</a>_   | `Axis.Vertical` |
 | space | 间距                                               | _string_ \| _number_ | `12` |
 | beforeChange | 改变前的回调     | _(value: boolean) => Promise\<boolean\> \| boolean_ | `-` |
-| disabled <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.4</span>| 是否禁用                           | _boolean_ | `false` |
+| disabled | 是否禁用                           | _boolean_ | `false` |
 
 ### RadioGroup Events
 

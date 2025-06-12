@@ -524,7 +524,7 @@ CalendarDialog包含Calendar除 `isShowConfirmBtn` 以外所有属性，Calendar
 
 | 插槽名             | 说明               | 类型             |
 | ------------------| ------------------| ----------------|
-| dayItemBuilder <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.4</span>| 单个日期的插槽      | `($$: IBestCalendarDayItem) => void` |
+| dayItemBuilder    | 单个日期的插槽      | `($$: IBestCalendarDayItem) => void` |
 
 ### Events
 

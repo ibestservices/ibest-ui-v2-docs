@@ -384,11 +384,11 @@ struct DemoPage {
 | alignment             | 弹窗在竖直方向上的对齐方式, 可选值 `top` `center` `bottom` | _string_ | `center`|
 | offsetX               | 弹窗相对alignment所在位置的横向偏移量            | _number_ \| _string_ | `0` |
 | offsetY               | 弹窗相对alignment所在位置的纵向偏移量            | _number_ \| _string_ | `0` |
-| keyboardAvoidMode <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.5</span>| 设置弹窗是否在拉起软键盘时进行自动避让| _<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#keyboardavoidmode12%E6%9E%9A%E4%B8%BE%E8%AF%B4%E6%98%8E" target="_blank">KeyboardAvoidMode</a>_ | `DEFAULT` |
+| keyboardAvoidMode     | 设置弹窗是否在拉起软键盘时进行自动避让| _<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#keyboardavoidmode12%E6%9E%9A%E4%B8%BE%E8%AF%B4%E6%98%8E" target="_blank">KeyboardAvoidMode</a>_ | `DEFAULT` |
 | keyboardAvoidDistance | 弹窗避让键盘后，和键盘之间的距离 | _<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-graphics#lengthmetrics" target="_blank">LengthMetrics</a>_ | `16vp` |
 | levelMode             | 弹窗显示层级 | _<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-promptaction#levelmode15%E6%9E%9A%E4%B8%BE%E8%AF%B4%E6%98%8E" target="_blank">LevelMode</a>_ | `0` |
 | levelUniqueId         | 页面级弹窗需要显示的层级下的节点 uniqueId, 仅当levelMode属性设置为LevelMode.EMBEDDED时生效 | _number_ | `-` |
-| confirmButtonFontWeight <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.4</span>| 确认按钮的文字字重| _FontWeight_ | `Normal` |
+| confirmButtonFontWeight| 确认按钮的文字字重| _FontWeight_ | `Normal` |
 | beforeClose           | 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 `Promise` | _(action: cancel \| confirm) => Promise\<boolean\> \| boolean_ | `-` |
 
 ### Events

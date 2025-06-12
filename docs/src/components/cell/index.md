@@ -390,6 +390,7 @@ struct DemoPage {
 | inset  | 是否展示为圆角卡片风格   | _boolean_ | `false` |
 | border | 是否显示外边框          | _boolean_ | `true`  |
 | radius | 圆角大小, 仅inset为true时有效| _string_ \| _number_ | `8`   |
+| titlePadding <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.7</span>| 标题内边距       | _string_ \| _number_ \| _Padding_ | `16`  |
 
 ### Cell @Props
 
@@ -421,6 +422,8 @@ struct DemoPage {
 | borderSizeType  | 底部分割线尺寸类型, 可选值 `full` `center` `right` | _string_ | `center` |
 | borderLeft      | 底部分割线left值, `borderSizeType` 为 `right` 时有效| _Dimension_| `16` |
 | bdColor         | 底部分割线颜色               | _ResourceColor_| `#ebedf0` |
+| titleFontSize <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.7</span>| 标题字体大小                 | _number_ \| _string_ |   `''`  |
+| labelFontSize <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.7</span>| 描述信息字体大小              | _number_ \| _string_ |   `''`  |
 
 
 ### Events

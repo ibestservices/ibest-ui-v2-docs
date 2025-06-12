@@ -48,7 +48,7 @@ onWindowStageCreate(windowStage: window.WindowStage): void {
 ```ts
 import { IBestButton } from "@ibestservices/ibest-ui-v2"
 
-@Component
+@ComponentV2
 export struct DemoPage {
   build(){
     Column(){
