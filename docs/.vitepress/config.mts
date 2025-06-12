@@ -1,4 +1,6 @@
 import { defineConfig } from "vitepress";
+import llmstxt from "vitepress-plugin-llms";
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "IBest-UI-V2",
@@ -156,5 +158,8 @@ export default defineConfig({
     search: {
       provider: "local",
     },
+  },
+  vite: {
+    plugins: [llmstxt()],
   },
 });
