@@ -370,7 +370,7 @@ struct DemoPage {
 | cellBgColor   | 单元格背景色                     | _ResourceColor_  | `#fff` |
 | cellTextColor | 单元格文字颜色                   | _ResourceColor_  | `#323233` |
 | cellFontSize  | 单元格文字大小                   | _string_ \| _number_  | `14` |
-| cellPadding   | 单元格内边距                     | _<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#padding" target="_blank">Padding</a>_  | `{left: 6, right: 6, top: 8, bottom: 8}` |
+| cellPadding   | 单元格内边距                     | _Length_ \| _BorderRadiuses_ \| _LocalizedBorderRadiuses_   | `{left: 6, right: 6, top: 8, bottom: 8}` |
 | showSummary   | 是否显示合计行                   | _boolean_ | `false` |
 | sumText       | 合计行文字                       | _ResourceStr_  | `合计` |
 | summaryMethod | 合计行计算方法                   | _(data: any[], column: IBestTableColumnData) => (string \| number)[]_ | `-` |

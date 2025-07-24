@@ -500,8 +500,8 @@ struct DemoPage {
 | fontSize            | tab文字大小                                     | _number_ \| _string_ | `14` |
 | isShowActiveBg      | 是否显示激活背景, 仅type为`line`时有效      | _boolean_      |  `false` |
 | activeBgColor       | 激活背景色, 仅type为`line`时有效           | _ResourceColor_      |  `''` |
-| inactiveBgColor     | 非激活背景色, 仅type为`line`时有效           | _ResourceColor_      |  `''` |
-| radius              | 选项圆角, 仅type为`line`时有效 | _number_ \| _string_ |  `0` |
+| inactiveBgColor     | 非激活背景色, 仅type为`line`时有效          | _ResourceColor_      |  `''` |
+| radius              | 选项圆角, 仅type为`line`时有效             | _Length_ \| _BorderRadiuses_ \| _LocalizedBorderRadiuses_  |  `0` |
 | showActiveLine <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.1</span>| 是否显示激活标记线, 仅type为`line`时有效      | _boolean_      |  `true` |
 | tabLineRadius <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.1</span>| 标记线圆角, 仅type为`line`时有效             | _number_ \| _string_ | `0` |
 | activeFontWeight <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.1</span>| 激活文字字重          | _FontWeight_ | `Normal` |
