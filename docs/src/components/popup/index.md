@@ -522,7 +522,7 @@ struct DemoPage {
 | isShowClose         | 是否显示关闭图标                                           | _boolean_  | `true` |
 | closeIcon           | 自定义关闭图标                                             | _ResourceStr_ | `''`|
 | closeIconColor      | 关闭图标的颜色                                              | _ResourceColor_ | `#c8c9cc` |
-| cornerRadius        | 弹出层圆角值                                               | _string \| number_ | `0`   |
+| cornerRadius        | 弹出层圆角值                                               | _Length_ \| _BorderRadiuses_ \| _LocalizedBorderRadiuses_  | `0`   |
 | offsetY             | 弹出层底部偏移量                                           | _number_ |  `0`  |
 | isModal             | 是否为模态窗口                                              | _boolean_ | `true` |
 | maskColor           | 蒙层颜色                                                   | _ResourceColor_ | `0x33000000` |

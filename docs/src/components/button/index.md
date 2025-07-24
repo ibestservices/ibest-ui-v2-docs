@@ -346,7 +346,7 @@ struct ButtonPage {
 | icon         | 按钮图标                   | _ResourceStr_ | `-` |
 | fontColor    | 按钮文字颜色                | _ResourceColor_ | `-` |
 | btnBorderColor | 按钮边框颜色              | _ResourceColor_ | `-` |
-| btnBorderRadius| 按钮圆角                  | _string_ \| _number_ | `-` |
+| btnBorderRadius| 按钮圆角                  | _Length_ \| _BorderRadiuses_ \| _LocalizedBorderRadiuses_ | `-` |
 | space          | 文字与图标间距             | _string_ \| _number_ | `4` |
 | fontWeight     | 文字字重                  | _string_ \| _number_ \| FontWeight | `Normal` |
 

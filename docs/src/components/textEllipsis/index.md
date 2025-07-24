@@ -178,6 +178,8 @@ struct DemoPage {
 | omitContent  | 省略号内容                             | _ResourceStr_ |  `…`  |
 | actionColor  | 操作文字颜色                           | _ResourceColor_ |  `#3D8AF2`  |
 | omitPosition | 省略位置，可选值 `start` `middle` `end` | _string_ |  `end`  |
+| textFontWeight <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.8</span>| 文字字重                 | _string_ \| _number_ \| _FontWeight_ |  `Normal`  |
+| actionFontWeight <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.8</span>| 操作文字字重              | _string_ \| _number_ \| _FontWeight_ |  `Normal`  |
 
 ### Events
 

@@ -344,7 +344,7 @@ struct DemoPage {
 | --------------------- | -----------------------------| ----------| ------ |
 | visible               | 弹窗是否可见, 支持双向绑定       | _boolean_ | `false` |
 | dialogWidth           | 弹窗的宽度                     | _number_ \| _string_  | `320`|
-| dialogBorderRadius    | 弹窗的圆角                     | _number_ \| _string_  | `16` |
+| dialogBorderRadius    | 弹窗的圆角                     | _Length_ \| _BorderRadiuses_ \| _LocalizedBorderRadiuses_  | `16` |
 | bgImage               | 弹框背景图片                   | _ResourceStr_ | `''` |
 | bgColor               | 弹窗的背景颜色                 | _ResourceColor_ | `#fff` |
 | title                 | 弹窗的标题                     | _ResourceStr_  |    ``   |

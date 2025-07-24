@@ -106,13 +106,20 @@ struct DemoPage {
 
 | 参数           | 说明                                | 类型       | 默认值     |
 | --------------| ----------------------------------- | --------- | ---------- |
+| sourceString  | 源文本                               | _ResourceStr_ | `''` |
+| keywords      | 高亮关键字                            | _ResourceStr_ \| _ResourceStr[]_ \| _IBestHighlightKeywords[]_ | `''` |
 | autoEscape    | 是否自动转义                          | _boolean_ | `true` |  
 | caseSensitive | 是否区分大小写                        | _boolean_ | `false` |  
-| keywords      | 高亮关键字                            | _ResourceStr_ \| _ResourceStr[]_ | `''` |
-| sourceString  | 源文本                               | _ResourceStr_ | `''` |
 | textColor     | 文字颜色                              | _ResourceColor_ |  `#969799`  |
-| highLightColor| 高亮文字颜色                          | _ResourceColor_ |  `#1989fa`  |
+| highLightColor| 高亮文字颜色                           | _ResourceColor_ |  `#1989fa`  |
 | textFontSize  | 文字大小                              | _string_ \| _number_ |  `14`  |
 | highLightFontSize| 高亮文字大小                        | _string_ \| _number_ |  `14`  |
 | maxLines      | 最大行数                              | _number_ |  `-`  |
 | overflow      | 超出隐藏                              | _TextOverflow_ |  `None`  |
+
+### IBestHighlightKeywords <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.8</span> 数据结构
+| 参数       | 说明      | 类型 |
+| ----------| ---------| --------- |
+| text      | 关键字    | _ResourceStr_ |
+| color     | 关键字颜色 | _ResourceColor_ |
+| fontSize  | 关键字大小 | _string_ \| _number_ |
