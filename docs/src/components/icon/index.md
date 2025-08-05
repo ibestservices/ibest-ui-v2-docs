@@ -1,3 +1,6 @@
+<script setup>
+  import Collection from "./components/Collection.vue"
+</script>
 # Icon 图标
 
 ## 介绍
@@ -68,6 +71,8 @@ struct DemoPage {
 ```
 :::
 
+## 图标合集(点击可复制名称)
+<Collection/>
 
 ## API
 
@@ -75,10 +80,10 @@ struct DemoPage {
 
 | 参数         | 说明                                 | 类型      | 默认值     |
 | ------------| -------------------------------------| ---------| ---------- |
-| name        | 图标名称或图标地址, 具体名称可参考<a href="https://vant-ui.github.io/vant/#/zh-CN/icon#jie-shao" target="__blank">这里</a>   | _ResourceStr_  | `arrow` |
+| name        | 图标名称或图标地址, 具体名称可参考上方图标合集| _ResourceStr_  | `''` |
 | color       | 图标颜色                              | _ResourceColor_ |  `''`  |
 | iconSize    | 图标大小                              | _number_ \| _string_ | `16` |
-| iconRadius | 图标圆角                              | _number_ \| _string_ | `0` |
+| iconRadius  | 图标圆角                              | _number_ \| _string_ | `0` |
 
 ### Events
 
