@@ -242,23 +242,18 @@ struct DemoPage {
 | uploaderIconSize| 触发器图标大小                                | _number_ \| _string_ | `24` |
 | uploaderIconColor| 触发器图标颜色                               | _ResourceColor_ | `#dcdee0` |
 | showDelete| 是否显示删除按钮                                    | _boolean_ | `true` |
-| fileSelectOptions| 文件选择配置项, 仅在`selectType`为`file`时有效 | _FileSelectOptions_ | `-` |
 | disabled     | 是否禁用                                        | _boolean_ | `false` |
 | customUploader | 自定义上传触发器                               | _CustomBuilder_ | `-`|
-| customPreview  | 自定义预览内容                                 | _(file: IBestUploaderFile) => void_ |  `-`|
+| customPreview  | 自定义预览内容                                 | _(file: IBestUploaderFile, index: number) => void_ |  `-`|
 | uploaderBgColor| 触发器背景色                                   | _ResourceColor_ |  `#f7f8fa`|
-| showPreviewList| 是否显示预览列表 | _boolean_ | `true` |
-
-### FileSelectOptions  数据结构
-
-| 参数 | 说明 | 类型 | 默认值 |
-| ------------ | ------------------| --------- | ---------- |
-| defaultFilePathUri   | 指定选择的文件或者目录路径 | _string_ | `''` |
-| fileSuffixFilters    | 选择文件的后缀类型, 详情参考<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/js-apis-file-picker-V5#documentselectoptions" target="__blank">这里</a> | _string[]_ | `[]` |
+| showPreviewList| 是否显示预览列表                                | _boolean_ | `true` |
+| imageSelectOption <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.8</span>| 图片选择器配置 | _<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-photoaccesshelper#photoselectoptions">photoAccessHelper.PhotoSelectOptions</a>_ | `-` |
+| fileSelectOption <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.8</span>| 文件选择器配置 | _<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-file-picker#documentselectoptions">picker.DocumentSelectOptions</a>_ | `-` |
+| beforeRemove <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.8</span>| 删除文件前的回调 | _(file: IBestUploaderFile, index: number) => Promise\<boolean\> \| boolean_ | `-` |
 
 ### IBestUploaderFile 数据结构
-| 参数 | 说明 | 类型 | 默认值 |
-| ------------ | ------------------| --------- | ---------- |
+| 参数        | 说明 | 类型 | 默认值 |
+| ----------| ------------------| --------- | ---------- |
 | url       | 文件在线地址 | _string_ | `''` |
 | internalUri| internal协议地址, 格式为 `internal://cache/` 加文件名 | _string_ | `[]` |
 | previewUri| 选择文件后可预览地址(仅图片) | _string_ | `''` |
@@ -267,6 +262,7 @@ struct DemoPage {
 | size      | 文件大小, 单位Byte         | _number_ | `0` |
 | isImage   | 是否是图片, 当在线图片地址不包含类型信息时, 可以添加 `isImage` 标记来声明 | _string_ | `''` |
 | status    | 文件上传状态               | _'uploading' \| 'failed' \| 'done'_ | `''` |
+| uploadUrl <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.8</span>| 上传后地址      | _string_ | `''` |
 
 ### Events
 
@@ -275,3 +271,5 @@ struct DemoPage {
 | onBeforeInsert | 文件插入前回调, 返回true插入, 返回false则跳过      | `(file: IBestUploaderFile) => boolean` |
 | onChange | 文件全部插入后回调      | `insertFile: IBestUploaderFile[], allFile: IBestUploaderFile[]` |
 | onExceed | 超出限制后回调      | `-` |
+| onRemove <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.8</span>| 删除文件后回调   | `file: IBestUploaderFile, allFile: IBestUploaderFile[]` |
+| onFileClick <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.8</span>| 点击文件后回调, 仅当isPreviewFullImage为false时生效   | `file: IBestUploaderFile, index: number` |

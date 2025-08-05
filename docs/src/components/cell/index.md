@@ -424,6 +424,9 @@ struct DemoPage {
 | bdColor         | 底部分割线颜色               | _ResourceColor_| `#ebedf0` |
 | titleFontSize <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.7</span>| 标题字体大小                 | _number_ \| _string_ |   `''`  |
 | labelFontSize <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.7</span>| 描述信息字体大小              | _number_ \| _string_ |   `''`  |
+| arrowSize <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.8</span>| 箭头大小                           | _number_ \| _string_ |   `14`  |
+| arrowColor <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.8</span>| 箭头颜色                           | _ResourceColor_ |   `#323233`  |
+| cellPadding <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.8</span>| 单元格内边距                        | _Length_ \| _Padding_ \| _LocalizedPadding_ |   `0`  |
 
 
 ### Events

@@ -502,11 +502,12 @@ struct DemoPage {
 | isShowConfirmBtn | 是否显示底部确定按钮                                   | _boolean_ | `false` |
 | confirmBtnColor  | 确认按钮颜色                                          | _ResourceColor_  | `#3D8AF2` |
 | confirmBtnText   | 确认按钮文案                                          | _ResourceStr_  | `确认` |
-| cornerRadius | 弹框圆角                                                 | _string_ \| _number_  | `10`|
+| cornerRadius | 弹框圆角                                                 | _Length_ \| _BorderRadiuses_ \| _LocalizedBorderRadiuses_ | `10`|
 | clock        | 开启打卡模式                                              | _boolean_ | `false`  |
 | clockSuccessText | 打卡成功文案                                          | _ResourceStr_  | `已成功` |
 | isShowUnClock | 是否显示未打卡                                           | _boolean_ | `true`  |
 | unClockText  | 未打卡文案                                                | _ResourceStr_  | `未打卡` |
+| showOtherMonthDate <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.8</span>| 是否显示其他月份的日期                        | _boolean_ | `true` |
 
 
 ### CalendarDialog @Props

@@ -228,7 +228,7 @@ struct DemoPage {
 | fontColor        | 文字颜色                                   | _string \| number \| <a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/ts-components-canvas-canvasgradient-V5" target="__blank">CanvasGradient</a> \| <a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/ts-components-canvas-canvaspattern-V5#canvaspattern" target="__blank">CanvasPattern</a>_ | <div style="padding: 2px 4px; background: #000; color: #fff; border-radius: 4px">#000000</div> |
 | waterMarkZIndex  | 水印的 z-index                             | _number_ | `-1`      |
 | bgColor          | 背景色                                     | _ResourceColor_ | `#fff` |
-| contentInteractive <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.6</span>| 水印在上层时,内容是否可交互, 仅 `waterMarkZIndex` 大于0有效| _boolean_ | `false` |
+| contentInteractive| 水印在上层时,内容是否可交互, 仅 `waterMarkZIndex` 大于0有效| _boolean_ | `false` |
 
 ### 插槽
 

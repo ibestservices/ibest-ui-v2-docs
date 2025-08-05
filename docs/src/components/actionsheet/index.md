@@ -384,7 +384,7 @@ struct DemoPage {
 | cancelTextColor | 取消按钮文字颜色        | _ResourceColor_ |  `#646566`  |
 | beforeClose     | 关闭前的回调函数，返回 false 可阻止关闭，支持返回 Promise    | _() => Promise\<boolean\> \| boolean_ |  `-`  |
 | itemHeight      | 选项高度     | _number_ \| _string_ |  `50`  |
-| radius          | 面板圆角     | _number_ |  `16`  |
+| radius          | 面板圆角     | _number_ \| _BorderRadiuses_ \| _LocalizedBorderRadiuses_ |  `16`  |
 
 ### IBestActionType 数据结构
 | 参数         | 说明                                          | 类型      |

@@ -579,7 +579,7 @@ struct DemoPage {
 | min          | 最小值, type 为 `number` `decimal` 时有效                  | _number_ | `-1` |
 | max          | 最大值, type 为 `number` `decimal` 时有效                  | _number_ | `-1` |
 | verticalAlign| 垂直方向对齐方式, 仅 `labelPosition` 为left时有效, 可选值 `top` `center` | _string_ | `''` |
-| radius       | 外部圆角 | _string_ \| _number_ | `0` |
+| radius       | 外部圆角 | _Length_ \| _BorderRadiuses_ \| _LocalizedBorderRadiuses_ | `0` |
 | prefix       | 前缀内容 | _ResourceStr_ | `''` |
 | prefixFontColor | 前缀内容颜色 | _ResourceColor_ | `#969799` |
 | suffix       | 后缀内容 | _ResourceStr_ | `''` |
