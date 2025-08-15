@@ -164,13 +164,14 @@ struct DemoPage {
 | showToolBar   | 是否显示顶部栏                                 | _boolean_ | `true` |
 | confirmText   | 确认按钮文字                                   | _ResourceStr_ |  `确定`  |
 | cancelText    | 取消按钮文字                                   | _ResourceStr_ |  `取消`  |
-| filter        | 过滤器    | _(type: string, options: IBestPickerOption[]) => IBestPickerOption[]_ | `null` |
+| filter        | 过滤器                                         | _(type: string, options: IBestPickerOption[]) => IBestPickerOption[]_ | `null` |
 | groupId       | 分组id, 通常在配合PickerGroup组件使用时传入, 可实现多个DatePicker联动| _string_ \| _number_ | `''` |
-| horizontal    | 是否横向     | _boolean_ | `false` |
-| itemWidth     | 单项宽度     | _number_ \| _string_ | `44`   |
-| contentHeight | 整体高度, 仅横向时生效 | _number_ \| _string_ | `44`   |
-| optionFontSize| 选项字体大小    | _number_ \| _string_ | `16`   |
-| lunar <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.8</span>| 是否显示农历    | _boolean_ | `false` |
+| horizontal    | 是否横向                                       | _boolean_ | `false` |
+| itemWidth     | 单项宽度                                       | _number_ \| _string_ | `44`   |
+| contentHeight | 整体高度, 仅横向时生效                          | _number_ \| _string_ | `44`   |
+| optionFontSize| 选项字体大小                                    | _number_ \| _string_ | `16`   |
+| lunar         | 是否显示农历                                    | _boolean_ | `false` |
+| radius <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.0</span>| 外部圆角                                       | _number_ \| _string_ | `0`   |
  
 ### Events
 

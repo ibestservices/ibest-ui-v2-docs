@@ -507,7 +507,7 @@ struct DemoPage {
 | clockSuccessText | 打卡成功文案                                          | _ResourceStr_  | `已成功` |
 | isShowUnClock | 是否显示未打卡                                           | _boolean_ | `true`  |
 | unClockText  | 未打卡文案                                                | _ResourceStr_  | `未打卡` |
-| showOtherMonthDate <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.8</span>| 是否显示其他月份的日期                        | _boolean_ | `true` |
+| showOtherMonthDate | 是否显示其他月份的日期                               | _boolean_ | `true` |
 
 
 ### CalendarDialog @Props

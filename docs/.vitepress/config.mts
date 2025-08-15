@@ -36,7 +36,7 @@ export default defineConfig({
       { text: "首页", link: "/" },
       { text: "指南", link: "/guide/home/", activeMatch: "/guide/" },
       { text: "组件", link: "/components/button/", activeMatch: "/components/" },
-      { text: "v0.0.9", link: "" },
+      { text: "v1.0.0", link: "" },
     ],
     sidebar: [
       {
@@ -44,7 +44,7 @@ export default defineConfig({
         items: [
           { text: "介绍", link: "/guide/home/" },
           { text: "快速上手", link: "/guide/quickstart/" },
-          { text: "全局配置", link: "/guide/config-unit/" },
+          { text: "全局配置", link: "/guide/global-config/" },
           { text: "自定义主题样式", link: "/guide/custom-theme/" },
           { text: "颜色模式", link: "/guide/color-mode/" },
           { text: "常见问题", link: "/guide/faq/" },
@@ -94,9 +94,9 @@ export default defineConfig({
         items: [
           { text: "ActionSheet 动作面板", link: "/components/actionsheet/" },
           { text: "Dialog 弹出框", link: "/components/dialog/" },
-          { text: `DropdownMenu 下拉菜单 <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.7</span>`, link: "/components/dropdownMenu/" },
+          { text: "DropdownMenu 下拉菜单", link: "/components/dropdownMenu/" },
           { text: "FloatBubble 浮动气泡", link: "/components/floatbubble/" },
-          { text: `Guide 引导 <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.7</span>`, link: "/components/guide/" },
+          { text: "Guide 引导", link: "/components/guide/" },
           { text: "Loading 加载", link: "/components/loading/" },
           { text: "Notify 消息通知", link: "/components/notify/" },
           { text: "PullRefresh 下拉刷新", link: "/components/pullrefresh/" },
@@ -106,6 +106,7 @@ export default defineConfig({
       {
         text: "展示组件",
         items: [
+          { text: `Avatar 头像 <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.0</span>`, link: "/components/avatar/" },
           { text: "Badge 徽标", link: "/components/badge/" },
           { text: "CircleProgress 环形进度条", link: "/components/circleProgress/" },
           { text: "Collapse 折叠面板", link: "/components/collapse/" },
@@ -118,6 +119,7 @@ export default defineConfig({
           { text: "NoticeBar 通知栏", link: "/components/noticeBar/" },
           { text: "Popover 气泡弹出框", link: "/components/popover/" },
           { text: "Progress 进度条", link: "/components/progress/" },
+          { text: `SectorProgress 扇形进度条 <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.0</span>`, link: "/components/sectorProgress/" },
           { text: "Skeleton 骨架屏", link: "/components/skeleton/" },
           { text: "Steps 步骤条", link: "/components/steps/" },
           { text: "TextEllipsis 文本省略", link: "/components/textEllipsis/" },
@@ -140,13 +142,14 @@ export default defineConfig({
         items: [
           { text: "CanvasDrawer 画布绘制", link: "/components/canvasDrawer/" },
           { text: "ColorPicker 颜色选择", link: "/components/colorPicker/" },
-          { text: `ContactAddress 联系人地址 <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.8</span>`, link: "/components/contactAddress/" },
+          { text: "ContactAddress 联系人地址", link: "/components/contactAddress/" },
           { text: "ImageCropper 图片裁剪", link: "/components/imageCropper/" },
         ],
       },
     ],
     socialLinks: [
       { icon: "github", link: "https://github.com/ibestservices/ibest-ui-v2" },
+      { icon: "gitcode", link: "https://gitcode.com/ibestservices/ibest-ui-v2" },
     ],
     docFooter: {
       prev: "上一页",

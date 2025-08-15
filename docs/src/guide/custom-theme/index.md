@@ -30,25 +30,25 @@ onWindowStageCreate(windowStage: window.WindowStage): void {
 
 | 参数               | 说明                                 | 类型   | 默认          |
 | ----------------- | -------------------------------------| ------| ------------ |
-| primary           | primary 反馈色                        | string | `#3D8AF2`   |
-| success           | success 反馈色                        | string | `#58DB6B`   |
-| warning           | warning 反馈色                        | string | `#F29C73`   |
-| danger            | danger 反馈色                         | string | `#DB3131`   |
-| default           | default 默认色                        | string | `#FFFFFF`   |
-| spaceMini         | 间距，一般用于 `padding` 与 `margin`    | string | `2`         |
-| spaceBase         | 间距，一般用于 `padding` 与 `margin`    | string | `4`   	     |
-| spaceXs           | 间距，一般用于 `padding` 与 `margin`    | string | `8`         |
-| spaceSm           | 间距，一般用于 `padding` 与 `margin`    | string | `12`        |
-| spaceMd           | 间距，一般用于 `padding` 与 `margin`    | string | `16`        |
-| spaceLg           | 间距，一般用于 `padding` 与 `margin`    | string | `24`        |
-| spaceXl           | 间距，一般用于 `padding` 与 `margin`    | string | `32`        |
-| fontSizeXs        | 文字大小                               | string | `10`        |
-| fontSizeSm        | 文字大小                               | string | `12`        |
-| fontSizeMd        | 文字大小                               | string | `14`        |
-| fontSizeLg        | 文字大小                               | string | `16`        |
-| fontSizeXl        | 文字大小                               | string | `20`        |
-| borderRadiusSm    | 圆角大小                               | string | `2`         |
-| borderRadiusMd    | 圆角大小                               | string | `4`         |
-| borderRadiusLg    | 圆角大小                               | string | `8`         |
-| borderRadiusMax   | 圆角大小                               | string | `9999`      |
-| animationDuration | 动画时长，单位 `ms`，如`Switch`组件的切换动画时长 | number | 200   |
+| primary           | primary 反馈色                        | _string_ | `#3D8AF2`   |
+| success           | success 反馈色                        | _string_ | `#58DB6B`   |
+| warning           | warning 反馈色                        | _string_ | `#F29C73`   |
+| danger            | danger 反馈色                         | _string_ | `#DB3131`   |
+| default           | default 默认色                        | _string_ | `#FFFFFF`   |
+| spaceMini         | 间距，一般用于 `padding` 与 `margin`    | _string_ | `2`         |
+| spaceBase         | 间距，一般用于 `padding` 与 `margin`    | _string_ | `4`   	   |
+| spaceXs           | 间距，一般用于 `padding` 与 `margin`    | _string_ | `8`         |
+| spaceSm           | 间距，一般用于 `padding` 与 `margin`    | _string_ | `12`        |
+| spaceMd           | 间距，一般用于 `padding` 与 `margin`    | _string_ | `16`        |
+| spaceLg           | 间距，一般用于 `padding` 与 `margin`    | _string_ | `24`        |
+| spaceXl           | 间距，一般用于 `padding` 与 `margin`    | _string_ | `32`        |
+| fontSizeXs        | 文字大小                               | _string_ | `10`        |
+| fontSizeSm        | 文字大小                               | _string_ | `12`        |
+| fontSizeMd        | 文字大小                               | _string_ | `14`        |
+| fontSizeLg        | 文字大小                               | _string_ | `16`        |
+| fontSizeXl        | 文字大小                               | _string_ | `20`        |
+| borderRadiusSm    | 圆角大小                               | _string_ | `2`         |
+| borderRadiusMd    | 圆角大小                               | _string_ | `4`         |
+| borderRadiusLg    | 圆角大小                               | _string_ | `8`         |
+| borderRadiusMax   | 圆角大小                               | _string_ | `9999`      |
+| animationDuration | 动画时长，单位 `ms`，如`Switch`组件的切换动画时长 | _number_ | `200`   |

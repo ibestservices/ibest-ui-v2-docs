@@ -283,7 +283,7 @@ struct DemoPage {
 | 插槽名             | 说明                 | 类型             |
 | -------------------| --------------------| ----------------|
 | customButton       | 自定义滑块           | _CustomBuilder_ |
-| customSecondButton <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.7</span>| 自定义第二个滑块      | _CustomBuilder_ |
+| customSecondButton | 自定义第二个滑块      | _CustomBuilder_ |
 
 
 ### Events

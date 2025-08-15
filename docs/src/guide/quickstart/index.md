@@ -17,13 +17,13 @@
 • 不建议使用 `ohpm install @ibestservices/ibest-ui-v2@版本号` 的方式安装对应版本。
 
 ![components](./images/change-version.png)
+:::
 
-• **组件库版本与api版本对应关系**
+#### 组件库版本与api版本对应关系
 | 组件库版本        | sdk版本      |
 |:----------------|:------------|
-| v0.0.1及以上     | `api15` 以上  |
 | v0.0.9及以上     | `api17` 以上  |
-:::
+| v0.0.1及以上     | `api15` 以上  |
 
 ```shell
 ohpm install @ibestservices/ibest-ui-v2
@@ -50,7 +50,7 @@ onWindowStageCreate(windowStage: window.WindowStage): void {
 import { IBestButton } from "@ibestservices/ibest-ui-v2"
 
 @ComponentV2
-export struct DemoPage {
+struct DemoPage {
   build(){
     Column(){
       IBestButton({

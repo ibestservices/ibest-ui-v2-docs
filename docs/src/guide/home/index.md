@@ -16,6 +16,10 @@ title: "IBest-UI-V2"
     ·
     &nbsp;
     <a href="https://github.com/ibestservices/ibest-ui-v2" target="_blank">Github</a>
+    &nbsp;
+    ·
+    &nbsp;
+    <a href="https://gitcode.com/ibestservices/ibest-ui-v2" target="_blank">Gitcode</a>
 </p>
 
 ## 介绍
@@ -50,7 +54,9 @@ title: "IBest-UI-V2"
 
 | 项目        | 描述         |          |
 |:-----------|:------------|:----------|
-| @ibestservices/area-data | 中国省市区数据，适用于鸿蒙 ArkUI 的 TextPicker 和 {{ $frontmatter.title }} 的 IBestCascader 等组件。 | <a href="https://ohpm.openharmony.cn/#/cn/detail/@ibestservices%2Farea-data">地址</a> |
+| @ibestservices/ibest-ui | 一个**轻量、简单易用、可定制主题、支持深色模式和浅色模式**的鸿蒙开源UI组件库，基于状态管理v1版本。| <a href="https://ohpm.openharmony.cn/#/cn/detail/@ibestservices%2Fibest-ui" target="_blank">地址</a> |
+| @ibestservices/ucharts     | 一个类型丰富、高性能、可扩展、支持主题定制的图表库。   | <a href="https://ohpm.openharmony.cn/#/cn/detail/@ibestservices%2Fucharts" target="_blank">地址</a>     |
+| @ibestservices/area-data   | 中国省市区数据，适用于鸿蒙 ArkUI 的 TextPicker 和 IBest-UI 的 IBestCascader 等组件。 | <a href="https://ohpm.openharmony.cn/#/cn/detail/@ibestservices%2Farea-data" target="_blank">地址</a>   |
 
 ## 其它链接
 - [Gitee](https://gitee.com/ibestservices/ibest-ui-v2)

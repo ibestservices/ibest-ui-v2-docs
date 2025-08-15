@@ -32,10 +32,15 @@ onWindowStageCreate(windowStage: window.WindowStage): void {
 
 | 参数             | 说明                                    | 类型   | 默认值        |
 | ----------------| --------------------------------------- | ----- | ------------ |
-| designWidth     | 标识页面设计基准宽度					   | number | `720`		  |
-| unit            | 全局尺寸单位, 可选值 `vp`、`px`、`lpx`	   | string | `vp`        |
-| fontUnit        | 全局字体单位, 可选值 `vp`、`px`、`lpx`、`fp`| string | `fp`        |
+| designWidth     | 标识页面设计基准宽度					   | _number_ | `720`		  |
+| unit            | 全局尺寸单位, 可选值 `vp`、`px`、`lpx`	   | _string_ | `vp`        |
+| fontUnit        | 全局字体单位, 可选值 `vp`、`px`、`lpx`、`fp`| _string_ | `fp`        |
+| avatar <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.0</span>| 头像组件配置					 | _IBestAvatarConfig_ | `-` |
 
+#### IBestAvatarConfig 数据类型
+| 参数             | 说明                          | 类型          | 默认值        |
+| ----------------| ------------------------------| ------------- | ------------ |
+| defaultAvatar   | 默认头像地址				   | _ResourceStr_ | `''`		  |
 
 ## 具体表现
 

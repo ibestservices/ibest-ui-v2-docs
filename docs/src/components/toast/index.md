@@ -346,10 +346,10 @@ struct DemoPage {
 | ------------ | --------------------------------------------------------| --------- | ---------- |
 | type         | 展示类型，可选值为 `success`、`warning`、`fail`、`loading`  | _string_  | "" |
 | wordBreak    | 文本换行方式，可选值为 `normal`、`break-all` 、`break-word` | _string_   | `normal` |
-| icon         | 自定义图标，支持网络图片和本地图片，优先级大于type              | _string_ \| _Resource_   | "" |
+| icon         | 自定义图标，支持网络图片和本地图片，优先级大于type            | _string_ \| _Resource_   | "" |
 | isShowMask   | 是否显示遮罩                                              | _boolean_   | `false` |
 | position     | 位置，可选值为 `top` 、`center`、`bottom`                  | _string_   | `center` |
-| offsetY      | 偏移量                                                   | _string_ \| _number_   | `0` |
+| offsetY      | 偏移量                                                     | _string_ \| _number_   | `0` |
 | iconWidth    | 自定义图标宽度                                             | _string_ \| _number_   | `36` |
 | onOpened     | 完全展示后的回调函数                                        | _() => void_ | `-` |
-| onClosed <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.7</span>| 完全关闭后的回调函数  | _() => void_ | `-` |
+| onClosed     | 完全关闭后的回调函数                                         | _() => void_ | `-` |

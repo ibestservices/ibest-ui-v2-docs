@@ -117,7 +117,7 @@ struct DemoPage {
 | maxLines      | 最大行数                              | _number_ |  `-`  |
 | overflow      | 超出隐藏                              | _TextOverflow_ |  `None`  |
 
-### IBestHighlightKeywords <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">0.0.8</span> 数据结构
+### IBestHighlightKeywords 数据结构
 | 参数       | 说明      | 类型 |
 | ----------| ---------| --------- |
 | text      | 关键字    | _ResourceStr_ |

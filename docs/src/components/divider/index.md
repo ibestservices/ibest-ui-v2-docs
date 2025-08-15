@@ -170,6 +170,10 @@ struct DemoPage {
 | rightLineWidth|右侧线段宽度, 仅水平时生效               | _number_ \| _string_  | `''` |
 | leftRightPadding| 左右内边距, 仅水平时生效              | _number_ \| _string_  | `0` |
 | leftRightMargin| 左右外边距, 仅垂直时生效               | _number_ \| _string_  | `8` |
+| dashGap <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.0</span>| 虚线间距, 仅在dashed为true时生效            | _LengthMetrics_ | `-`   |
+| dashWidth <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.0</span>| 虚线线段长度, 仅在dashed为true时生效            | _LengthMetrics_ | `-`   |
+| rightLineColor <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.0</span>| 右侧线颜色, 默认与lineColor一致            | _ResourceColor_ | `''`   |
+| rightDashed <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.0</span>| 右侧线是否使用虚线, 默认与dashed一致         | _boolean_ | `false`   |
 
 ### 插槽
 
