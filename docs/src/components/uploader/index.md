@@ -234,7 +234,7 @@ struct DemoPage {
 | selectType   | 选择文件类型，默认为图片                         | _image_ \| _file_ | `image` |
 | imageSelectOption | 图片选择器配置                             | _<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-photoaccesshelper#photoselectoptions">PhotoSelectOptions</a>_ | `-` |
 | fileSelectOption | 文件选择器配置                              | _<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-file-picker#documentselectoptions">DocumentSelectOptions</a>_ | `-` |
-| max          | 最大上传数量, 优先级大于imageSelectOption/fileSelectOption的maxSelectNumber | _number_  | `-1` |
+| max          | 最大上传数量，超过max时不显示触发器               | _number_  | `-1` |
 | maxSize      | 单个文件大小最大限制                             | _number_ |  `-1`  |
 | imageFit     | 预览图片裁剪方式                                | _<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/ts-appendix-enums-V5#imagefit" target="__blank">ImageFit</a>_ |  `Cover` |
 | previewSize  | 预览大小                                       | _number_ \| _string_ | `80` |
