@@ -231,9 +231,9 @@ struct DemoPage {
 | max          | 最大值,超过最大值会显示 {max}+,仅当 content 为数字时有效| _number_ |  `-1`  |
 | showZero     | 值为0时是否显示徽标                     | _boolean_ |  `true`  |
 | badgePosition| 徽标位置, 可选值 `top-left` `top-right` `bottom-left` `bottom-right`| _string_ |  `top-right`  |
-| icon <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.0</span>| 徽标图标, 优先级高于 content dot | _ResourceStr_ | `''` |
-| iconColor <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.0</span>| 徽标图标颜色 | _ResourceColor_ | `''` |
-| iconSize <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.0</span>| 徽标图标大小 | _string_ \| _number_  | `12` |
+| icon <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.1</span>| 徽标图标, 优先级高于 content dot | _ResourceStr_ | `''` |
+| iconColor <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.1</span>| 徽标图标颜色 | _ResourceColor_ | `''` |
+| iconSize <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.1</span>| 徽标图标大小 | _string_ \| _number_  | `12` |
 
 ### 插槽
 

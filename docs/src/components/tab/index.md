@@ -506,7 +506,7 @@ struct DemoPage {
 | tabLineRadius       | 标记线圆角, 仅type为`line`时有效                  | _number_ \| _string_ | `0` |
 | activeFontWeight    | 激活文字字重                                      | _FontWeight_ | `Normal` |
 | activeFontSize      | 激活文字大小                                      | _number_ \| _string_ | `14` |
-| outerRadius <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.0</span>| 外侧圆角 | _Length_ \| _BorderRadiuses_ \| _LocalizedBorderRadiuses_  | `0` |
+| outerRadius <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.1</span>| 外侧圆角 | _Length_ \| _BorderRadiuses_ \| _LocalizedBorderRadiuses_  | `0` |
 
 ### IBestTabItem IBestTabItemType  数据结构
 

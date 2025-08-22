@@ -349,8 +349,8 @@ struct ButtonPage {
 | btnBorderRadius| 按钮圆角                  | _Length_ \| _BorderRadiuses_ \| _LocalizedBorderRadiuses_ | `-` |
 | space          | 文字与图标间距             | _string_ \| _number_ | `4` |
 | fontWeight     | 文字字重                  | _string_ \| _number_ \| FontWeight | `Normal` |
-| btnPadding <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.0</span>| 按钮内边距                          | _Length_ \| _Padding_ \| _LocalizedPadding_ | `-` |
-| stateEffect <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.0</span>| 是否开启按压态                                                | _boolean_ | `true` |
+| btnPadding <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.1</span>| 按钮内边距                          | _Length_ \| _Padding_ \| _LocalizedPadding_ | `-` |
+| stateEffect <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.1</span>| 是否开启按压态                                                | _boolean_ | `true` |
 
 ### Events
 
