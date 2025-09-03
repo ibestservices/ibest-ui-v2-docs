@@ -407,3 +407,15 @@ struct DemoPage {
 | titleBuilder   | 标题的插槽，优先级大于 `title` 属性，将会完全接管 `title` 的渲染和间距控制     | _CustomBuilder_ |
 | defaultBuilder | 内容的插槽，优先级大于 `message` 属性，将会完全接管 `message` 的渲染和间距控制 | _CustomBuilder_ |
 | footerBuilder  | 底部按钮部分的插槽，将会完全接管按钮部分的渲染和间距控制                       | _CustomBuilder_ |
+
+## 主题定制
+
+组件提供了下列颜色变量，可用于自定义深色/浅色模式样式，使用方法请参考 [颜色模式](../../guide/color-mode/index.md) 章节，如需要其它颜色变量可提 [issue](https://github.com/ibestservices/ibest-ui/issues)。
+
+| 名称                                       | 描述                              | 默认值        |
+| -------------------------------------------|----------------------------------|--------------|
+| ibest_dialog_background                    | 背景颜色                          | `#fff`   |
+| ibest_dialog_title_color                   | 标题文字颜色                       | `#323233`   |
+| ibest_dialog_message_color                 | 提示信息文字颜色                    | `#323233`   |
+| ibest_dialog_cancel_text_color             | 取消按钮文字颜色                    | `#323233`   |
+| ibest_dialog_border_color                  | 边框颜色                           | `#ebedf0`   |

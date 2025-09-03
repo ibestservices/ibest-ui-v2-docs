@@ -167,3 +167,18 @@ struct DemoPage {
 | 事件名     | 说明              | 回调参数                         |
 | ----------| -----------------| -------------------------------- |
 | onChange  | 页码变化时触发     | `page: number` |
+
+## 主题定制
+
+组件提供了下列颜色变量，可用于自定义深色/浅色模式样式，使用方法请参考 [颜色模式](../../guide/color-mode/index.md) 章节，如需要其它颜色变量可提 [issue](https://github.com/ibestservices/ibest-ui/issues)。
+
+| 名称                                       | 描述                              | 默认值        |
+| -------------------------------------------|----------------------------------|--------------|
+| ibest_pagination_background                | 分页器背景色                      | `#fff`   |
+| ibest_pagination_active_background         | 分页器激活态背景色                 | `#1989fa`|
+| ibest_pagination_text_color                | 分页器文字颜色                     | `#1989fa` |
+| ibest_pagination_active_text_color         | 分页器激活态文字颜色               | `#fff` |
+| ibest_pagination_item_disabled_color       | 分页器禁用时文字颜色               | `#646566` |
+| ibest_pagination_item_disabled_background  | 分页器禁用时背景色                 | `#f7f8fa` |
+| ibest_pagination_desc_color                | 分页器描述文字颜色                 | `#646566` |
+| ibest_pagination_border_color              | 分页器边框颜色                     | `#f5f5f7` |

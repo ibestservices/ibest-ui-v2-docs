@@ -241,7 +241,17 @@ struct DemoPage {
 ### Events
 
 | 事件名   | 说明                | 参数类型                            |
-| -------- | ------------------| ----------------------------------- |
+| -------- | -------------------| ----------------------------------- |
 | onChange | 当值变化时触发的事件 | `val: number` |
 | onPlus   | 点击增加按钮时触发   | `-`                        |
 | onMinus  | 点击较少按钮时触发   | `-`                        |
+
+## 主题定制
+
+组件提供了下列颜色变量，可用于自定义深色/浅色模式样式，使用方法请参考 [颜色模式](../../guide/color-mode/index.md) 章节，如需要其它颜色变量可提 [issue](https://github.com/ibestservices/ibest-ui/issues)。
+
+| 名称                                       | 描述                              | 默认值        |
+| -------------------------------------------|----------------------------------|--------------|
+| ibest_stepper_background                   | 背景颜色                          | `#f2f3f5`   |
+| ibest_stepper_disabled_background          | 禁用时背景颜色                     | `#f7f8fa`   |
+| ibest_stepper_disabled_text_color          | 禁用时文字颜色                     | `#c8c9cc`   |

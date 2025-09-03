@@ -395,3 +395,15 @@ struct DemoPage {
 | 方法名          |       说明           | 参数                   |
 | -------------- | ---------------------| ---------------------- |
 | close          | 关闭所有下拉菜单       | `-` |
+
+## 主题定制
+
+组件提供了下列颜色变量，可用于自定义深色/浅色模式样式，使用方法请参考 [颜色模式](../../guide/color-mode/index.md) 章节，如需要其它颜色变量可提 [issue](https://github.com/ibestservices/ibest-ui/issues)。
+
+| 名称                                       | 描述                              | 默认值        |
+| -------------------------------------------|----------------------------------|--------------|
+| ibest_dropdown_menu_bg_color               | 菜单背景色                        | `#fff`   |
+| ibest_dropdown_menu_text_color             | 菜单文字颜色                      | `#323233`   |
+| ibest_dropdown_menu_active_color           | 激活态菜单文字颜色                 | `#1989fa`   |
+| ibest_dropdown_menu_border_color           | 菜单边框颜色                       | `#ebedf0`   |
+| ibest_dropdown_menu_disabled_color         | 菜单禁用时颜色                     | `#969799`   |

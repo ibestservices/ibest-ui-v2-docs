@@ -302,3 +302,13 @@ struct DemoPage {
 | onInput   | 按下按键后触发 | `value: string` |
 | onDelete  | 点击删除键时触发 | `-` |
 | onClose   | 点击关闭键时触发 | `-` |
+
+## 主题定制
+
+组件提供了下列颜色变量，可用于自定义深色/浅色模式样式，使用方法请参考 [颜色模式](../../guide/color-mode/index.md) 章节，如需要其它颜色变量可提 [issue](https://github.com/ibestservices/ibest-ui/issues)。
+
+| 名称                                       | 描述                              | 默认值        |
+| -------------------------------------------|----------------------------------|--------------|
+| ibest_number_keyboard_background           | 数字键盘背景色                     | `#f2f3f5`   |
+| ibest_number_keyboard_key_background       | 数字键盘按键背景色                 | `#fff`   |
+| ibest_number_keyboard_key_active_color     | 数字键盘按键按压态背景色            | `#ebedf0`   |

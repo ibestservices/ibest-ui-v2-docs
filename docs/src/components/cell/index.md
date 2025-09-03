@@ -445,3 +445,15 @@ struct DemoPage {
 | labelBuilder     | `label` 的插槽 优先级大于 `@Prop label`                           | _CustomBuilder_ |
 | iconBuilder      | 自定义`title`左侧`icon`的插槽, 使用`titleBuilder`时，该插槽不生效     | _CustomBuilder_ |
 | rightIconBuilder | 自定义`value`右侧`icon`的插槽, 使用`valueBuilder`时，该插槽不生效     | _CustomBuilder_ |
+
+## 主题定制
+
+组件提供了下列颜色变量，可用于自定义深色/浅色模式样式，使用方法请参考 [颜色模式](../../guide/color-mode/index.md) 章节，如需要其它颜色变量可提 [issue](https://github.com/ibestservices/ibest-ui/issues)。
+
+| 名称                                       | 描述                              | 默认值        |
+| -------------------------------------------|----------------------------------|--------------|
+| ibest_cell_title_color                     | 标题文字颜色                       | `#323233`   |
+| ibest_cell_label_color                     | 标题下方描述信息文字颜色            | `#969799`   |
+| ibest_cell_value_color                     | 右侧内容文字颜色                   | `#969799`   |
+| ibest_cell_background                      | 单元格背景色                       | `#fff`   |
+| ibest_cell_active_color                    | 单元格按压态背景色                  | `#f2f3f5`   |

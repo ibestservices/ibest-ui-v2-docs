@@ -405,3 +405,17 @@ struct DemoPage {
 | ------------| ---------------------| --------- |
 | title       | 列标题                | _ResourceStr_  |
 | prop        | 列属性                | _string_  |
+
+## 主题定制
+
+组件提供了下列颜色变量，可用于自定义深色/浅色模式样式，使用方法请参考 [颜色模式](../../guide/color-mode/index.md) 章节，如需要其它颜色变量可提 [issue](https://github.com/ibestservices/ibest-ui/issues)。
+
+| 名称                                       | 描述                              | 默认值        |
+| -------------------------------------------|----------------------------------|--------------|
+| ibest_table_header_background              | 表头背景色                        | `#fff`   |
+| ibest_table_header_text_color              | 表头文字颜色                       | `#969799`   |
+| ibest_table_border_color                   | 表格边框色                         | `#ebedf0`   |
+| ibest_table_cell_background                | 单元格背景色                       | `#fff`   |
+| ibest_table_cell_stripe_color              | 表格斑马纹色                       | `#fafafa`   |
+| ibest_table_cell_text_color                | 单元格文字颜色                     | `#323233`   |
+| ibest_table_footer_background              | 表尾背景色                         | `#f2f3f5`   |

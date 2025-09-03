@@ -408,3 +408,15 @@ struct DemoPage {
 | color        | 选项字体颜色                                   | _ResourceColor_ |
 | isDisabled   | 是否禁用                                       | _boolean_ |
 | readonly     | 是否只读                                       | _boolean_ |
+
+## 主题定制
+
+组件提供了下列颜色变量，可用于自定义深色/浅色模式样式，使用方法请参考 [颜色模式](../../guide/color-mode/index.md) 章节，如需要其它颜色变量可提 [issue](https://github.com/ibestservices/ibest-ui/issues)。
+
+| 名称                                       | 描述                              | 默认值        |
+| -------------------------------------------|----------------------------------|--------------|
+| ibest_action_sheet_background              | 背景颜色                          | `#f7f8fa`   |
+| ibest_action_sheet_item_background         | 选项背景色                         | `#fff`   |
+| ibest_action_sheet_item_description_color  | 描述文字颜色                       | `#969799`   |
+| ibest_action_sheet_item_disabled_text_color| 选项禁用时文字颜色                  | `#c8c9cc`   |
+| ibest_action_sheet_border_color            | 边框颜色                           | `#ebedf0`   |

@@ -547,5 +547,15 @@ struct DemoPage {
 ### 插槽
 |插槽名         | 说明                        | 类型                      |
 | ------------ | -------------------------- | ------------------------- |
-|headerBuilder | 自定义头部      |  _CustomBuilder_  |
-|contentBuilder| 弹出层自定义内容 |  _CustomBuilder_  |
+|headerBuilder | 自定义头部                  |  _CustomBuilder_  |
+|contentBuilder| 弹出层自定义内容             |  _CustomBuilder_  |
+
+## 主题定制
+
+组件提供了下列颜色变量，可用于自定义深色/浅色模式样式，使用方法请参考 [颜色模式](../../guide/color-mode/index.md) 章节，如需要其它颜色变量可提 [issue](https://github.com/ibestservices/ibest-ui/issues)。
+
+| 名称                                       | 描述                              | 默认值        |
+| -------------------------------------------|----------------------------------|--------------|
+| ibest_popup_background                     | 弹出层背景色                       | `#fff`   |
+| ibest_popup_title_color                    | 弹出层标题文字颜色                 | `#323233`   |
+| ibest_popup_close_icon_color               | 弹出层关闭图标颜色                 | `#c8c9cc`   |

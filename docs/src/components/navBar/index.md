@@ -298,3 +298,14 @@ struct DemoPage {
 | leftBuilder  | 自定义左侧内容    | _CustomBuilder_ |
 | rightBuilder | 自定义右侧内容    | _CustomBuilder_ |
 | titleBuilder | 自定义标题内容    | _CustomBuilder_ |
+
+
+## 主题定制
+
+组件提供了下列颜色变量，可用于自定义深色/浅色模式样式，使用方法请参考 [颜色模式](../../guide/color-mode/index.md) 章节，如需要其它颜色变量可提 [issue](https://github.com/ibestservices/ibest-ui/issues)。
+
+| 名称                                       | 描述                              | 默认值        |
+| -------------------------------------------|----------------------------------|--------------|
+| ibest_navbar_background                    | 标题栏背景色                      | `#fff`   |
+| ibest_navbar_sub_title_text_color          | 副标题文字颜色                    | `#969799`|
+| ibest_navbar_border_color                  | 边框颜色                          | `#ebedf0` |

@@ -273,3 +273,13 @@ struct DemoPage {
 | onExceed       | 超出限制后回调                                    | `-` |
 | onRemove       | 删除文件后回调                                    | `file: IBestUploaderFile, allFile: IBestUploaderFile[]` |
 | onFileClick    | 点击文件后回调, 仅当isPreviewFullImage为false时生效| `file: IBestUploaderFile, index: number` |
+
+## 主题定制
+
+组件提供了下列颜色变量，可用于自定义深色/浅色模式样式，使用方法请参考 [颜色模式](../../guide/color-mode/index.md) 章节，如需要其它颜色变量可提 [issue](https://github.com/ibestservices/ibest-ui/issues)。
+
+| 名称                                       | 描述                              | 默认值        |
+| -------------------------------------------|----------------------------------|--------------|
+| ibest_uploader_background                  | 触发器背景颜色                     | `#f7f8fa`   |
+| ibest_uploader_icon_color                  | 触发器图标颜色                     | `#dcdee0`   |
+| ibest_uploader_file_background             | 文件背景颜色                       | `#f7f8fa`   |

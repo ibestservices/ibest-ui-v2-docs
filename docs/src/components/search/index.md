@@ -228,3 +228,14 @@ struct DemoPage {
 | onInputFocus  | 搜索框聚焦时触发 | `-` |
 | onClear  | 点击清除图标时触发 | `-` |
 | onRightButtonClick  | 点击右侧按钮时触发 | `-` |
+
+## 主题定制
+
+组件提供了下列颜色变量，可用于自定义深色/浅色模式样式，使用方法请参考 [颜色模式](../../guide/color-mode/index.md) 章节，如需要其它颜色变量可提 [issue](https://github.com/ibestservices/ibest-ui/issues)。
+
+| 名称                                       | 描述                              | 默认值        |
+| -------------------------------------------|----------------------------------|--------------|
+| ibest_search_outer_background              | 外部背景色                        | `#fff`   |
+| ibest_search_inner_background              | 内部背景色                        | `#f7f8fa`   |
+| ibest_search_label_color                   | 输入框左侧文本文字颜色             | `#323233`   |
+| ibest_search_left_icon_color               | 输入框左侧图标颜色                 | `#969799`   |

@@ -162,3 +162,12 @@ struct DemoPage {
 | 事件名         | 说明                 | 回调参数                       |
 | --------------| ---------------------| ------------------------------ |
 | onReachTarget | 到达目标值            | `-` |
+
+## 主题定制
+
+组件提供了下列颜色变量，可用于自定义深色/浅色模式样式，使用方法请参考 [颜色模式](../../guide/color-mode/index.md) 章节，如需要其它颜色变量可提 [issue](https://github.com/ibestservices/ibest-ui/issues)。
+
+| 名称                                       | 描述                              | 默认值        |
+| -------------------------------------------|----------------------------------|--------------|
+| ibest_sector_progress_background           | 进度条背景色                      | `#ebedf0`   |
+| ibest_sector_progress_text_color           | 中间文字颜色                      | `#323233` |

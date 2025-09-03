@@ -240,3 +240,12 @@ struct DemoPage {
 | 插槽名             | 说明               | 类型             |
 | ------------------| ------------------| ----------------|
 | defaultBuilder    | 默认内容的插槽      | _CustomBuilder_ |
+
+## 主题定制
+
+组件提供了下列颜色变量，可用于自定义深色/浅色模式样式，使用方法请参考 [颜色模式](../../guide/color-mode/index.md) 章节，如需要其它颜色变量可提 [issue](https://github.com/ibestservices/ibest-ui/issues)。
+
+| 名称                                       | 描述                              | 默认值        |
+| -------------------------------------------|----------------------------------|--------------|
+| ibest_badge_background                     | 徽标背景颜色                       | `#ee0a24`   |
+| ibest_badge_text_color                     | 徽标文字颜色                       | `#fff`   |

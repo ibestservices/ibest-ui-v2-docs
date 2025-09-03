@@ -353,3 +353,15 @@ struct DemoPage {
 | 插槽名             | 说明                             | 类型             |
 | ------------------| --------------------------------| ----------------|
 | defaultBuilder    | 默认内容                         | _CustomBuilder_ |
+
+## 主题定制
+
+组件提供了下列颜色变量，可用于自定义深色/浅色模式样式，使用方法请参考 [颜色模式](../../guide/color-mode/index.md) 章节，如需要其它颜色变量可提 [issue](https://github.com/ibestservices/ibest-ui/issues)。
+
+| 名称                                       | 描述                              | 默认值        |
+| -------------------------------------------|----------------------------------|--------------|
+| ibest_collapse_background                  | 面板背景颜色                      | `#fff`   |
+| ibest_collapse_title_color                 | 面板标题文字颜色                  | `#323233`   |
+| ibest_collapse_icon_color                  | 面板图标颜色                      | `#323233`   |
+| ibest_collapse_value_color                 | 面板标题右侧文字颜色               | `#969799`   |
+| ibest_collapse_border_color                | 面板边框颜色                      | `#ebedf0`   |
