@@ -343,33 +343,33 @@ struct DemoPage {
 | 参数                   | 说明                          | 类型      | 默认值  |
 | --------------------- | -----------------------------| ----------| ------ |
 | visible               | 弹窗是否可见, 支持双向绑定       | _boolean_ | `false` |
-| dialogWidth           | 弹窗的宽度                     | _number_ \| _string_  | `320`|
+| dialogWidth           | 弹窗的宽度                     | _string_ \| _number_  | `320`|
 | dialogBorderRadius    | 弹窗的圆角                     | _Length_ \| _BorderRadiuses_ \| _LocalizedBorderRadiuses_  | `16` |
 | bgImage               | 弹框背景图片                   | _ResourceStr_ | `''` |
 | bgColor               | 弹窗的背景颜色                 | _ResourceColor_ | `#fff` |
 | title                 | 弹窗的标题                     | _ResourceStr_  |    ``   |
 | titleColor            | 弹窗的标题文字颜色              | _ResourceColor_ | `#323233` |
-| titleFontSize         | 标题的文字大小                  | _number_ \| _string_  | `16` |
-| titlePaddingTop       | 弹窗的标题的上内边距             | _number_ \| _string_  | `26` |
-| titlePaddingX         | 标题的左右内边距                | _number_ \| _string_ | `24`  |
-| titleLienHeight       | 标题的行高                     | _number_ \| _string_ | `24` |
+| titleFontSize         | 标题的文字大小                  | _string_ \| _number_  | `16` |
+| titlePaddingTop       | 弹窗的标题的上内边距             | _string_ \| _number_  | `26` |
+| titlePaddingX         | 标题的左右内边距                | _string_ \| _number_ | `24`  |
+| titleLienHeight       | 标题的行高                     | _string_ \| _number_ | `24` |
 | titleTextAlign        | 标题的对齐方式                  | _'left' \| 'center' \| 'right'_ | `center`|
 | message               | 弹窗的内容区域文本               | _ResourceStr_| `''` |
 | messageFontColor      | 弹窗的内容文字颜色               | _ResourceColor_ | `#323233`|
-| messageFontSize       | 弹窗的内容文字大小               | _number_ \| _string_ | `14`|
-| messageLineHeight     | 弹窗的内容区域文字行高            | _number_ \| _string_ | `20`|
-| messagePaddingTop     | 弹窗的内容区域的上内边距          | _number_ \| _string_| `8` |
-| messagePaddingX       | 弹窗的内容区域的左右内边距        | _number_ \| _string_ | `24` |
-| messagePaddingXBottom | 弹窗的内容区域的下内边距          | _number_ \| _string_ | `26`|
+| messageFontSize       | 弹窗的内容文字大小               | _string_ \| _number_ | `14`|
+| messageLineHeight     | 弹窗的内容区域文字行高            | _string_ \| _number_ | `20`|
+| messagePaddingTop     | 弹窗的内容区域的上内边距          | _string_ \| _number_| `8` |
+| messagePaddingX       | 弹窗的内容区域的左右内边距        | _string_ \| _number_ | `24` |
+| messagePaddingXBottom | 弹窗的内容区域的下内边距          | _string_ \| _number_ | `26`|
 | messageTextAlign      | 弹窗的内容区域的文字对齐方式       | _left_ \| _center_ \| _right_ | `center`|
-| messageMaxHeight      | 弹窗的内容区域的滚动区域最大高度    | _number_ \| _string_ | `auto` |
+| messageMaxHeight      | 弹窗的内容区域的滚动区域最大高度    | _string_ \| _number_ | `auto` |
 | theme                 | 按钮样式风格，可选值 `default` `round-button`          | _string_ | `default`|
-| buttonSpace           | 按钮间距                        | _number_ \| _string_ | `0`|
+| buttonSpace           | 按钮间距                        | _string_ \| _number_ | `0`|
 | showConfirmButton     | 是否展示确认按钮                 | _boolean_ | `true`|
 | showCancelButton      | 是否展示取消按钮                 | _boolean_ | `false`|
 | confirmButtonText     | 确认按钮文案                     | _ResourceStr_  | `确认` |
 | cancelButtonText      | 取消按钮的文案                   | _ResourceStr_  | `取消` |
-| buttonFontSize        | 按钮文字大小                     | _number_ \| _string_ | `16` |
+| buttonFontSize        | 按钮文字大小                     | _string_ \| _number_ | `16` |
 | confirmButtonColor    | 确认按钮的文字颜色, 当 `theme` 为 `round-button` 时默认为 `#fff` | _ResourceColor_ | `#3D8AF2` |
 | confirmButtonBgColor  | 确认按钮背景色, 当 `theme` 为 `round-button` 时默认为 `#3D8AF2` | _ResourceColor_  | `#fff` |
 | cancelButtonColor     | 取消按钮的文字颜色                | _ResourceColor_| `#646566` |
@@ -382,8 +382,8 @@ struct DemoPage {
 | closeOnClickOverlay   | 是否允许点击遮罩层关闭                          | _boolean_ | `false`|
 | closeOnBackPress      | 是否允许返回键关闭                             | _boolean_ | `true`|
 | alignment             | 弹窗在竖直方向上的对齐方式, 可选值 `top` `center` `bottom` | _string_ | `center`|
-| offsetX               | 弹窗相对alignment所在位置的横向偏移量            | _number_ \| _string_ | `0` |
-| offsetY               | 弹窗相对alignment所在位置的纵向偏移量            | _number_ \| _string_ | `0` |
+| offsetX               | 弹窗相对alignment所在位置的横向偏移量            | _string_ \| _number_ | `0` |
+| offsetY               | 弹窗相对alignment所在位置的纵向偏移量            | _string_ \| _number_ | `0` |
 | keyboardAvoidMode     | 设置弹窗是否在拉起软键盘时进行自动避让| _<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#keyboardavoidmode12%E6%9E%9A%E4%B8%BE%E8%AF%B4%E6%98%8E" target="_blank">KeyboardAvoidMode</a>_ | `DEFAULT` |
 | keyboardAvoidDistance | 弹窗避让键盘后，和键盘之间的距离 | _<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-graphics#lengthmetrics" target="_blank">LengthMetrics</a>_ | `16vp` |
 | levelMode             | 弹窗显示层级 | _<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-promptaction#levelmode15%E6%9E%9A%E4%B8%BE%E8%AF%B4%E6%98%8E" target="_blank">LevelMode</a>_ | `0` |

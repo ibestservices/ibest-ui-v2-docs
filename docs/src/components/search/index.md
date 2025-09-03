@@ -195,11 +195,11 @@ struct DemoPage {
 | label        | 输入框左侧文本                                  | _ResourceStr_  | `''` |
 | placeholder  | 占位文字                                       | _ResourceStr_  | `''` |
 | placeholderColor  | 占位文字颜色                              | _ResourceColor_  | `#c8c9cc` |
-| contentHeight| 搜索框高度                                     | _number_ \| _string_ | `34` |
+| contentHeight| 搜索框高度                                     | _string_ \| _number_ | `34` |
 | outBgColor   | 外侧背景色                                     | _ResourceColor_ | `#fff` |
 | innerBgColor | 内侧背景色                                     | _ResourceColor_ | `#f7f8fa` |
 | isRound      | 是否为胶囊搜索框, 优先级大于 `radius`             | _boolean_ |  `false`  |
-| radius       | 圆角大小                                       | _number_ \| _string_ | `0` |
+| radius       | 圆角大小                                       | _string_ \| _number_ | `0` |
 | leftIcon     | 左侧图标                                       | _ResourceStr_ | `-` |
 | leftIconColor| 左侧图标颜色                                    | _ResourceColor_ |  `#969799`  |
 | clearable    | 是否可清空                                      | _boolean_ |  `true`  |
@@ -214,7 +214,7 @@ struct DemoPage {
 | customRightButton| 自定义右侧按钮       | _CustomBuilder_ | `-` |
 | textColor     | 输入框文字颜色          | _ResourceColor_ |  `#323233`  |
 | labelColor    | 左侧文本颜色            | _ResourceColor_ |  `#323233`  |
-| textFontSize  | 输入框文字大小          | _number_ \| _string_ |  `14`  |
+| textFontSize  | 输入框文字大小          | _string_ \| _number_ |  `14`  |
 | rightBtnBgColor | 右侧按钮背景色        | _ResourceColor_ |  `#fff`  |
 | rightBtnPressBgColor| 右侧按钮按压背景色 | _ResourceColor_ |  `#f2f3f5`  |
 

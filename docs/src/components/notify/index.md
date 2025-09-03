@@ -169,7 +169,7 @@ struct DemoPage {
 | type        | 通知背景类型, 可选 `primary` `success` `warning` `danger` | _string_  | `danger` |
 | duration    | 显示时长                                      | _number_  |  `1500`  |
 | color       | 文字颜色                                      | _ResourceColor_ | `#fff` |
-| fontSize    | 文字大小                                       | _number_ \| _string_ |  `14`  |
+| fontSize    | 文字大小                                       | _string_ \| _number_ |  `14`  |
 | backgroundColor| 自定义背景颜色                               | _ResourceColor_ | `''` |
 | customContent| 自定义通知内容                                 | _CustomBuilder_ |  `-`  |
 | onOpen      | 通知显示后触发                                  | _() => void_ |  `-`  |

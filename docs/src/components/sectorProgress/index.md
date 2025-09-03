@@ -148,7 +148,7 @@ struct DemoPage {
 | target       | 目标进度                              | _number_  | `100` |
 | text         | 中间文字                              | _string_ |  `''`  |
 | textColor    | 中间文字颜色                           | _ResourceColor_ |  `#323233`  |
-| textFontSize | 中间文字大小                           | _number_ \| _string_  | `16` |
+| textFontSize | 中间文字大小                           | _string_ \| _number_  | `16` |
 | textFontWeight| 中间文字字重                          | _FontWeight_ |  `600`  |
 | clockwise    | 是否顺时针                             | _boolean_  | `true` |
 | startPosition| 进度条起始位置, 可选值 `left` `right` `top` `bottom` | _string_  | `top` |

@@ -203,10 +203,10 @@ struct LoadingPage {
 | ----- | --------------| ------------------------| -------- |
 | loadingIconType       | 类型，可选值为 `spinner`  | _string_   | `circular`   |
 | loadingText           | 加载的文案                | _ResourceStr_  |   `''`   |
-| loadingSize           | 加载图标大小              | _number_ \| _string_   |  `30`    |
+| loadingSize           | 加载图标大小              | _string_ \| _number_   |  `30`    |
 | loadingColor          | loading 的颜色           | _ResourceColor_ | `#c8c9cc` |
 | loadingTextColor      | loading 的文字颜色        | _ResourceColor_ | `#c8c9cc` |
-| loadingTextFontSize   | loading 的文字内容大小     | _number_ \| _string_ | `14`    |
+| loadingTextFontSize   | loading 的文字内容大小     | _string_ \| _number_ | `14`    |
 | loadingStrokeWidth    | loading 图形的线条宽度     | _Length_    | `2`  |
 | loadingMaskColor      | loading 的遮罩颜色        | _ResourceColor_| `transparent`  |
 | spinnerStrokeHeight   | `spinner` 图的每条线的长度 | _string_ \| _number_   | `8` |

@@ -123,7 +123,7 @@ struct DemoPage {
 | maxLength    | 最大长度		                                   | _number_ | `8` |
 | title        | 顶部标题文字                                   | _ResourceStr_ | `''` |
 | confirmBtnText | 确认按钮文字                                 | _ResourceStr_ | `完成` |
-| keyHeight    | 按键高度                                       | _number_ \| _string_ | `42` |
+| keyHeight    | 按键高度                                       | _string_ \| _number_ | `42` |
  
 ### Events
 

@@ -82,8 +82,8 @@ struct DemoPage {
 | ------------| -------------------------------------| ---------| ---------- |
 | name        | 图标名称或图标地址, 具体名称可参考上方图标合集| _ResourceStr_  | `''` |
 | color       | 图标颜色                              | _ResourceColor_ |  `''`  |
-| iconSize    | 图标大小                              | _number_ \| _string_ | `16` |
-| iconRadius  | 图标圆角                              | _number_ \| _string_ | `0` |
+| iconSize    | 图标大小                              | _string_ \| _number_ | `16` |
+| iconRadius  | 图标圆角                              | _string_ \| _number_ | `0` |
 
 ### Events
 

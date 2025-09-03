@@ -137,7 +137,7 @@ struct DemoPage {
 | ------------ | ----------------------------------- | --------- | ---------- |
 | time         | 倒计时时长, 单位 毫秒                  | _number_  | `0` |
 | color        | 文字颜色                              | _ResourceColor_ | `#323232` |
-| fontSize     | 文字大小                              | _number_ \| _string_ | `16` |
+| fontSize     | 文字大小                              | _string_ \| _number_ | `16` |
 | format       | 时间格式                              | _string_ |  `HH:mm:ss`  |
 | autoStart    | 是否自动开始倒计时                      | _boolean_ |  `true`  |
 | controller   | 组件库控制器                           | _IBestCountDownController_ |  `-`  |

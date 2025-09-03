@@ -221,10 +221,10 @@ struct DemoPage {
 | min           | 最小值                                      | _string_ \| _number_ | `1` |
 | max           | 最大值                                      | _string_ \| _number_ | `Infinity` |
 | autoFixed     | 是否自动校正超出限制范围的数值                  | _boolean_            | `true`     |
-| step          | 步长，每次点击时改变的值                       | _number_ \| _string_ | `1`        |
-| inputWidth    | 输入框宽度                                   | _number_ \| _string_ | `32`    |
-| buttonSize    | 按钮大小以及输入框高度                         | _number_ \| _string_ | `27`    |
-| decimalLength | 固定显示的小数位数                             | _number_ \| _string_ |  `0` |
+| step          | 步长，每次点击时改变的值                       | _string_ \| _number_ | `1`        |
+| inputWidth    | 输入框宽度                                   | _string_ \| _number_ | `32`    |
+| buttonSize    | 按钮大小以及输入框高度                         | _string_ \| _number_ | `27`    |
+| decimalLength | 固定显示的小数位数                             | _string_ \| _number_ |  `0` |
 | integer       | 是否只允许输入整数                             | _boolean_    | `false`    |
 | disabled      | 是否禁用步进器                                | _boolean_     | `false`    |
 | disablePlus   | 是否禁用增加按                                | _boolean_     | `false`    |
@@ -235,8 +235,8 @@ struct DemoPage {
 | showInput     | 是否显示输入框                                 | _boolean_    | `true`     |
 | longPress     | 是否开启长按手势，开启后可以长按增加和减少按钮       | _boolean_   | `true`     |
 | validateTime  | 多少毫秒触发自动校验修正，为 `0` 时不修正，单位 `ms`| _number_    | `1000`     |
-| iconSize      | 输入框中图标的宽度                              | _number_ \| _string_ | `20` |
-| buttonRadius  | 按钮的圆角                                     | _number_ \| _string_ | `2`  |
+| iconSize      | 输入框中图标的宽度                              | _string_ \| _number_ | `20` |
+| buttonRadius  | 按钮的圆角                                     | _string_ \| _number_ | `2`  |
 
 ### Events
 

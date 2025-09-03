@@ -181,9 +181,9 @@ struct DemoPage {
 | ------------ | ---------------------------------------------| --------- | ---------- |
 | value        | 当前输入框的值, 支持双向绑定                      | _string_  | `''` |
 | inputLength  | 输入框长度                                     | _number_ |  `6`  |
-| inputHeight  | 输入框高度                                     | _number_ \| _string_ | `50` |
-| space        | 格子间距                                       | _number_ \| _string_ | `0` |
-| radius       | 格子圆角,当 `space` 不为0时有效                  | _number_ \| _string_ | `5` |
+| inputHeight  | 输入框高度                                     | _string_ \| _number_ | `50` |
+| space        | 格子间距                                       | _string_ \| _number_ | `0` |
+| radius       | 格子圆角,当 `space` 不为0时有效                  | _string_ \| _number_ | `5` |
 | isHighlightCurrent | 是否高亮当前正在输入的格子,当 `space` 不为0时有效| _boolean_ | `true` |
 | highlightColor | 格子高亮颜色,当 `space` 不为0时有效            | _ResourceColor_ | `#3D8AF2` |
 | isHidden     | 是否隐藏内容                                   | _boolean_ | `true` |
@@ -195,9 +195,9 @@ struct DemoPage {
 | bdColor      | 边框线颜色                                     | _ResourceColor_ |  `#ebedf0`  |
 | cellBgColor  | 格子背景色                                     | _ResourceColor_ |  `#fff`  |
 | cellTextColor| 格子文字颜色                                   | _ResourceColor_ |  `#323233`  |
-| dotFontSize  | 黑点大小                                       | _number_ \| _string_ |  `40`    |
-| textFontSize | 明文展示时文字大小                               | _number_ \| _string_ |  `20`    |
-| tipFontSize  | 提示文字大小                                     | _number_ \| _string_ |  `16`    |
+| dotFontSize  | 黑点大小                                       | _string_ \| _number_ |  `40`    |
+| textFontSize | 明文展示时文字大小                               | _string_ \| _number_ |  `20`    |
+| tipFontSize  | 提示文字大小                                     | _string_ \| _number_ |  `16`    |
 | autoFocus    | 自动聚焦                                       | _boolean_ |  `false`  |
 | showCursor   | 是否显示闪烁光标                                | _boolean_ |  `true`  |
 | highlightType | 格子高亮类型, 可选值为 `shadow` `border`        | _string_ |  `border`  |

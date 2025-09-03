@@ -532,8 +532,8 @@ struct DemoPage {
 | title        | 弹出层标题                                              | _ResourceStr_  | `请选择` |
 | options      | 可选项数据源                                            | _IBestCascaderOption[]_ |`[]`|
 | activeColor  | 选中项颜色                                              | _ResourceColor_ | `#3D8AF2`  |
-| listHeight   | 滚动区域高度                                             | _number_ \| _string_ | `350`|
-| itemHeight   | 单个选项高度                                             | _number_ \| _string_ | `40`|
+| listHeight   | 滚动区域高度                                             | _string_ \| _number_ | `350`|
+| itemHeight   | 单个选项高度                                             | _string_ \| _number_ | `40`|
 | lazy         | 是否开启动态加载                                         | _boolean_ | `false` |
 | lazyLoad     | 异步加载函数,`value` 为当前点击的选项值, `level` 为下一个选项的层级, 默认从0开始, `cb` 为接收结果的回调函数 | _(value: string \| number, level: number, cb: (arr: IBestCascaderOption[]) => void) => void_|`null`|
 

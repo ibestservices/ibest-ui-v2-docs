@@ -200,19 +200,19 @@ struct ButtonPage {
       IBestButton({
         text: '按钮',
         type: 'primary',
-        iconPositon: "right",
+        iconPosition: "right",
         icon: 'arrow'
       })
       IBestButton({
         text: '按钮',
         type: 'primary',
-        iconPositon: "top",
+        iconPosition: "top",
         icon: $r('app.media.app_icon')
       })
       IBestButton({
         type: 'primary',
         text: '按钮',
-        iconPositon: "bottom",
+        iconPosition: "bottom",
         iconBuilder: (): void => this.Arrow()
       })
     }

@@ -154,10 +154,10 @@ struct DemoPage {
 | activeBgColor| 背景选中颜色                           | _ResourceColor_ | `#1989fa` |
 | disabledBgColor| 背景禁用颜色                         | _ResourceColor_ | `#f7f8fa` |
 | bdColor      | 边框颜色                              | _ResourceColor_ | `#f5f5f7` |
-| pageCount    | 总页数                                | _number_ \| _string_ |  `''`  |
-| totalItems   | 总数量                                | _number_ \| _string_ |  `''`  |
-| showPageSize | 每页显示页码数                          | _number_ \| _string_ |  `5`  |
-| itemsPerPage | 每页条目数                             | _number_ \| _string_ |  `10`  |
+| pageCount    | 总页数                                | _string_ \| _number_ |  `''`  |
+| totalItems   | 总数量                                | _string_ \| _number_ |  `''`  |
+| showPageSize | 每页显示页码数                          | _string_ \| _number_ |  `5`  |
+| itemsPerPage | 每页条目数                             | _string_ \| _number_ |  `10`  |
 | forceEllipses| 是否显示省略号                          | _boolean_ | `false` |
 | showPrevButton| 是否显示上一页按钮                      | _boolean_ | `true` |
 | showNextButton| 是否显示下一页按钮                      | _boolean_ | `true` |

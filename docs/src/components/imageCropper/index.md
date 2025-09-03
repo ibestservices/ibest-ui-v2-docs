@@ -185,14 +185,14 @@ struct DemoPage {
 
 | 参数             | 说明                               | 类型       | 默认值      |
 | ----------------| -----------------------------------| ----------| -----------|
-| componentWidth  | 组件宽度                            | _number_ \| _string_  | `100%` |
-| componentHeight | 组件高度                            | _number_ \| _string_   | `100%` |
+| componentWidth  | 组件宽度                            | _string_ \| _number_  | `100%` |
+| componentHeight | 组件高度                            | _string_ \| _number_   | `100%` |
 | bgColor         | 背景色                              | _ResourceColor_ |  `#000`  |
 | url             | 需要裁剪的图片路径, 支持 `在线图片` `base64` `file协议` 格式。 | _ResourceStr_ | `''` |
 | shape           | 裁剪形状, 可选值 `rect` `circle`     | _string_        | `rect` |
 | maskColor       | 蒙层颜色                            | _ResourceColor_ | `rgba(0,0,0,0.6)` |
-| centerWidth     | 裁剪区域宽度或直径                    | _number_ \| _string_  | `60%` |
-| centerHeight    | 裁剪区域高度, 仅当 `shape` 为 `rect` 时有效| _number_ \| _string_ | `60%` |
+| centerWidth     | 裁剪区域宽度或直径                    | _string_ \| _number_  | `60%` |
+| centerHeight    | 裁剪区域高度, 仅当 `shape` 为 `rect` 时有效| _string_ \| _number_ | `60%` |
 | showBorder      | 是否显示裁剪区域边框                  | _boolean_   | `true` |
 | bdColor         | 裁剪区域边框颜色                      | _ResourceColor_ | #ebedf0` |
 | maxScale        | 最大缩放比例                         | _number_   | `2` |

@@ -412,20 +412,20 @@ struct DemoPage {
 | arrowDirection | 箭头方向，可选值为 left up down         | _string_              | `right`  |
 | leftIcon| 左侧图标                                      | _ResourceStr_         |          |
 | leftIconColor  | 左侧图标颜色                            | _ResourceStr_ |          |
-| leftIconSize   | 左侧图标大小                             | _number_ \| _string_ |   `16`  |
+| leftIconSize   | 左侧图标大小                             | _string_ \| _number_ |   `16`  |
 | rightIcon      | 右侧图标                                 | _ResourceStr_|          |
 | rightIconColor | 右侧图标颜色                             | _ResourceStr_ |          |
-| rightIconSize  | 右侧图标大小                             | _number_ \| _string_|   `16`  |
-| leftIconMarginRight| 左侧图标与title间距                  | _number_ \| _string_ |   `4`  |
-| rightIconMarginLeft| 右侧图标与内容间距                    | _number_ \| _string_ |   `4`  |
-| leftContentWidth| 左侧内容宽度                             | _number_ \| _string_ |   ``  |
-| leftRightPadding| 左右padding                             | _number_ \| _string_ |   `16`  |
+| rightIconSize  | 右侧图标大小                             | _string_ \| _number_|   `16`  |
+| leftIconMarginRight| 左侧图标与title间距                  | _string_ \| _number_ |   `4`  |
+| rightIconMarginLeft| 右侧图标与内容间距                    | _string_ \| _number_ |   `4`  |
+| leftContentWidth| 左侧内容宽度                             | _string_ \| _number_ |   ``  |
+| leftRightPadding| 左右padding                             | _string_ \| _number_ |   `16`  |
 | borderSizeType  | 底部分割线尺寸类型, 可选值 `full` `center` `right` | _string_ | `center` |
 | borderLeft      | 底部分割线left值, `borderSizeType` 为 `right` 时有效| _Dimension_| `16` |
 | bdColor         | 底部分割线颜色                            | _ResourceColor_| `#ebedf0` |
-| titleFontSize   | 标题字体大小                              | _number_ \| _string_ |   `''`  |
-| labelFontSize   | 描述信息字体大小                           | _number_ \| _string_ |   `''`  |
-| arrowSize       | 箭头大小                                  | _number_ \| _string_ |   `14`  |
+| titleFontSize   | 标题字体大小                              | _string_ \| _number_ |   `''`  |
+| labelFontSize   | 描述信息字体大小                           | _string_ \| _number_ |   `''`  |
+| arrowSize       | 箭头大小                                  | _string_ \| _number_ |   `14`  |
 | arrowColor      | 箭头颜色                                  | _ResourceColor_ |   `#323233`  |
 | cellPadding     | 单元格内边距                              | _Length_ \| _Padding_ \| _LocalizedPadding_ | `0`|
 

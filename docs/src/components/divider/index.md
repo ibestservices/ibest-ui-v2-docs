@@ -160,16 +160,16 @@ struct DemoPage {
 | dashed       | 是否使用虚线                          | _boolean_  | `false` |
 | hairline     | 是否显示细线                          | _boolean_  | `true` |
 | vertical     | 是否为垂直方向                         | _boolean_  | `false` |
-| lineHeight   | 分割线高度, 仅垂直时有效                | _number_ \| _string_  | `14` |
+| lineHeight   | 分割线高度, 仅垂直时有效                | _string_ \| _number_  | `14` |
 | lineColor    | 分割线颜色                            | _ResourceColor_ |  `#ebedf0` |
 | text         | 文本内容, 仅水平时生效                  | _ResourceStr_  | `''` |
 | color        | 文本内容颜色, 仅水平时生效               | _ResourceColor_ | `#969799` |
-| textFontSize | 文本字体大小, 仅水平时生效               | _number_ \| _string_  | `14` |
-| textLineSpace| 文本与线段间距, 仅水平时生效             | _number_ \| _string_  | `16` |
-| leftLineWidth| 左侧线段宽度, 仅水平时生效               | _number_ \| _string_  | `''` |
-| rightLineWidth|右侧线段宽度, 仅水平时生效               | _number_ \| _string_  | `''` |
-| leftRightPadding| 左右内边距, 仅水平时生效              | _number_ \| _string_  | `0` |
-| leftRightMargin| 左右外边距, 仅垂直时生效               | _number_ \| _string_  | `8` |
+| textFontSize | 文本字体大小, 仅水平时生效               | _string_ \| _number_  | `14` |
+| textLineSpace| 文本与线段间距, 仅水平时生效             | _string_ \| _number_  | `16` |
+| leftLineWidth| 左侧线段宽度, 仅水平时生效               | _string_ \| _number_  | `''` |
+| rightLineWidth|右侧线段宽度, 仅水平时生效               | _string_ \| _number_  | `''` |
+| leftRightPadding| 左右内边距, 仅水平时生效              | _string_ \| _number_  | `0` |
+| leftRightMargin| 左右外边距, 仅垂直时生效               | _string_ \| _number_  | `8` |
 | dashGap <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.1</span>| 虚线间距, 仅在dashed为true时生效            | _LengthMetrics_ | `-`   |
 | dashWidth <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.1</span>| 虚线线段长度, 仅在dashed为true时生效            | _LengthMetrics_ | `-`   |
 | rightLineColor <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.1</span>| 右侧线颜色, 默认与lineColor一致            | _ResourceColor_ | `''`   |

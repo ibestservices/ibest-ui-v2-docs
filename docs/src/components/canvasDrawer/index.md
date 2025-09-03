@@ -233,12 +233,12 @@ struct DemoPage {
 
 | 参数          | 说明                               | 类型       | 默认值      |
 | ------------ | -----------------------------------| ----------| -----------|
-| canvasWidth  | 画板宽度                             | _number_ \| _string_  | `0` |
-| canvasHeight | 画板高度                             | _number_ \| _string_   | `0` |
+| canvasWidth  | 画板宽度                             | _string_ \| _number_  | `0` |
+| canvasHeight | 画板高度                             | _string_ \| _number_   | `0` |
 | canvasBgColor| 画板背景色                           | _ResourceColor_ |  `#fff`  |
 | linerGradient| 画板渐变背景色                        | _LinearGradient_ | `-` |
 | canvasBgImg  | 画板背景图片                          | _ResourceStr_ \| _PixelMap_ | `''` |
-| radius       | 画板圆角                             | _number_ \| _string_ | `0` |
+| radius       | 画板圆角                             | _string_ \| _number_ | `0` |
 | contentList  | 要绘制的内容列表                      | _IBestCanvasContent_ | `[]` |
 
 ### IBestCanvasContent 数据结构

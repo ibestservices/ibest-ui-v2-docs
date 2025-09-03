@@ -152,6 +152,49 @@ struct DemoPage {
 ```
 :::
 
+### 自定义内容
+
+![自定义内容](./images/custom-content.png)
+::: tip
+· 通过 `iconBuilder` 插槽可以自定义图标, 通过 `labelBuilder` 插槽可以自定义文本。   
+· 注意：`iconBuilder` 与 `labelBuilder` 只能通过this.xxx方式传递，箭头函数无效。
+:::
+
+::: details 点我查看代码
+```ts
+@Entry
+@ComponentV2
+struct DemoPage {
+  @Local isChecked: boolean = true
+  @Builder iconBuilder($$: IBestCheckboxBuilderParams){
+    IBestIcon({
+      name: "like-o",
+      color: "#fff",
+      iconSize: 18
+    })
+      .opacity($$.checked ? 1 : 0)
+  }
+  @Builder labelBuilder($$: IBestCheckboxBuilderParams) {
+    Text($$.checked ? "选中" : "未选中")
+  }
+  build() {
+    Column({space: 14}){
+      IBestCheckbox({
+        value: this.isChecked!!,
+        iconBuilder: this.iconBuilder,
+        label: '自定义图标'
+      })
+      IBestCheckbox({
+        value: this.isChecked!!,
+        defaultBuilder: this.labelBuilder
+      })
+    }
+    .alignItems(HorizontalAlign.Start)
+  }
+}
+```
+:::
+
 ### 左侧文本
 
 ![左侧文本](./images/label-position-checkbox.png)
@@ -236,6 +279,36 @@ struct DemoPage {
         }
       })
     }
+  }
+}
+```
+:::
+
+### 其他类型
+
+![其他类型](./images/other-type.png)
+::: details 点我查看代码
+```ts
+@Entry
+@ComponentV2
+struct DemoPage {
+  @Local isChecked: string = '1'
+  @Local isChecked1: number = 1
+  build() {
+    Column({ space: 12 }) {
+      IBestCheckbox({
+        value: this.isChecked!!,
+        label: "string：" + this.isChecked,
+        trueValue: "1",
+        falseValue: "2"
+      })
+      IBestCheckbox({
+        value: this.isChecked1!!,
+        label: "number：" + this.isChecked1.toString(),
+        trueValue: 1,
+        falseValue: 0
+      })
+    }.alignItems(HorizontalAlign.Start)
   }
 }
 ```
@@ -540,34 +613,42 @@ struct CheckboxPage {
 
 | 参数          | 说明                                                              | 类型   | 默认值  |
 | ------------- | -----------------------------------------------------------------|-------| ------- |
-| group         | 标识符，通常为一个唯一的字符串，需具备`全局唯一性`或已入栈的页面`唯一性`    | _string_ \| _number_  |  `''`   |
-| name          | 标识符，通常为一个唯一的字符串或数字，同一 `group` 的 `name` 不可重复    | _string_ \| _number_ | `''` |
+| group         | 标识符，通常为一个唯一的字符串，需具备`全局唯一性`或已入栈的页面`唯一性`| _string_ \| _number_  |  `''`   |
+| name          | 标识符，通常为一个唯一的字符串或数字，同一 `group` 的 `name` 不可重复 | _string_ \| _number_ | `''` |
 | label         | 显示的文本                                                        | _ResourceStr_   |  `''`   |
-| value         | 默认是否选中 非双向绑定，如果要获取最新的值请从 `onChange` 回调中获取     | _boolean_       | `false` |
-| iconSize      | 图标大小                                                          | _number_ \| _string_ | `18`|
+| value         | 选中绑定值，支持双向绑定                                           | _string_ \| _number_ \| _boolean_| `false` |
+| iconSize      | 图标大小                                                          | _string_ \| _number_ | `18`|
 | shape         | 形状，可选值为 `square` `round`                                    | _string_        | `round` |
 | disabled      | 是否为禁用状态                                                     | _boolean_       | `false` |
 | labelDisabled | 是否禁用文本内容点击                                                | _boolean_       | `false` |
 | labelPosition | 文本位置，可选值为 `left`                                           | _string_        | `right` |
 | checkedColor  | 选中状态颜色                                                       | _ResourceColor_ | `#1989fa`  |
 | indeterminate | 是否为不确定状态                                                    | _boolean_       | `false` |
-| labelFontSize | 文本字体大小                                                       | _number_ \| _string_ | `16`|
-| bgColor       | 默认背景色     | _ResourceColor_ | `''` |
-| bdColor       | 默认边框色     | _ResourceColor_ | `#ebedf0` |
-| beforeChange  | 改变前的回调     | _(value: boolean) => Promise\<boolean\> \| boolean_ | `-` |
+| labelFontSize | 文本字体大小                                                       | _string_ \| _number_ | `16`|
+| bgColor       | 背景色                                                             | _ResourceColor_ | `''` |
+| bdColor       | 边框色                                                             | _ResourceColor_ | `#ebedf0` |
+| beforeChange  | 改变前的回调                                                        | _(value: boolean) => Promise\<boolean\> \| boolean_ | `-` |
+| trueValue <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.2</span>| 选中时的值，仅单独使用时生效         | _string_ \| _number_ | `'1'` |
+| falseValue <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.2</span>| 未选中时的值，仅单独使用时生效     | _string_ \| _number_ | `'0'` |
 
 ### Checkbox Events
 
 | 事件名   | 说明                   | 回调参数                       |
 | -------- | ----------------------| ------------------------------ |
-| onChange | 选中状态改变的回调事件   | `checked: boolean` |
+| onChange | 选中状态改变的回调事件   | `checked: string \| number \| boolean` |
 
 ### Checkbox 插槽
 
 | 插槽名         | 说明                        | 参数类型    |
 | ---------------| ---------------------------| --------- |
-| defaultBuilder | `label` 的插槽，优先级大于 `label` 属性  | `data: { checked: boolean, disabled: boolean }` |
-| iconBuilder    | 自定义图标插槽，需要自己调整选中与未选中展示的 `UI` 内容 | `data: { checked: boolean, disabled: boolean }` |
+| defaultBuilder | `label` 的插槽，优先级大于 `label` 属性  | `$$: IBestCheckboxBuilderParams` |
+| iconBuilder    | 自定义图标插槽，需要自己调整选中与未选中展示的 `UI` 内容 | `$$: IBestCheckboxBuilderParams` |
+
+### IBestCheckboxBuilderParams 数据类型
+| 参数        | 说明       | 类型     |
+| -----------|------------| --------|
+| checked    | 是否选中    | _boolean_ |
+| disabled   | 是否禁用    | _boolean_ |
 
 ### CheckboxGroup @Props
 

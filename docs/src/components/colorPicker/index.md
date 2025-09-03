@@ -192,16 +192,16 @@ struct DemoPage {
 | colorFormat  | 指定传入的颜色格式, 可选值 `rgb` 、`hex`          | _string_  | `hex` |
 | enableAlpha  | 是否支持透明度选择                               | _boolean_ | `false` |
 | bgColor      | 整体背景色                                     | _ResourceColor_  | `''` |
-| panelHeight  | 面板高度                                       | _number_ \| _string_ | `180`   |
-| cursorWidth   | 颜色选取块宽度(宽高一致)                        | _number_ \| _string_ | `12`   |
-| hueSliderWidth| 色彩滑块宽度                                   | _number_ \| _string_ | `16`   |
-| hueSliderHeight| 色彩滑块高度                                  | _number_ \| _string_ | `8`   |
-| alphaSliderWidth| 透明度滑块宽度                               | _number_ \| _string_ | `8`   |
-| alphaSliderHeight| 透明度滑块高度                              | _number_ \| _string_ | `16`   |
-| panelHueSpace | 颜色面板与色彩滑块之间的距离                      | _number_ \| _string_ | `12`   |
-| panelAlphaSpace| 颜色面板与透明度滑块之间的距离                    | _number_ \| _string_ | `12`   |
+| panelHeight  | 面板高度                                       | _string_ \| _number_ | `180`   |
+| cursorWidth   | 颜色选取块宽度(宽高一致)                        | _string_ \| _number_ | `12`   |
+| hueSliderWidth| 色彩滑块宽度                                   | _string_ \| _number_ | `16`   |
+| hueSliderHeight| 色彩滑块高度                                  | _string_ \| _number_ | `8`   |
+| alphaSliderWidth| 透明度滑块宽度                               | _string_ \| _number_ | `8`   |
+| alphaSliderHeight| 透明度滑块高度                              | _string_ \| _number_ | `16`   |
+| panelHueSpace | 颜色面板与色彩滑块之间的距离                      | _string_ \| _number_ | `12`   |
+| panelAlphaSpace| 颜色面板与透明度滑块之间的距离                    | _string_ \| _number_ | `12`   |
 | predefineColors | 预设颜色                                     | _string[]_ | `[]`   |
-| predefineBlockWidth | 预设颜色块宽度(宽高一致)                    | _number_ \| _string_ | `20`   |
+| predefineBlockWidth | 预设颜色块宽度(宽高一致)                    | _string_ \| _number_ | `20`   |
 
 ### Events
 

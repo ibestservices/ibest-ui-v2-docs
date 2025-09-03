@@ -408,13 +408,13 @@ struct DemoPage {
 | group         | 标识符，通常为一个唯一的字符串，需具备`全局唯一性`或已入栈的页面`唯一性`| _string_ \| _number_ |  `''`  |
 | name          | 标识符，通常为一个唯一的字符串或数字                                  | _string_ \| _number_ \| _boolean_ |  `''` |
 | label         | 显示的文本                                                       | _ResourceStr_  |  `''` |
-| iconSize      | 图标大小                                                         | _number_ \| _string_ |  `18`  |
+| iconSize      | 图标大小                                                         | _string_ \| _number_ |  `18`  |
 | shape         | 形状，可选值为 `round` `square` `dot`                             | _string_             | `round` |
 | disabled      | 是否为禁用状态                                                    | _boolean_            | `false` |
 | labelDisabled | 是否禁用文本内容点击                                               | _boolean_            | `false` |
 | labelPosition | 文本位置，可选值为 `left`                                          | _string_             | `right` |
 | checkedColor  | 选中状态颜色                                                      | _ResourceColor_      |  `#1989fa` |
-| labelFontSize | 文本字体大小                                                      | _number_ \| _string_ |  `16`  |
+| labelFontSize | 文本字体大小                                                      | _string_ \| _number_ |  `16`  |
 | bgColor       | 默认背景色     | _ResourceColor_ | `''` |
 | bdColor       | 默认边框色     | _ResourceColor_ | `#ebedf0` |
 

@@ -138,7 +138,7 @@ struct DemoPage {
 | target       | 目标进度                              | _number_  | `100` |
 | text         | 中间文字                              | _string_ |  `''`  |
 | textColor    | 中间文字颜色                           | _ResourceColor_ |  `#323233`  |
-| textFontSize | 中间文字大小                           | _number_ \| _string_  | `16` |
+| textFontSize | 中间文字大小                           | _string_ \| _number_  | `16` |
 | textFontWeight| 中间文字字重                          | _FontWeight_ |  `600`  |
 | color        | 进度条颜色                             | _ResourceColor_  | `#3d8af2` |
 | bgColor      | 进度条背景颜色                          | _ResourceColor_  | `#fff` |

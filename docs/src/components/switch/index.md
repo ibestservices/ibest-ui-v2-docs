@@ -212,7 +212,7 @@ struct DemoPage {
 | value           | 默认是否选中, 支持双向绑定 | _boolean_ | `false` |
 | disabled        | 是否禁用按钮             | _boolean_ | `false`  |
 | loading         | 是否显示为加载状态        | _boolean_ | `false` |
-| switchSize      | 大小尺寸                | _number_ \| _string_  | `26` |
+| switchSize      | 大小尺寸                | _string_ \| _number_  | `26` |
 | activeColor     | 打开时的背景色           | _ResourceColor_  | `#1989fa` |
 | inactiveColor   | 关闭时的背景色           | _ResourceColor_  | `rgba(120, 120, 128, 0.2)` |
 | loadingActiveColor | 打开时的 loading 颜色，默认跟随 `activeColor`    | _ResourceColor_  |        |

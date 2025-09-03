@@ -186,10 +186,10 @@ struct DemoPage {
 | successText  | 下拉刷新成功提示文案                      | _ResourceStr_ | `''` |
 | successDuration| 下拉刷新成功提示展示时长(ms)             | _number_ | `500` |
 | duration     | 下拉刷新动画时长(ms)                      | _number_ | `300` |
-| headHeight   | 顶部内容高度                             | _number_ \| _string_ | `50` |
+| headHeight   | 顶部内容高度                             | _string_ \| _number_ | `50` |
 | scroller     | 当自定义内容包含List Grid Scroll组件时必传  | _Scroller_ |  `-`  |
 | isEnableSlideUp| 是否启用上滑加载 | _boolean_ | `true` |
-| bottomHeight| 底部加载内容高度                           | _number_ \| _string_ | `50` |
+| bottomHeight| 底部加载内容高度                           | _string_ \| _number_ | `50` |
 | slidingUpText| 上滑过程提示文案                           | _ResourceStr_ | `上滑即可加载...` |
 | slideUpLoosingText| 上滑释放过程提示文案                  | _ResourceStr_ | `释放即可加载...` |
 | slideUpLoadingText| 上滑加载过程提示文案                  | _ResourceStr_ | `加载中...` |

@@ -132,11 +132,11 @@ struct DemoPage {
 | ------------| ---------------------------------------| --------- | ---------- |
 | show        | 是否展示                                | _boolean_  | `false` |
 | bgColor     | 气泡背景色                              | _ResourceColor_ | `#1989fa` | 
-| bubbleSize  | 气泡大小                                | _number_ \| _string_ | `48` |
+| bubbleSize  | 气泡大小                                | _string_ \| _number_ | `48` |
 | shape       | 气泡形状, 可选值为 `circle` `square`      | _string_ | `circle` |
-| radius      | 圆角, 仅shap为 `square` 时生效            | _number_ \| _string_ | `6` |
+| radius      | 圆角, 仅shap为 `square` 时生效            | _string_ \| _number_ | `6` |
 | icon        | 图标                                    | _ResourceStr_ | `-` |
-| iconSize    | 图标大小                                 | _number_ \| _string_ | `24` |
+| iconSize    | 图标大小                                 | _string_ \| _number_ | `24` |
 | iconColor   | 图标颜色                                 | _ResourceColor_ | `#fff` |
 | pos         | 气泡初始位置                              | _IBestEdges_ | `-` |
 | dragAxis    | 可拖拽方向, 可选值为 `x` `y` `xy` `lock`   | _string_  | `y` |

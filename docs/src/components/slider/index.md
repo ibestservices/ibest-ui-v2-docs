@@ -269,8 +269,8 @@ struct DemoPage {
 | max          | 最大值                                | _number_  | `100` |
 | min          | 最小值                                | _number_ |  `0`  |
 | step         | 步长                                  | _number_ | `1` |
-| barHeight    | 进度条高度                             | _number_ \| _string_ | `2` |
-| buttonSize   | 滑块大小, 宽高一致                      | _number_ \| _string_ | `24` |
+| barHeight    | 进度条高度                             | _string_ \| _number_ | `2` |
+| buttonSize   | 滑块大小, 宽高一致                      | _string_ \| _number_ | `24` |
 | activeColor  | 进度条激活态颜色                        | _ResourceColor_ | `#3D8AF2` |
 | barBgColor   | 进度条背景色                           | _ResourceColor_ | `#ebedf0` |
 | disabled     | 是否禁用                              | _boolean_ | `false` |

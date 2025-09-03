@@ -244,38 +244,38 @@ struct DemoPage {
 
 | 参数          | 说明                                  | 类型            | 默认值      |
 | ------------ | -------------------------------------| -------------- | -----------|
-| navBarHeight | 导航栏高度                             | _number_ \| _string_  | `46` |
+| navBarHeight | 导航栏高度                             | _string_ \| _number_  | `46` |
 | navBarBgColor| 导航栏背景颜色                          | _ResourceColor_ | `#fff`    |
 | bgLinearGradient| 导航栏渐变背景色, 优先级高于navBarBgColor| _<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V13/ts-universal-attributes-gradient-color-V13#lineargradient" target="__blank">LinearGradient</a>_ | `-` |
 | leftRightPadding| 导航栏左右内边距                      | _number_ | `16` |
 | isShowBorder | 是否显示下边框线                         | _boolean_ | `true` |
 | title        | 标题文字                                | _ResourceStr_ | `''` |  
 | titleColor   | 标题文字颜色                             | _ResourceColor_ | `#323233` |
-| titleFontSize| 标题文字大小                             | _number_ \| _string_ | `16` |
+| titleFontSize| 标题文字大小                             | _string_ \| _number_ | `16` |
 | titleIcon    | 标题图标                                | _ResourceStr_ | `''` |
 | titleIconColor| 标题图标颜色                            | _ResourceColor_ | `#323233` |
-| titleIconSize| 标题图标大小                             | _number_ \| _string_ | `20` |
-| titleIconRadius| 标题图标圆角                           | _number_ \| _string_ | `0` |
+| titleIconSize| 标题图标大小                             | _string_ \| _number_ | `20` |
+| titleIconRadius| 标题图标圆角                           | _string_ \| _number_ | `0` |
 | titleFontWeight| 标题字重                               | _FontWeight_ | `600` |
 | subTitle     | 副标题文字                               | _ResourceStr_ | `''` |
 | subTitleColor| 副标题文字颜色                            | _ResourceColor_ | `#969799` |
-| subTitleFontSize| 副标题文字大小                         | _number_ \| _string_ | `12` |
+| subTitleFontSize| 副标题文字大小                         | _string_ \| _number_ | `12` |
 | isShowLeft   | 是否显示左侧内容                          | _boolean_ | `true` |
 | leftIcon     | 自定义左侧图标                            | _ResourceStr_ | `arrow-left` |
 | leftIconColor| 左侧图标颜色                              | _ResourceColor_ | `#323233` |
-| leftIconSize| 左侧图标大小                               | _number_ \| _string_ | `20` |
-| leftIconRadius| 左侧图标圆角                             | _number_ \| _string_ | `0` |
+| leftIconSize| 左侧图标大小                               | _string_ \| _number_ | `20` |
+| leftIconRadius| 左侧图标圆角                             | _string_ \| _number_ | `0` |
 | leftLabel    |  左侧文字                                | _ResourceStr_ | `''` |
 | leftLabelColor| 左侧文字颜色                             | _ResourceColor_ | `#323233` |
-| leftLabelFontSize| 左侧文字大小                          | _number_ \| _string_ | `16` |
+| leftLabelFontSize| 左侧文字大小                          | _string_ \| _number_ | `16` |
 | isShowRight  | 是否显示右侧                              | _boolean_ | `false` |
 | rightIcon    | 自定义右侧图标                             | _ResourceStr_ | `''` |
 | rightIconColor | 右侧图标颜色                             | _ResourceColor_ | `#323233` |
-| rightIconSize | 右侧图标大小                              | _number_ \| _string_ | `20` |
-| rightIconRadius| 右侧图标圆角                             | _number_ \| _string_ | `0` |
+| rightIconSize | 右侧图标大小                              | _string_ \| _number_ | `20` |
+| rightIconRadius| 右侧图标圆角                             | _string_ \| _number_ | `0` |
 | rightLabel | 右侧文字                                    | _ResourceStr_ | `''` |
 | rightLabelColor| 右侧文字颜色                             | _ResourceColor_ | `#323233` |
-| rightLabelFontSize| 右侧文字大小                          | _number_ \| _string_ | `16` |
+| rightLabelFontSize| 右侧文字大小                          | _string_ \| _number_ | `16` |
 | isShowStatusBar | 是否显示状态栏                          | _boolean_ | `false` |
 | statusBarBgColor | 状态栏背景色, 默认与导航栏背景色一致       | _ResourceColor_ | `#fff` |
 | isKeepBgColorSame | 是否保持与导航栏背景色一致，默认为是，即状态栏背景色会跟随导航栏背景色变化 | _boolean_ | `true` |

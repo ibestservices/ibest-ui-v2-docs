@@ -172,7 +172,7 @@ struct DemoPage {
 | decimals     | 小数位数                 | _number_ | `0` |
 | useEasing    | 结尾使用缓动              | _boolean_ |  `true`  |
 | separator    | 千分位分隔符              | _string_ |  `''`  |
-| fontSize     | 文字大小                 | _number_ \| _string_ | `30` |
+| fontSize     | 文字大小                 | _string_ \| _number_ | `30` |
 | color        | 字体色                   | _string_ |  `#323233`  |
 | fontWeight   | 字重                     | _FontWeight_ |  `Normal`  |
 | controller   | 组件控制器                | _IBestCountToController_ |  `-`  |
