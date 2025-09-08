@@ -155,7 +155,7 @@ struct DemoPage {
 | groupId      | 分组id                       | _string_ \| _number_  | `''`  |
 | active       | 当前导航项的索引               | _number_  | `0`  |
 | sideWidth    | 宽度                         | _string_ \| _number_ | `80`  |
-| maxHeight    | 是否显示外边框                 | _string_ \| _number_ | `0`  |
+| maxHeight    | 最大高度                      | _string_ \| _number_ | `''`  |
 | titleColor   | 文字颜色                      | _ResourceColor_ | `#323233`  |
 | titleFontSize| 文字大小                      | _string_ \| _number_ | `14`  |
 | bgColor      | 背景色                        | _ResourceColor_ | `#f7f8fa`  |
