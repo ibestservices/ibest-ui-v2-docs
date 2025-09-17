@@ -342,21 +342,21 @@ struct ButtonPage {
 | hairline     | 是否使用细边框                                       | _boolean_ | `false`  |
 | loading      | 是否显示为加载状态                                    | _boolean_ | `false`  |
 | loadingText  | 加载状态提示文字                                      | _ResourceStr_ |  `''`  |
-| loadingSize  | 加载图标大小，如果为-1 默认跟随字体大小                  | _string_ \| _number_  | `-1` |
-| icon         | 按钮图标                   | _ResourceStr_ | `-` |
-| fontColor    | 按钮文字颜色                | _ResourceColor_ | `-` |
-| btnBorderColor | 按钮边框颜色              | _ResourceColor_ | `-` |
-| btnBorderRadius| 按钮圆角                  | _Length_ \| _BorderRadiuses_ \| _LocalizedBorderRadiuses_ | `-` |
-| space          | 文字与图标间距             | _string_ \| _number_ | `4` |
-| fontWeight     | 文字字重                  | _string_ \| _number_ \| FontWeight | `Normal` |
-| btnPadding <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.1</span>| 按钮内边距                          | _Length_ \| _Padding_ \| _LocalizedPadding_ | `-` |
-| stateEffect <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.1</span>| 是否开启按压态                                                | _boolean_ | `true` |
+| loadingSize  | 加载图标大小，如果为-1 默认跟随字体大小                 | _string_ \| _number_  | `-1` |
+| icon         | 按钮图标                                             | _ResourceStr_ | `-` |
+| fontColor    | 按钮文字颜色                                         | _ResourceColor_ | `-` |
+| btnBorderColor | 按钮边框颜色                                       | _ResourceColor_ | `-` |
+| btnBorderRadius| 按钮圆角                                           | _Length_ \| _BorderRadiuses_ \| _LocalizedBorderRadiuses_ | `-` |
+| space          | 文字与图标间距                                      | _string_ \| _number_ | `4` |
+| fontWeight     | 文字字重                                            | _string_ \| _number_ \| FontWeight | `Normal` |
+| btnPadding     | 按钮内边距                                          | _Length_ \| _Padding_ \| _LocalizedPadding_ | `-` |
+| stateEffect    | 是否开启按压态                                      | _boolean_ | `true` |
 
 ### Events
 
-| 事件名     | 说明                                             | 回调参数                         |
+| 事件名     | 说明                                             | 事件类型                         |
 | ---------- | ------------------------------------------------| -------------------------------- |
-| onBtnClick | 点击按钮的回调事件，按钮状态不为加载或禁用时触发     | `-` |
+| onBtnClick | 点击按钮的回调事件，按钮状态不为加载或禁用时触发     | `() => void` |
 
 ### 插槽
 

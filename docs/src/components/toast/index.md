@@ -327,29 +327,29 @@ struct DemoPage {
 
 ### 方法
 
-| 方法名      | 说明                      | 参数                       |  返回值          |
-| ---------- | -------------------------|--------------------------- |------------------|
-| show       |  展示提示                  | _string_ \| _ToastParams_  | toast 实例        |
-| hide       |  隐藏提示                  | -                          | -                |
-| showLoading|  展示loading              |  _LoadingOption_ |  -  |
+| 方法名      | 说明                      | 参数                             |  返回值          |
+| ---------- | --------------------------|----------------------------------|------------------|
+| show       |  展示提示                  | `option: string \| ToastOption`  | `toast 实例`     |
+| showLoading|  展示loading               | `option: LoadingOption`          |  `void`  |
+| hide       |  隐藏提示, 异步方式         | `-`                              | `Promise<void>`  |
 
 ### LoadingOption 数据结构
 | 参数         | 说明                                                     | 类型      | 默认值     |
 | ------------ | --------------------------------------------------------| --------- | ---------|
-| message      | 展示文本内容                                              | _ResourceStr_  | "" |
-| duration     | 展示时长(ms)，值为 0 或 type为 `loading` 时toast 不会自动消失 | _number_   | 1500  |
+| message      | 展示文本内容                                              | _ResourceStr_  | `''` |
+| duration     | 展示时长(ms)，值为 0 或 type为 `loading` 时toast 不会自动消失 | _number_   | `1500`  |
 | loadingType  | 加载图标类型，可选值为 `circular`、`spinner`，type为 `loading` 时有效 | _boolean_   | `circular` |
 
-### ToastParams 数据结构, 继承至LoadingOption
+### ToastOption 数据结构, 继承至LoadingOption
 
-| 参数         | 说明                                                     | 类型      | 默认值     |
-| ------------ | --------------------------------------------------------| --------- | ---------- |
-| type         | 展示类型，可选值为 `success`、`warning`、`fail`、`loading`  | _string_  | "" |
+| 参数         | 说明                                                       | 类型      | 默认值     |
+| ------------ | ----------------------------------------------------------| --------- | ---------- |
+| type         | 展示类型，可选值为 `success`、`warning`、`fail`、`loading`  | _string_  | `''` |
 | wordBreak    | 文本换行方式，可选值为 `normal`、`break-all` 、`break-word` | _string_   | `normal` |
-| icon         | 自定义图标，支持网络图片和本地图片，优先级大于type            | _string_ \| _Resource_   | "" |
-| isShowMask   | 是否显示遮罩                                              | _boolean_   | `false` |
+| icon         | 自定义图标，支持网络图片和本地图片，优先级大于type            | _string_ \| _Resource_   | `''` |
+| isShowMask   | 是否显示遮罩                                               | _boolean_   | `false` |
 | position     | 位置，可选值为 `top` 、`center`、`bottom`                  | _string_   | `center` |
-| offsetY      | 偏移量                                                     | _string_ \| _number_   | `0` |
+| offsetY      | 偏移量                                                    | _string_ \| _number_   | `0` |
 | iconWidth    | 自定义图标宽度                                             | _string_ \| _number_   | `36` |
 | onOpened     | 完全展示后的回调函数                                        | _() => void_ | `-` |
-| onClosed     | 完全关闭后的回调函数                                         | _() => void_ | `-` |
+| onClosed     | 完全关闭后的回调函数                                        | _() => void_ | `-` |

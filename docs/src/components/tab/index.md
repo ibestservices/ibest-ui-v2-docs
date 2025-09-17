@@ -506,7 +506,7 @@ struct DemoPage {
 | tabLineRadius       | 标记线圆角, 仅type为`line`时有效                  | _string_ \| _number_ | `0` |
 | activeFontWeight    | 激活文字字重                                      | _FontWeight_ | `Normal` |
 | activeFontSize      | 激活文字大小                                      | _string_ \| _number_ | `14` |
-| outerRadius <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.1</span>| 外侧圆角 | _Length_ \| _BorderRadiuses_ \| _LocalizedBorderRadiuses_  | `0` |
+| outerRadius         | 外侧圆角                                         | _Length_ \| _BorderRadiuses_ \| _LocalizedBorderRadiuses_  | `0` |
 
 ### IBestTabItem IBestTabItemType  数据结构
 
@@ -517,6 +517,7 @@ struct DemoPage {
 | number        | 自定义显示数量         | _number_ | `-`|
 | icon          | 自定义显示图片         | _ResourceStr_ | `-` |
 | isDisable     | 控制是否禁用          | _boolean_ | `false` |
+| iconPosition <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.3</span>| 图片位置, 可选值为 `left` `right` | _string_ | `left` |
 
 ### 插槽
 | 插槽名     | 说明                      | 类型             |
@@ -525,10 +526,10 @@ struct DemoPage {
 
 ### Events
 
-| 事件名     | 说明                      | 参数类型                |
-| --------- | ------------------------ | ---------------------- |
-| onChange  | tab切换后的回调            | `name: string \| number` |
-| onTabClick| 点击tab后的回调            | `name: string \| number` |
+| 事件名     | 说明                      | 事件类型                |
+| --------- | --------------------------| ---------------------- |
+| onChange  | tab切换后的回调            | `(name: string \| number) => void` |
+| onTabClick| 点击tab后的回调            | `(name: string \| number) => void` |
 
 ## 主题定制
 

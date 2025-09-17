@@ -440,7 +440,7 @@ struct DemoPage {
 
 | 事件名    | 说明                               | 事件类型               |
 | -------- | -----------------------------------| ---------------------- |
-| onChange | 选中状态改变的回调事件               | `name: string \| number \| boolean` |
+| onChange | 选中状态改变的回调事件               | `(name: string \| number \| boolean) => void` |
 
 ### RadioGroup 插槽
 

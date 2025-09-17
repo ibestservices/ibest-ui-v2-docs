@@ -282,14 +282,13 @@ struct DemoPage {
 | titleTextAlign| 标题文字对齐方式, 可选值 `left` `center`   | _string_ | `center` |
 | expandSafeAreaType  | 导航栏扩展区域类型                   | _SafeAreaType[]_ | `[SafeAreaType.SYSTEM, SafeAreaType.CUTOUT]` |
 
-
 ### Events
 
-| 事件名        | 说明                     | 回调参数        |
-| ------------ | ------------------------| -------------- |
-| onLeftClick  | 点击左侧内容区域回调        | `-` |
-| onRightClick | 点击右侧内容区域回调        | `-` |
-| onTitleClick | 点击标题区域回调           | `-` |
+| 事件名        | 说明                      | 事件类型        |
+| ------------ | --------------------------| -------------- |
+| onLeftClick  | 点击左侧内容区域回调        | `() => void` |
+| onRightClick | 点击右侧内容区域回调        | `() => void` |
+| onTitleClick | 点击标题区域回调           | `() => void` |
 
 ### 插槽
 

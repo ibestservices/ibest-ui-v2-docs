@@ -338,10 +338,20 @@ struct DemoPage {
 
 ## API
 
-### IBestDialog @Props
+### IBestDialogUtil 方法
+
+| 方法名      | 说明                      | 参数                              |  返回值          |
+| ---------- | --------------------------|-----------------------------------|------------------|
+| open       |  展示, 返回当前弹窗id      | `option: IBestDialogOption`       | `Promise<string>`|
+| close      |  关闭                     | `id?: string`                     | `void`  |
+
+### IBestDialog @Props & IBestDialogOption 数据结构
+:::tip
+`visible` 只有 `IBestDialog` 可用。
+:::
 
 | 参数                   | 说明                          | 类型      | 默认值  |
-| --------------------- | -----------------------------| ----------| ------ |
+| --------------------- | ------------------------------| ----------| ------ |
 | visible               | 弹窗是否可见, 支持双向绑定       | _boolean_ | `false` |
 | dialogWidth           | 弹窗的宽度                     | _string_ \| _number_  | `320`|
 | dialogBorderRadius    | 弹窗的圆角                     | _Length_ \| _BorderRadiuses_ \| _LocalizedBorderRadiuses_  | `16` |
@@ -385,28 +395,28 @@ struct DemoPage {
 | offsetX               | 弹窗相对alignment所在位置的横向偏移量            | _string_ \| _number_ | `0` |
 | offsetY               | 弹窗相对alignment所在位置的纵向偏移量            | _string_ \| _number_ | `0` |
 | keyboardAvoidMode     | 设置弹窗是否在拉起软键盘时进行自动避让| _<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#keyboardavoidmode12%E6%9E%9A%E4%B8%BE%E8%AF%B4%E6%98%8E" target="_blank">KeyboardAvoidMode</a>_ | `DEFAULT` |
-| keyboardAvoidDistance | 弹窗避让键盘后，和键盘之间的距离 | _<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-graphics#lengthmetrics" target="_blank">LengthMetrics</a>_ | `16vp` |
-| levelMode             | 弹窗显示层级 | _<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-promptaction#levelmode15%E6%9E%9A%E4%B8%BE%E8%AF%B4%E6%98%8E" target="_blank">LevelMode</a>_ | `0` |
+| keyboardAvoidDistance | 弹窗避让键盘后，和键盘之间的距离      | _<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-graphics#lengthmetrics" target="_blank">LengthMetrics</a>_ | `16vp` |
+| levelMode             | 弹窗显示层级                        | _<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-promptaction#levelmode15%E6%9E%9A%E4%B8%BE%E8%AF%B4%E6%98%8E" target="_blank">LevelMode</a>_ | `0` |
 | levelUniqueId         | 页面级弹窗需要显示的层级下的节点 uniqueId, 仅当levelMode属性设置为LevelMode.EMBEDDED时生效 | _number_ | `-` |
-| confirmButtonFontWeight| 确认按钮的文字字重| _FontWeight_ | `Normal` |
+| confirmButtonFontWeight| 确认按钮的文字字重                  | _FontWeight_ | `Normal` |
 | beforeClose           | 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 `Promise` | _(action: cancel \| confirm) => Promise\<boolean\> \| boolean_ | `-` |
 
 ### Events
 
-| 事件名      | 说明                                     | 回调参数                   |
+| 事件名      | 说明                                     | 事件类型                   |
 | ----------- | --------------------------------------- | ------------------------ |
-| onOpen      | 打开弹窗的回调                            | `-` |
-| onClose     | 关闭弹窗的回调                            | `-` |
-| onCancel    | 点击取消按钮的回调                         | `-` |
-| onConfirm   | 点击确认按钮的回调                         | `-` |
+| onOpen      | 打开弹窗的回调                            | `() => void` |
+| onClose     | 关闭弹窗的回调                            | `() => void` |
+| onCancel    | 点击取消按钮的回调                         | `() => void` |
+| onConfirm   | 点击确认按钮的回调                         | `() => void` |
 
 ### 插槽
 
-| 插槽名         | 说明                                                                   | 类型        |
-| -------------- | ---------------------------------------------------------------------| ---------- |
-| titleBuilder   | 标题的插槽，优先级大于 `title` 属性，将会完全接管 `title` 的渲染和间距控制     | _CustomBuilder_ |
-| defaultBuilder | 内容的插槽，优先级大于 `message` 属性，将会完全接管 `message` 的渲染和间距控制 | _CustomBuilder_ |
-| footerBuilder  | 底部按钮部分的插槽，将会完全接管按钮部分的渲染和间距控制                       | _CustomBuilder_ |
+| 插槽名         | 说明                                   | 类型        |
+| -------------- | --------------------------------------| ---------- |
+| titleBuilder   | 标题的插槽，优先级大于 `title` 属性     | _CustomBuilder_ |
+| defaultBuilder | 内容的插槽，优先级大于 `message` 属性   | _CustomBuilder_ |
+| footerBuilder  | 底部按钮部分的插槽                     | _CustomBuilder_ |
 
 ## 主题定制
 

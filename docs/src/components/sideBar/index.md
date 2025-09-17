@@ -179,9 +179,9 @@ struct DemoPage {
 
 ### IBestSideBar Events
 
-| 事件名     | 说明                  | 回调参数                         |
+| 事件名     | 说明                  | 事件类型                         |
 | ----------| ---------------------| -------------------------------- |
-| onChange  | 切换事件回调           | `index: number` |
+| onChange  | 切换事件回调           | `(index: number) => void` |
 
 
 ### IBestSideBarItem @Props
@@ -199,9 +199,9 @@ struct DemoPage {
 
 ### IBestSideBarItem Events
 
-| 事件名        | 说明                  | 回调参数                         |
+| 事件名        | 说明                  | 事件类型                         |
 | -------------| ---------------------| -------------------------------- |
-| onItemClick  | 选项点击回调           | `index: number` |
+| onItemClick  | 选项点击回调           | `(index: number) => void` |
 
 ## 主题定制
 

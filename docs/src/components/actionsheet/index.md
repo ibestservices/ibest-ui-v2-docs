@@ -30,6 +30,21 @@ struct DemoPage {
             actions: ["选项一", "选项二", "选项三"],
             onSelect: (index: number) => {
               IBestToast.show(`点击了第${index}个选项`)
+            },
+            beforeClose: () => {
+              return new Promise((resolve, reject) => {
+                IBestDialogUtil.open({
+                  title: "提示",
+                  message: "确定关闭?",
+                  showCancelButton: true,
+                  onConfirm: () => {
+                    resolve(true)
+                  },
+                  onCancel: () => {
+                    reject(false)
+                  }
+                })
+              })
             }
           })
         }
@@ -350,6 +365,13 @@ struct DemoPage {
 
 ## API
 
+### 方法
+
+| 方法名      | 说明                      | 参数                              |  返回值          |
+| ---------- | --------------------------|-----------------------------------|------------------|
+| show       |  展示, 返回当前弹窗id      | `option: IBestActionSheetOption`  | `Promise<string>`|
+| close      |  关闭                     | `id?: string`                     | `Promise<void>`  |
+
 ### IBestActionSheetOption 数据结构
 :::tip
 部分原生属性会有版本兼容问题,详情可点 <a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/ts-universal-attributes-sheet-transition-V5#sheetoptions" target="__blank">这里</a> 查阅官方文档。
@@ -377,14 +399,14 @@ struct DemoPage {
 | closeOnBackPress   | 是否允许物理关闭                            | _boolean_ |  `true`  |
 | closeOnClickOverlay| 是否允许点击遮罩关闭                         | _boolean_ |  `true`  |
 | customContent   | 自定义内容                                    | _CustomBuilder_ |  `-`  |
-| onOpen     | 打开面板后触发                                      | _() => void_ |  `-`  |
-| onSelect   | 点击选项后触发, 当 `acions` 为一维数组时, `index1` 为选项索引, `index` 为选项标识; 当 `acions` 为二维数组时, `index1` 为点击选项的行索引, `index2` 为当前行的选项索引, `value` 为选项标识 | _(index1: number, index2?: number \| string, value?: string) => void_ |  `-`  |
-| onCancel        | 点击取消按钮触发                                        | _() => void_ |  `-`  |
-| onClose         | 面板关闭后触发                                          | _() => void_ |  `-`  |
-| cancelTextColor | 取消按钮文字颜色        | _ResourceColor_ |  `#646566`  |
+| onOpen      | 打开面板后触发                                    | _() => void_ |  `-`  |
+| onSelect    | 点击选项后触发, 当 `acions` 为一维数组时, `index1` 为选项索引, `index2` 为选项标识; 当 `acions` 为二维数组时, `index1` 为点击选项的行索引, `index2` 为当前行的选项索引, `value` 为选项标识 | _(index1: number, index2?: number \| string, value?: string) => void_ |  `-`  |
+| onCancel        | 点击取消按钮触发                               | _() => void_ |  `-`  |
+| onClose         | 面板关闭后触发                                 | _() => void_ |  `-`  |
+| cancelTextColor | 取消按钮文字颜色                               | _ResourceColor_ |  `#646566`  |
 | beforeClose     | 关闭前的回调函数，返回 false 可阻止关闭，支持返回 Promise    | _() => Promise\<boolean\> \| boolean_ |  `-`  |
-| itemHeight      | 选项高度     | _string_ \| _number_ |  `50`  |
-| radius          | 面板圆角     | _number_ \| _BorderRadiuses_ \| _LocalizedBorderRadiuses_ |  `16`  |
+| itemHeight      | 选项高度                                      | _string_ \| _number_ |  `50`  |
+| radius          | 面板圆角                                      | _number_ \| _BorderRadiuses_ \| _LocalizedBorderRadiuses_ |  `16`  |
 
 ### IBestActionType 数据结构
 | 参数         | 说明                                          | 类型      |

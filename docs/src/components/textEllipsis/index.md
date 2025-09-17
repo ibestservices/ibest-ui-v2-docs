@@ -183,6 +183,6 @@ struct DemoPage {
 
 ### Events
 
-| 事件名         | 说明                                             | 回调参数                         |
+| 事件名         | 说明                                            | 事件类型                         |
 | --------------| ------------------------------------------------| -------------------------------- |
-| onActionClick | 点击操作文字时触发, isExpand 为点击后状态, true 为展开, false 为折叠 | `isExpand: boolean` |
+| onActionClick | 点击操作文字时触发, isExpand 为点击后状态, true 为展开, false 为折叠 | `(isExpand: boolean) => void` |

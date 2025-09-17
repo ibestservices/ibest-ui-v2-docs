@@ -217,17 +217,18 @@ struct DemoPage {
 | textFontSize  | 输入框文字大小          | _string_ \| _number_ |  `14`  |
 | rightBtnBgColor | 右侧按钮背景色        | _ResourceColor_ |  `#fff`  |
 | rightBtnPressBgColor| 右侧按钮按压背景色 | _ResourceColor_ |  `#f2f3f5`  |
+| outPadding <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.3</span>| 外侧内边距             | _Padding_ \| _Length_ \| _LocalizedPadding_ |  `-`  |
 
 ### Events
 
-| 事件名     | 说明         | 回调参数             |
-| ----------| ------------------------------ | -------------------------------- |
-| onInput   | 输入时触发 | `value: string` |
-| onSearch  | 点击输入法右下角按钮触发 | `-` |
-| onInputBlur| 搜索框失焦时触发 | `-` |
-| onInputFocus  | 搜索框聚焦时触发 | `-` |
-| onClear  | 点击清除图标时触发 | `-` |
-| onRightButtonClick  | 点击右侧按钮时触发 | `-` |
+| 事件名        | 说明                       | 事件类型             |
+| --------------| --------------------------| -------------------------------- |
+| onInput       | 输入时触发                 | `(value: string) => void` |
+| onSearch      | 点击输入法右下角按钮触发    | `() => void` |
+| onInputBlur   | 搜索框失焦时触发            | `() => void` |
+| onInputFocus  | 搜索框聚焦时触发            | `() => void` |
+| onClear       | 点击清除图标时触发          | `() => void` |
+| onRightButtonClick  | 点击右侧按钮时触发    | `() => void` |
 
 ## 主题定制
 

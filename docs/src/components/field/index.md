@@ -649,15 +649,15 @@ struct DemoPage {
 
 ### Events
 
-| 事件名             | 说明                     | 回调参数                         |
-| ------------------| -------------------------| -------------------------------- |
-| onChange          | value变化时触发           | `value: string \| number \| boolean \| (string \| number \| IBestUploaderFile)[]` |
-| onClear           | 点击清除按钮时触发         | `-` |
-| onFieldClick      | 点击组件时触发             | `-` |
-| onFieldFocus      | 输入框获得焦点时触发       | `-` |
-| onFieldBlur       | 输入框失去焦点时触发       | `-` |
-| onLeftIconClick   | 左侧图标点击时触发         | `-` |
-| onRightIconClick  | 右侧图标点击时触发         | `-` |
+| 事件名            | 说明                         | 事件类型                         |
+| ------------------| ----------------------------| -------------------------------- |
+| onChange          | value变化时触发              | `(value: string \| number \| boolean \| (string \| number \| IBestUploaderFile)[]) => void` |
+| onClear           | 点击清除按钮时触发            | `() => void` |
+| onFieldClick      | 点击组件时触发                | `() => void` |
+| onFieldFocus      | 输入框获得焦点时触发          | `() => void` |
+| onFieldBlur       | 输入框失去焦点时触发          | `() => void` |
+| onLeftIconClick   | 左侧图标点击时触发            | `() => void` |
+| onRightIconClick  | 右侧图标点击时触发            | `() => void` |
 
 
 ### 插槽

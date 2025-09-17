@@ -269,6 +269,6 @@ struct DemoPage {
 
 ### Events
 
-| 事件名        | 说明                       | 回调参数              |
+| 事件名        | 说明                       | 事件类型              |
 | -------------| --------------------------| ---------------------|
-| onDrawFinish | 内容全部绘制完毕时触发        | `pixelMap: PixelMap` |
+| onDrawFinish | 内容全部绘制完毕时触发        | `(pixelMap: PixelMap) => void` |

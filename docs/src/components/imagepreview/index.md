@@ -158,11 +158,23 @@ struct DemoPage {
 
 ## API
 
+### 方法
+
+| 方法名      | 说明       | 参数                              |  返回值          |
+| ---------- | -----------|-----------------------------------|------------------|
+| show       |  展示      | `list: IBestPreviewImgType[], option?: IBestImagePreviewOption`| `Promise<void>`|
+| hide       |  关闭      | `-`                                | `void`  |
+
+### IBestPreviewImgType 数据结构
+
+| 说明                 | 类型      | 默认值     |
+| ---------------------| --------- | ---------- |
+| 要预览的图片列表      | _(<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/js-apis-image-V5#pixelmap7" target="__blank">PixelMap</a> \| <a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/ts-types-V5#resourcestr" target="__blank">ResourceStr</a> \| <a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/js-apis-arkui-drawabledescriptor-V5#drawabledescriptor" target="__blank">DrawableDescriptor</a>)[]_ | `[]` |
+
 ### @Props
 
 | 参数         | 说明                                          | 类型      | 默认值     |
 | ------------ | ---------------------------------------------| --------- | ---------- |
-| list         | 要预览的图片列表                                | _(<a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/js-apis-image-V5#pixelmap7" target="__blank">PixelMap</a> \| <a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/ts-types-V5#resourcestr" target="__blank">ResourceStr</a> \| <a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/js-apis-arkui-drawabledescriptor-V5#drawabledescriptor" target="__blank">DrawableDescriptor</a>)[]_ | `[]` |
 | maskColor    | 遮罩背景色                                     | _ResourceColor_  | `rgba(24,24,25,0.95)` |
 | startIndex   | 指定初始显示的图片索引                           | _number_ |  `0`  |
 | swipeDuration| 切换动画时长                                    | _number_ | `200` |

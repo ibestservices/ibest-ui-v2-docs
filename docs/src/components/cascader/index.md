@@ -549,10 +549,10 @@ struct DemoPage {
 
 ### Events
 
-| 事件名     | 说明                                             | 回调参数                         |
-| ----------| ------------------------------------------------ | -------------------------------- |
-| onChange  | 选择单项后触发 | `value: string \| number, selectedOptions: IBestCascaderOption[], index: number` |
-| onConfirm | 全部选择完毕后触发 | `value: IBestCascaderOption[]` |
+| 事件名     | 说明              | 事件类型                         |
+| ----------| ------------------| -------------------------------- |
+| onChange  | 选择单项后触发     | `(value: string \| number, selectedOptions: IBestCascaderOption[], index: number) => void` |
+| onConfirm | 全部选择完毕后触发 | `(value: IBestCascaderOption[]) => void` |
 
 ## 主题定制
 

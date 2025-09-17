@@ -179,9 +179,9 @@ struct DemoPage {
 
 ### Events
 
-| 事件名      | 说明         | 回调参数                         |
+| 事件名      | 说明         | 事件类型                         |
 | ---------- | ------------| -------------------------------- |
-| onFinish   | 结束事件     | `-` |
+| onFinish   | 结束事件     | `() => void` |
 
 ### IBestCountToController 
 

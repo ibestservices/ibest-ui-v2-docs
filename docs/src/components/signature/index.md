@@ -159,11 +159,11 @@ struct DemoPage {
 
 ### Events
 
-| 事件名     | 说明             | 回调参数  |
-| ----------| --------------  | -------- |
-| onDrawEnd | 手指离开屏幕触发   | `-` |
-| onConfirm | 点击确定按钮的回调 | `url: PixelMap` |
-| onClear   | 点击清空按钮的回调 | `-` |
+| 事件名     | 说明             | 事件类型  |
+| ----------| -----------------| -------- |
+| onDrawEnd | 手指离开屏幕触发   | `() => void` |
+| onConfirm | 点击确定按钮的回调 | `(url: PixelMap) => void` |
+| onClear   | 点击清空按钮的回调 | `() => void` |
 
 ### IBestSignatureController 控制器
 | 方法名     | 说明                            | 参数类型  |

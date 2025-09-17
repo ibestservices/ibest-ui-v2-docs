@@ -128,7 +128,7 @@ struct DemoPage {
           groupId: this.groupId,
           name: '2',
           index: 1,
-          title: '标题2',
+          title: '禁用标题2',
           disabled: true
         }){
           Text('技术无非就是那些开发它的人的共同灵魂。').fontSize(14).fontColor("#969799")
@@ -137,7 +137,8 @@ struct DemoPage {
           groupId: this.groupId,
           name: '3',
           index: 2,
-          title: '标题3'
+          title: '只读标题3',
+          readOnly: true
         }){
           Text('在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。').fontSize(14).fontColor("#969799")
         }
@@ -315,9 +316,9 @@ struct DemoPage {
 
 ### IBestCollapse Events
 
-| 事件名     | 说明                  | 回调参数                         |
+| 事件名     | 说明                  | 事件类型                         |
 | ----------| ---------------------| -------------------------------- |
-| onChange  | 面板状态变化回调        | `name: string \| string[]` |
+| onChange  | 面板状态变化回调        | `(name: string \| string[]) => void` |
 
 ### IBestCollapseController 实例方法
 | 方法名      | 说明                  | 参数             | 返回值 |

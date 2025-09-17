@@ -161,6 +161,13 @@ struct DemoPage {
 
 ## API
 
+### 方法
+
+| 方法名      | 说明                      | 参数                              |  返回值          |
+| ---------- | --------------------------|-----------------------------------|------------------|
+| show       |  展示                     | `option: IBestNotifyOption`        | `Promise<void>`  |
+| close      |  关闭                     | `-`                                | `Promise<void>`  |
+
 ### IBestNotifyOption 数据结构
 
 | 参数         | 说明                                         | 类型      | 默认值     |

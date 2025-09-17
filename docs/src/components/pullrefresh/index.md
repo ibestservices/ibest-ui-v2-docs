@@ -199,9 +199,9 @@ struct DemoPage {
 
 ### Events
 
-| 事件名      | 说明                                | 回调参数      |
+| 事件名      | 说明                                | 事件类型      |
 | ---------- | ----------------------------------- | ------------ |
-| onRefresh  | 触发下拉刷新时的回调, pull 为下拉, slideUp 为上滑 | `direction: 'pull' \| 'slideUp'` |
+| onRefresh  | 触发下拉刷新时的回调, pull 为下拉, slideUp 为上滑 | `(direction: 'pull' \| 'slideUp') => void` |
 
 ### 插槽
 

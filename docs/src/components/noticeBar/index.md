@@ -166,7 +166,7 @@ struct DemoPage {
 ### @Props
 
 | 参数         | 说明                                 | 类型      | 默认值     |
-| ------------ | ----------------------------------- | --------- | ---------- |
+| ------------ | -------------------------------------| --------- | ---------- |
 | text         | 通知栏文本内容                         | _string_ | `''` |  
 | mode         | 通知栏模式, 可选值 `closeable` `link`  | _string_  | `-` |
 | barHeight    | 通知栏高度                            | _string_ \| _number_ | `40` |
@@ -180,19 +180,19 @@ struct DemoPage {
 | rightIcon    | 自定义右侧图标                         | _ResourceStr_ |  `''`  |
 | rightIconSize | 右侧图标大小                          | _string_ \| _number_ | `16` |
 | rightIconColor | 右侧图标颜色                         | _ResourceColor_ | `#ed6a0c` |
-| scrollable   | 是否开启滚动播放，内容长度溢出时默认开启    | _boolean_ | `` |
+| scrollable   | 是否开启滚动播放，内容长度溢出时默认开启   | _boolean_ | `` |
 | delay        | 滚动播放延迟时间，单位秒                  | _number_ | `1` |
 | speed        | 滚动播放速度，单位 vp/s                  | _number_ | `60` |
 | wrapable     | 是否开启换行, 为true时滚动不生效          | _boolean_ | `false` |
 | vertical     | 是否开启垂直滚动                         | _boolean_ | `false` |
 | verticalTextList | 垂直滚动文本列表                     | _string[]_ | `[]` |
 | verticalInterval | 垂直滚动文本间隔时间，单位秒           | _number_ | `3` |
-| radius <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">2.0.9</span>| 圆角                            | _number_ | `0` |
+| radius       | 圆角                                    | _number_ | `0` |
 
 ### Events
 
-| 事件名     | 说明                            | 回调参数                         |
-| ---------- | ------------------------------| --------------------------------|
-| onBarClick | 点击通知栏回调                   | `-` |
-| onClose    | 点击右侧关闭图标回调              | `-` |
-| onTextClick | 垂直滚动时,点击文字回调          | `index: number` |
+| 事件名     | 说明                            | 事件类型                         |
+| ---------- | --------------------------------| --------------------------------|
+| onBarClick | 点击通知栏回调                   | `() => void` |
+| onClose    | 点击右侧关闭图标回调              | `() => void` |
+| onTextClick | 垂直滚动时,点击文字回调          | `(index: number) => void` |

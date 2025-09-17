@@ -153,7 +153,7 @@ struct DemoPage {
 
 | 参数         | 说明                                          | 类型      | 默认值     |
 | ------------ | ---------------------------------------------| --------- | ---------- |
-| value        | 当前选中的日期, 支持双向绑定                     | _string[]_  | `[]` | 
+| value        | 当前选中的日期, 支持双向绑定                    | _string[]_  | `[]` | 
 | minDate      | 最小可选日期                                   | _Date_  |    `十年前`     |
 | maxDate      | 最大可选日期                                   | _Date_ | `十年后`  |
 | isShowDay    | 是否显示日列                                   | _boolean_ | `true`|
@@ -171,15 +171,15 @@ struct DemoPage {
 | contentHeight | 整体高度, 仅横向时生效                          | _string_ \| _number_ | `44`   |
 | optionFontSize| 选项字体大小                                    | _string_ \| _number_ | `16`   |
 | lunar         | 是否显示农历                                    | _boolean_ | `false` |
-| radius <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.1</span>| 外部圆角                                       | _string_ \| _number_ | `0`   |
+| radius        | 外部圆角                                       | _string_ \| _number_ | `0`   |
  
 ### Events
 
-| 事件名     | 说明         | 回调参数             |
-| ----------| ------------------------------ | -------------------------------- |
-| onChange | 某一列选项变更后触发 | `value: IBestDatePickerResult` |
-| onConfirm | 点击确定按钮时触发 | `value: IBestDatePickerResult` |
-| onCancel |  点击取消按钮时触发 | `-` |
+| 事件名     | 说明                | 事件类型                                  |
+| ----------| --------------------| -----------------------------------------|
+| onChange  | 某一列选项变更后触发  | `(value: IBestDatePickerResult) => void` |
+| onConfirm | 点击确定按钮时触发    | `(value: IBestDatePickerResult) => void` |
+| onCancel  |  点击取消按钮时触发   | `() => void` |
 
 ### IBestDatePickerResult 数据结构
 | 参数         | 说明                                          | 类型      |

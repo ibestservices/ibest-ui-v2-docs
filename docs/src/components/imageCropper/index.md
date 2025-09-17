@@ -132,6 +132,101 @@ struct DemoPage {
 ```
 :::
 
+### 其他操作
+
+![其他操作](./images/other.png)
+
+::: details 点我查看代码
+```ts
+import { IBestDialogUtil } from "@ibestservices/ibest-ui-v2"
+@Entry
+@ComponentV2
+struct DemoPage {
+  @Local initImg: string = "https://img1.baidu.com/it/u=404530833,1472694862&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=800"
+  @Local curScale: number = 1
+  @Local enableRotate: boolean = false
+  @Local curAngle: number = 0
+  private controller: IBestImageCropperController = new IBestImageCropperController()
+  @Local previewUrl: PixelMap | string = ''
+  @Builder imgBuilder() {
+    Column() {
+      Image(this.previewUrl)
+        .width(260)
+    }
+    .padding(30)
+  }
+  showResult() {
+    IBestDialogUtil.open({
+      title: "截取结果",
+      defaultBuilder: (): void => this.imgBuilder()
+    })
+  }
+  build(){
+    Column({ space: 20 }) {
+      IBestImageCropper({
+        componentHeight: 500,
+        url: this.initImg,
+        centerWidth: 260,
+        centerHeight: 260,
+        maxScale: 3,
+        enableRotate: this.enableRotate,
+        maxAngle: 45,
+        controller: this.controller
+      })
+      Row({ space: 14 }){
+        Text("缩放比例")
+        Row(){
+          IBestSlider({
+            value: this.curScale!!,
+            min: 1,
+            max: 3,
+            step: 0.01,
+            onChange: (value) => {
+              this.controller.setScale(value as number)
+            }
+          })
+        }.layoutWeight(1)
+      }
+      Row({ space: 14 }){
+        Text("开启旋转")
+        IBestSwitch({
+          value: this.enableRotate!!,
+          onChange: () => {
+            this.curAngle = 0
+          }
+        })
+      }.width("100%")
+      Row({ space: 14 }){
+        Text("旋转角度")
+        Row() {
+          IBestSlider({
+            value: this.curAngle!!,
+            min: -45,
+            max: 45,
+            step: 1,
+            onChange: (value) => {
+              this.controller.setAngle(value as number)
+            }
+          })
+        }.layoutWeight(1)
+      }
+      .visibility(this.enableRotate ? Visibility.Visible : Visibility.None)
+      IBestButton({
+        type: "primary",
+        text: "获取结果",
+        onBtnClick: () => {
+          this.controller.getResult(res => {
+            this.previewUrl = res
+            this.showResult()
+          })
+        }
+      })
+    }
+  }
+}
+```
+:::
+
 ### 自定义样式
 
 ![自定义样式](./images/style.png)
@@ -183,6 +278,8 @@ struct DemoPage {
 
 ## API
 
+### @Props
+
 | 参数             | 说明                               | 类型       | 默认值      |
 | ----------------| -----------------------------------| ----------| -----------|
 | componentWidth  | 组件宽度                            | _string_ \| _number_  | `100%` |
@@ -197,8 +294,14 @@ struct DemoPage {
 | bdColor         | 裁剪区域边框颜色                      | _ResourceColor_ | #ebedf0` |
 | maxScale        | 最大缩放比例                         | _number_   | `2` |
 | controller      | 组件实例控制器                        | _IBestImageCropperController_ | `-`  |
+| enableRotate <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.3</span>| 是否开启旋转, 开启后不可移动 | _boolean_ | `false` |
+| maxAngle <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.3</span>| 旋转最大角度, 默认180°, 即顺时针最大180°, 逆时针最大180° | _number_ | `180` |
 
 ### IBestImageCropperController 实例方法
+
 | 方法名      | 说明            | 参数                |   返回值    |
-| ---------- | ---------------| --------------------|------------|
+| ---------- | ----------------| --------------------|------------|
 | getResult  | 获取截取结果     |  `callBack?: (result: PixelMap) => void`  | `Promise<PixelMap>` |
+| setScale <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.3</span>| 设置缩放比例  | `scale: number`| `void` |
+| setAngle <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.3</span>| 设置旋转角度  | `angle: number`| `void` |
+| reset <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.3</span>| 重置 | `-` | `void` |

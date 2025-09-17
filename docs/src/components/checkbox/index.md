@@ -633,9 +633,9 @@ struct CheckboxPage {
 
 ### Checkbox Events
 
-| 事件名   | 说明                   | 回调参数                       |
+| 事件名   | 说明                   | 事件类型                       |
 | -------- | ----------------------| ------------------------------ |
-| onChange | 选中状态改变的回调事件   | `checked: string \| number \| boolean` |
+| onChange | 选中状态改变的回调事件   | `(checked: string \| number \| boolean) => void` |
 
 ### Checkbox 插槽
 
@@ -671,9 +671,9 @@ struct CheckboxPage {
 
 ### CheckboxGroup Events
 
-| 事件名    | 说明                            | 参数类型                  |
+| 事件名    | 说明                            | 事件类型                  |
 | -------- | ------------------------------ | ------------------------ |
-| onChange | 选中状态改变的回调事件，回调参数是选中的 `checkbox` 组件的 `name` 值 | `checkboxNames: (string \| number)[]`  |
+| onChange | 选中状态改变的回调事件，回调参数是选中的 `checkbox` 组件的 `name` 值 | `(checkboxNames: (string \| number)[]) => void`  |
 
 ### CheckboxGroup 插槽
 

@@ -266,13 +266,13 @@ struct DemoPage {
 
 ### Events
 
-| 事件名          | 说明                     | 参数类型                |
-| -------------- | -------------------------| ---------------------- |
+| 事件名          | 说明                        | 事件类型                |
+| ---------------| ----------------------------| ---------------------- |
 | onBeforeInsert | 文件插入前回调, 返回true插入, 返回false则跳过      | `(file: IBestUploaderFile) => boolean` |
-| onChange       | 文件全部插入后回调                                | `insertFile: IBestUploaderFile[], allFile: IBestUploaderFile[]` |
-| onExceed       | 超出限制后回调                                    | `-` |
-| onRemove       | 删除文件后回调                                    | `file: IBestUploaderFile, allFile: IBestUploaderFile[]` |
-| onFileClick    | 点击文件后回调, 仅当isPreviewFullImage为false时生效| `file: IBestUploaderFile, index: number` |
+| onChange       | 文件全部插入后回调            | `(insertFile: IBestUploaderFile[], allFile: IBestUploaderFile[]) => void` |
+| onExceed       | 超出限制后回调                | `() => void` |
+| onRemove       | 删除文件后回调                | `(file: IBestUploaderFile, allFile: IBestUploaderFile[]) => void` |
+| onFileClick    | 点击文件后回调, 仅当isPreviewFullImage为false时生效   | `(file: IBestUploaderFile, index: number) => void` |
 
 ## 主题定制
 

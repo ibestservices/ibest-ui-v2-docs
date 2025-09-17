@@ -123,3 +123,9 @@ struct DemoPage {
 | text      | 关键字    | _ResourceStr_ |
 | color     | 关键字颜色 | _ResourceColor_ |
 | fontSize  | 关键字大小 | _string_ \| _number_ |
+
+### Events
+
+| 事件名          | 说明                                             | 事件类型                         |
+| ---------------| ------------------------------------------------ | -------------------------------- |
+| onKeywordClick <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.3</span>| 高亮词点击事件                                    | `(text: string) => void` |

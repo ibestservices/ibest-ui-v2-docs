@@ -220,11 +220,11 @@ struct DemoPage {
 
 ### Events
 
-| 事件名          | 说明                 | 事件类型                   |
-| -------------- | ---------------------------| -------------------------------------- |
-| onChange       | 开关状态改变的回调事件         | `value: boolean`   |
-| onBeforeChange | 开关状态改变前的回调事件，value 为将要改变的状态, 接收一个 `Promise` 对象，如果 `Promise` 状态为 `resolve` ，则按钮状态变化将继续进行；如果状态为 `reject` ，则将阻止按钮状态的变化。 | `(value: boolean) => Promise<boolean>` |
-| onSwitchClick  | 点击开关的回调事 | `-`  |
+| 事件名          | 说明                          | 事件类型                   |
+| -------------- | ------------------------------| -------------------------------------- |
+| onChange       | 开关状态改变的回调事件          | `(value: boolean) => void`   |
+| onBeforeChange | 开关状态改变前的回调事件，value 为将要改变的状态, 接收一个 `Promise` 对象，如果 `Promise` 状态为 `resolve` ，则按钮状态变化将继续进行；如果状态为 `reject` ，则将阻止按钮状态的变化。 | `(value: boolean) => Promise<boolean> \| boolean` |
+| onSwitchClick  | 点击开关的回调事                | `() => void`  |
 
 ### 插槽
 

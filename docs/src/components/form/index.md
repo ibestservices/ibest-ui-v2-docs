@@ -523,9 +523,7 @@ struct DemoPage {
       // 日历
       IBestCalendarDialog({
         visible: this.visible1!!,
-        onConfirm: value => {
-          this.form.value7 = value[0].dateStr
-        }
+        value: this.form.value7!!
       })
     }
   }
@@ -774,7 +772,7 @@ struct subjectItem{
 
 ### IBestFormController API
 
-| 方法名          |       说明            | 参数                   | 返回值   |
+| 方法名          |说明                   | 参数                   | 返回值   |
 | -------------- | ----------------------| ---------------------- |-------|
 | validate       | 验证整个表单           | `callback?: (valid: boolean, field: FieldValidateResult[]) => void` | `Promise<IBestFormValidateResult>` |
 | validateField  | 验证指定表单           | `prop: string, callBack?: (valid: boolean, field?: FieldValidateResult) => void` | `Promise<IBestFieldValidateResult>` |

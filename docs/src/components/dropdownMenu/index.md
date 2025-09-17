@@ -25,8 +25,36 @@ struct DemoPage {
   @Local value: number = 1
   @Local options: IBestDropdownMenuOption[] = [
     { text: '全部商品', value: 1 },
-    { text: '新款商品', value: 2 },
-    { text: '活动商品', value: 3 }
+    { text: '第一个新款商品', value: 2 },
+    { text: '活动商品', value: 3 },
+    { text: '优惠商品', value: 4 },
+    { text: '价格商品', value: 5 },
+    { text: '折扣商品', value: 6 },
+    { text: '精选商品', value: 7 },
+    { text: '推荐商品', value: 8 },
+    { text: '精选商品', value: 9 },
+    { text: '推荐商品', value: 10 },
+    { text: '新品商品', value: 11 },
+    { text: '优惠商品', value: 12 },
+    { text: '价格商品', value: 13 },
+    { text: '折扣商品', value: 14 },
+    { text: '精选商品', value: 15 },
+    { text: '推荐商品', value: 16 },
+    { text: '新品商品', value: 17 },
+    { text: '优惠商品', value: 18 },
+    { text: '价格商品', value: 19 },
+    { text: '折扣商品', value: 20 },
+    { text: '精选商品', value: 21 },
+    { text: '推荐商品', value: 22 },
+    { text: '新品商品', value: 23 },
+    { text: '优惠商品', value: 24 },
+    { text: '价格商品', value: 25 },
+    { text: '折扣商品', value: 26 },
+    { text: '精选商品', value: 27 },
+    { text: '推荐商品', value: 28 },
+    { text: '新品商品', value: 29 },
+    { text: '优惠商品', value: 30 },
+    { text: '最后一个价格商品', value: 31 }
   ]
   @Local value1: string = ''
   @Local options1: IBestDropdownMenuOption[] = [
@@ -40,7 +68,8 @@ struct DemoPage {
         IBestDropdownItem({
           groupId: this.groupId,
           value: this.value!!,
-          options: this.options
+          options: this.options,
+          maxHeight: 500
         })
         IBestDropdownItem({
           groupId: this.groupId,
@@ -134,15 +163,15 @@ struct DemoPage {
   groupId: string = 'dropdown_menu'
   @Local value: number = 1
   @Local options: IBestDropdownMenuOption[] = [
-    { text: '全部商品', value: 1 },
-    { text: '新款商品', value: 2 },
-    { text: '活动商品', value: 3 }
+    { text: '全部商品', icon: "star", value: 1 },
+    { text: '新款商品', icon: "fire", iconPosition: 'right', value: 2 },
+    { text: '活动商品', icon: "gem", value: 3, disabled: true }
   ]
   @Local value1: string = ''
   @Local options1: IBestDropdownMenuOption[] = [
     { text: '默认排序', value: '' },
     { text: '好评排序', value: 'a' },
-    { text: '销量排序', value: 'b' },
+    { text: '销量排序', value: 'b' }
   ]
   build() {
     Column(){
@@ -234,9 +263,9 @@ struct DemoPage {
 ```
 :::
 
-### 异步选项
+### 异步打开
 
-![异步选项](./images/sync.gif)
+![异步打开](./images/sync.gif)
 
 ::: details 点我查看代码
 ```ts
@@ -255,14 +284,20 @@ struct DemoPage {
           groupId: this.groupId,
           value: this.value!!,
           options: this.options,
-          onOpen: () => {
-            setTimeout(() => {
-              this.options = [
-                { text: '打折商品', value: 1 },
-                { text: '新款商品', value: 2 },
-                { text: '活动商品', value: 3 }
-              ]
-            }, 1500)
+          beforeOpen: () => {
+            if(this.options.length){
+              return true
+            }
+            return new Promise((resolve, reject) => {
+              setTimeout(() => {
+                this.options = [
+                  { text: '打折商品', value: '1' },
+                  { text: '新款商品', value: '2' },
+                  { text: '活动商品', value: '3' }
+                ]
+                resolve(true)
+              }, 1500)
+            })
           }
         })
         IBestDropdownItem({
@@ -351,6 +386,7 @@ struct DemoPage {
 | radius       | 下拉菜单圆角                          | _string_ \| _number_  | `0`  |
 | selectedIcon | 菜单项选中图标                        | _ResourceStr_  | `success`  |
 | controller   | 菜单项控制器                          | _IBestDropdownMenuController_  | `-`  |
+| dropDownIconSize <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.3</span>| 下拉选项图标大小        | _string_ \| _number_  | `14`  |
 
 ### IBestDropdownMenu 插槽
 
@@ -367,6 +403,7 @@ struct DemoPage {
 | options      | 菜单选项列表                          | _IBestDropdownMenuOption[]_  | `[]`  |
 | value        | 当前选中项对应的value，支持双向绑定     | _string_ \| _number_  | `''`  |
 | disabled     | 菜单是否禁用                          | _boolean_ | `false` |
+| maxHeight <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.3</span>| 最大高度        | _string_ \| _number_  | `''` |
 
 ### IBestDropdownMenuOption 数据结构
 | 参数      | 说明                 | 类型            |
@@ -374,15 +411,17 @@ struct DemoPage {
 | text      | 选项文字             | _ResourceStr_ |
 | value     | 选项标识符           | _string_ \| _number_ |
 | disabled  | 选项是否禁用         | _boolean_ |
-| icon      | 选项左侧的图标        | _ResourceStr_ |
+| icon      | 选项左侧的图标       | _ResourceStr_ |
+| iconPosition <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.3</span>| 选项图标位置, 可选值 `left`、`right`, 默认'left' | _string_ |
 
 ### IBestDropdownItem Events
 
-| 事件名     | 说明                                             | 回调参数                         |
-| ---------- | ------------------------------------------------| -------------------------------- |
-| onOpen     | 菜单打开时触发     | `-` |
-| onClose    | 菜单关闭时触发     | `-` |
-| onChange   | 点击选项时触发     | `value: string \| number` |
+| 事件名     | 说明                             | 事件类型                         |
+| ---------- | --------------------------------| -------------------------------- |
+| onOpen     | 菜单打开时触发                   | `() => void` |
+| onClose    | 菜单关闭时触发                   | `() => void` |
+| onChange   | 点击选项时触发                   | `(value: string \| number) => void` |
+| beforeOpen <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.3</span>| 菜单打开前触发，返回false可阻止菜单打开 | `() => Promise<boolean> \| boolean` |
 
 ### IBestDropdownItem 插槽
 

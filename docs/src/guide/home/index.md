@@ -58,7 +58,7 @@ title: "IBest-UI-V2"
 | @ibestservices/ucharts     | 一个类型丰富、高性能、可扩展、支持主题定制的图表库。   | <a href="https://ohpm.openharmony.cn/#/cn/detail/@ibestservices%2Fucharts" target="_blank">地址</a>     |
 | @ibestservices/area-data   | 中国省市区数据，适用于鸿蒙 ArkUI 的 TextPicker 和 IBest-UI 的 IBestCascader 等组件。 | <a href="https://ohpm.openharmony.cn/#/cn/detail/@ibestservices%2Farea-data" target="_blank">地址</a>   |
 | @ibestservices/ibest-orm   | 一个轻量、简单易用、全功能、支持实体关联、事务、自动迁移的鸿蒙开源 ORM 工具库。                                                 | <a href="https://ohpm.openharmony.cn/#/cn/detail/@ibestservices%2Fibest-orm" target="_blank">地址</a>     |
-| @ibestservices/ibest-barcode | 一个轻量、简单易用的鸿蒙开源条形码组件, 支持CODE39、CODE93、CODE128、、EAN13、UPC、ITF、MSI、Pharmacode、Codabar等多种条码类型。 | <a href="https://ohpm.openharmony.cn/#/cn/detail/@ibestservices%2Fibest-barcode" target="_blank">地址</a> |
+| @ibestservices/ibest-barcode | 一个轻量、简单易用的鸿蒙开源条形码组件, 支持CODE39、CODE93、CODE128、EAN13、UPC、ITF、MSI、Pharmacode、Codabar等多种条码类型。 | <a href="https://ohpm.openharmony.cn/#/cn/detail/@ibestservices%2Fibest-barcode" target="_blank">地址</a> |
 
 ## 其它链接
 - [Gitee](https://gitee.com/ibestservices/ibest-ui-v2)
