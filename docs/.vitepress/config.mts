@@ -48,7 +48,6 @@ export default defineConfig({
           { text: "自定义主题样式", link: "/guide/custom-theme/" },
           { text: "颜色模式", link: "/guide/color-mode/" },
           { text: "常见问题", link: "/guide/faq/" },
-          { text: "贡献指南", link: "/guide/contribution/" },
           { text: "设计资源", link: "/guide/design/" },
         ],
       },

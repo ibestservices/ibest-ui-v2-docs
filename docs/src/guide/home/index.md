@@ -80,9 +80,8 @@ title: "IBest-UI-V2"
 [安徽百得思维信息科技有限公司](https://www.ibestservices.com/)：孵化公司
 
 ## 贡献指南
-
-贡献代码请阅读我们的[贡献指南](../contribution/)。   
-使用过程中发现任何问题都可以提 [issue](https://github.com/ibestservices/ibest-ui-v2/issues) 给我们，当然，我们也非常欢迎你给我们发 [PR](https://github.com/ibestservices/ibest-ui-v2/pulls)。
+ 
+使用过程中发现任何问题都可以提 [issue](https://github.com/ibestservices/ibest-ui-v2/issues) 给我们。
 
 ## 贡献者
 
@@ -94,7 +93,7 @@ title: "IBest-UI-V2"
 
 ## 开源协议
 
-本项目基于 `Apache2.0` 协议，请自由地享受和参与开源。
+本项目基于 `MIT` 协议，请自由地享受和参与开源。
 
 ## 打赏
 本项目为开源免费项目，长期维护需要时间和精力。如果您认可它的价值，欢迎通过打赏支持项目发展。您的每一份鼓励，都是我持续更新的动力源泉。   
