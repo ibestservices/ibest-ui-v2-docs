@@ -443,6 +443,5 @@ struct DemoPage {
 | -------------------------------------------|----------------------------------|--------------|
 | ibest_dropdown_menu_bg_color               | 菜单背景色                        | `#fff`   |
 | ibest_dropdown_menu_text_color             | 菜单文字颜色                      | `#323233`   |
-| ibest_dropdown_menu_active_color           | 激活态菜单文字颜色                 | `#1989fa`   |
 | ibest_dropdown_menu_border_color           | 菜单边框颜色                       | `#ebedf0`   |
 | ibest_dropdown_menu_disabled_color         | 菜单禁用时颜色                     | `#969799`   |

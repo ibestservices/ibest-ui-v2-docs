@@ -196,4 +196,3 @@ struct DemoPage {
 | -------------------------------------------|----------------------------------|--------------|
 | ibest_step_background_color                | 背景色                            | `#fff`   |
 | ibest_step_text_color                      | 文字颜色                           | `#969799`   |
-| ibest_step_active_color                    | 激活态文字颜色                     | `#1989fa`   |

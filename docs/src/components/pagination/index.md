@@ -175,8 +175,6 @@ struct DemoPage {
 | 名称                                       | 描述                              | 默认值        |
 | -------------------------------------------|----------------------------------|--------------|
 | ibest_pagination_background                | 分页器背景色                      | `#fff`   |
-| ibest_pagination_active_background         | 分页器激活态背景色                 | `#1989fa`|
-| ibest_pagination_text_color                | 分页器文字颜色                     | `#1989fa` |
 | ibest_pagination_active_text_color         | 分页器激活态文字颜色               | `#fff` |
 | ibest_pagination_item_disabled_color       | 分页器禁用时文字颜色               | `#646566` |
 | ibest_pagination_item_disabled_background  | 分页器禁用时背景色                 | `#f7f8fa` |
