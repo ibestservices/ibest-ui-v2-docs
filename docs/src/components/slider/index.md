@@ -278,7 +278,7 @@ struct DemoPage {
 | vertical     | 是否垂直展示                           | _boolean_ |  `false`  |
 | reverse      | 是否换向                              | _boolean_ |  `false`  |
 | buttonBgColor| 滑块背景颜色                           | _ResourceColor_ |  `#fff`  |
-| ticks <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">2.1.9</span>| 是否显示刻度点   | _boolean_ | `false` |
+| ticks <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.4</span>| 是否显示刻度点   | _boolean_ | `false` |
 
 ### 插槽
 

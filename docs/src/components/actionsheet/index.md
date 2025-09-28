@@ -406,7 +406,7 @@ struct DemoPage {
 | closeOnClickOverlay| 是否允许点击遮罩关闭                         | _boolean_ |  `true`  |
 | customContent   | 自定义内容                                    | _CustomBuilder_ |  `-`  |
 | onOpen      | 打开面板后触发                                    | _() => void_ |  `-`  |
-| onSelect    | 点击选项后触发, 当 `acions` 为一维简单数组或一维对象数组且未指定value时, `index1` 为选项索引, `index2` 为选项名称; 当 `acions` 为一维对象数组且指定value或二维数组时, `index1` 为点击选项的行索引, `index2` 为当前行的选项索引, `value` 为选项标识, `name` 为选项名称。`选项名称`为 <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">2.1.9</span> 版本新增。 | _(index1: number, index2?: number \| string, value?: string, name?: string) => void_ |  `-`  |
+| onSelect    | 点击选项后触发, 当 `acions` 为一维简单数组或一维对象数组且未指定value时, `index1` 为选项索引, `index2` 为选项名称; 当 `acions` 为一维对象数组且指定value或二维数组时, `index1` 为点击选项的行索引, `index2` 为当前行的选项索引, `value` 为选项标识, `name` 为选项名称。`选项名称`为 <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.4</span> 版本新增。 | _(index1: number, index2?: number \| string, value?: string, name?: string) => void_ |  `-`  |
 | onCancel        | 点击取消按钮触发                               | _() => void_ |  `-`  |
 | onClose         | 面板关闭后触发                                 | _() => void_ |  `-`  |
 | cancelTextColor | 取消按钮文字颜色                               | _ResourceColor_ |  `#646566`  |
