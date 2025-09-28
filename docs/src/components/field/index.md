@@ -636,16 +636,16 @@ struct DemoPage {
 | suffix       | 后缀内容                                                    | _ResourceStr_ | `''` |
 | suffixFontColor | 后缀内容颜色                                             | _ResourceColor_ | `#969799` |
 | messageTextAlign| 验证信息对齐方式, 可选值 `left` `center` `right`, 默认与输入框文字对齐方式一致 | _string_ | `left` |
-| inputFontColor <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.2</span>| 输入框文字颜色 | _ResourceColor_ | `#323233` |
-| prefixIcon <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.2</span>| 前缀图标, 优先级高于prefix | _ResourceStr_ | `''` |
-| prefixSize <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.2</span>| 前缀内容大小 | _string_ \| _number_ | `14` |
-| suffixIcon <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.2</span>| 后缀图标, 优先级高于suffix | _ResourceStr_ | `''` |
-| suffixSize <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.2</span>| 后缀内容大小 | _string_ \| _number_ | `14` |
-| borderSizeType <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.2</span>| 底部边框线尺寸类型, 可选值 `full` `center` `right` | _string_ | `center` |
-| borderLeft <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.2</span>| 底部边框线左侧left值 | _Dimension_ | `-` |
-| fieldPadding <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.2</span>| 输入框内边距 | _Length_ \| _Padding_ \| _LocalizedPadding_ | `{left: 16, right: 16, top: 10, bottom: 10}` |
-| bdColor <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.2</span>| 底部边框线颜色 | _ResourceColor_ | `#ebedf0` |
-| showValue <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.2</span>| 右侧要显示的内容，当右侧需要显示的内容与value不同时可使用该属性，仅autosize为false且disabled \| readOnly \| isLink为true时生效 | _ResourceStr_ | `''` |
+| inputFontColor  | 输入框文字颜色 | _ResourceColor_ | `#323233` |
+| prefixIcon      | 前缀图标, 优先级高于prefix | _ResourceStr_ | `''` |
+| prefixSize      | 前缀内容大小 | _string_ \| _number_ | `14` |
+| suffixIcon      | 后缀图标, 优先级高于suffix | _ResourceStr_ | `''` |
+| suffixSize      | 后缀内容大小 | _string_ \| _number_ | `14` |
+| borderSizeType  | 底部边框线尺寸类型, 可选值 `full` `center` `right` | _string_ | `center` |
+| borderLeft      | 底部边框线左侧left值 | _Dimension_ | `-` |
+| fieldPadding    | 输入框内边距 | _Length_ \| _Padding_ \| _LocalizedPadding_ | `{left: 16, right: 16, top: 10, bottom: 10}` |
+| bdColor         | 底部边框线颜色 | _ResourceColor_ | `#ebedf0` |
+| showValue     | 右侧要显示的内容，当右侧需要显示的内容与value不同时可使用该属性，仅autosize为false且disabled \| readOnly \| isLink为true时生效 | _ResourceStr_ | `''` |
 
 ### Events
 

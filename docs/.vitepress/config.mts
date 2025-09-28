@@ -36,7 +36,7 @@ export default defineConfig({
       { text: "首页", link: "/" },
       { text: "指南", link: "/guide/home/", activeMatch: "/guide/" },
       { text: "组件", link: "/components/button/", activeMatch: "/components/" },
-      { text: "v1.0.3", link: "" },
+      { text: "v1.0.4", link: "" },
     ],
     sidebar: [
       {
@@ -65,6 +65,7 @@ export default defineConfig({
         text: "表单组件",
         items: [
           { text: "Calendar 日历", link: "/components/calendar/" },
+          { text: `Caliper 卡尺 <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">2.1.9</span>`, link: "/components/caliper/" },
           { text: "CarInput 车牌输入框", link: "/components/carInput/" },
           { text: "CarKeyboard", link: "/components/carkeyboard/" },
           { text: "Cascader 级联选择器", link: "/components/cascader/" },
@@ -80,8 +81,8 @@ export default defineConfig({
           { text: "Radio 单选框", link: "/components/radio/" },
           { text: "Rate 评分", link: "/components/rate/" },
           { text: "Search 搜索", link: "/components/search/" },
-          { text: "Slider 滑块", link: "/components/slider/" },
           { text: "Signature 签名", link: "/components/signature/" },
+          { text: "Slider 滑块", link: "/components/slider/" },
           { text: "Stepper 步进器", link: "/components/stepper/" },
           { text: "Switch 开关", link: "/components/switch/" },
           { text: "TimePicker 时间选择", link: "/components/timepicker/" },
@@ -118,7 +119,9 @@ export default defineConfig({
           { text: "NoticeBar 通知栏", link: "/components/noticeBar/" },
           { text: "Popover 气泡弹出框", link: "/components/popover/" },
           { text: "Progress 进度条", link: "/components/progress/" },
+          { text: `ReadMore 查看更多 <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">2.1.9</span>`, link: "/components/readMore/" },
           { text: "SectorProgress 扇形进度条", link: "/components/sectorProgress/" },
+          { text: `Segmented 分段控制器 <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">2.1.9</span>`, link: "/components/segmented/" },
           { text: "Skeleton 骨架屏", link: "/components/skeleton/" },
           { text: "Steps 步骤条", link: "/components/steps/" },
           { text: "TextEllipsis 文本省略", link: "/components/textEllipsis/" },

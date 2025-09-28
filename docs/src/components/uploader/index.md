@@ -164,18 +164,13 @@ struct DemoPage {
 @Entry
 @ComponentV2
 struct DemoPage {
-  @Local imgList: IBestUploaderFile[] = [
-		new IBestUploaderFile({
-			url: "https://pic1.zhimg.com/80/v2-03cdb3bff2090e98885fe4951799a1f4_1440w.webp"
-		})
-	]
-  @Builder previewItem(file: IBestUploaderFile){
+  @Local imgList: IBestUploaderFile[] = []
+  @Builder previewItem(file: IBestUploaderFile, index: number){
 		Column() {
 			Image(file.url || file.previewUri)
 				.width("100%")
 			Text(file.name)
 				.width("100%")
-				.fontColor("#fff")
 				.fontSize(14)
 				.textAlign(TextAlign.Center)
 				.maxLines(1)
@@ -190,7 +185,7 @@ struct DemoPage {
     Column(){
       IBestUploader({
         fileList: this.imgList!!,
-        customPreview: (file: IBestUploaderFile): void => this.previewItem(file)
+        customPreview: (file: IBestUploaderFile, index: number): void => this.previewItem(file, index)
       })
     }
   }

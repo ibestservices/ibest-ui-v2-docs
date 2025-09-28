@@ -174,7 +174,7 @@ struct DemoPage {
             ComponentShowContainer({ title: '自定义类型' }) {
               // 密码
               IBestField({
-                value: $value1,
+                value: this.value1!!,
                 label: "密码",
                 placeholder: "请输入密码",
                 type: "password"

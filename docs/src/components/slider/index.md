@@ -127,6 +127,7 @@ struct DemoPage {
       IBestSlider({
         value: this.value!!,
         step: 10,
+        ticks: true,
         onChange: (val) => {
           console.log(val.toString())
         }
@@ -277,6 +278,7 @@ struct DemoPage {
 | vertical     | 是否垂直展示                           | _boolean_ |  `false`  |
 | reverse      | 是否换向                              | _boolean_ |  `false`  |
 | buttonBgColor| 滑块背景颜色                           | _ResourceColor_ |  `#fff`  |
+| ticks <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">2.1.9</span>| 是否显示刻度点   | _boolean_ | `false` |
 
 ### 插槽
 
@@ -285,12 +287,11 @@ struct DemoPage {
 | customButton       | 自定义滑块           | _CustomBuilder_ |
 | customSecondButton | 自定义第二个滑块      | _CustomBuilder_ |
 
-
 ### Events
 
-| 事件名     | 说明                            | 事件类型             |
-| ----------| --------------------------------| --------------------- |
-| onChange  | 进度变化且拖动结束后触发           | `(value: IBestSliderValue) => void` |
+| 事件名     | 说明                    | 事件类型             |
+| ----------| ------------------------| --------------------- |
+| onChange  | 进度变化时触发           | `(value: IBestSliderValue) => void` |
 
 ## 主题定制
 

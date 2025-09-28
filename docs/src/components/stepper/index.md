@@ -211,6 +211,34 @@ struct DemoPage {
 ```
 :::
 
+### 自定义样式
+
+![自定义样式](./images/custom-style.png)
+
+::: details 点我查看代码
+```ts
+@Entry
+@Component
+struct DemoPage {
+  @State value: number = 1
+  build() {
+    Column(){
+      IBestStepper({
+        value: this.value!!,
+        buttonRadius: 999,
+        minusBtnBgColor: "#fff",
+        minusBtnIconColor: "#1989fa",
+        minusBtnBorderColor: "#1989fa",
+        plusBtnBgColor: "#1989fa",
+        plusBtnIconColor: "#fff",
+        inputBgColor: "transparent"
+      })
+    }
+  }
+}
+```
+:::
+
 ## API
 
 ### @Props
@@ -237,6 +265,12 @@ struct DemoPage {
 | validateTime  | 多少毫秒触发自动校验修正，为 `0` 时不修正，单位 `ms`| _number_    | `1000`     |
 | iconSize      | 输入框中图标的宽度                              | _string_ \| _number_ | `20` |
 | buttonRadius  | 按钮的圆角                                     | _string_ \| _number_ | `2`  |
+| minusBtnBgColor <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">2.1.9</span>| 减少按钮背景色 | _ResourceColor_ | `#f2f3f5`|
+| plusBtnBgColor <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">2.1.9</span>| 增加按钮背景色 | _ResourceColor_ | `#f2f3f5`|
+| minusBtnBorderColor <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">2.1.9</span>| 减少按钮边框色 | _ResourceColor_ | `''`|
+| plusBtnBorderColor <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">2.1.9</span>| 增加按钮边框色 | _ResourceColor_ | `''`|
+| minusBtnIconColor <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">2.1.9</span>| 减少按钮图标颜色 | _ResourceColor_ | `#323233`|
+| plusBtnIconColor <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">2.1.9</span>| 增加按钮图标颜色 | _ResourceColor_ | `#323233`|
 
 ### Events
 

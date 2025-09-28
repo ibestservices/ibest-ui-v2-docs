@@ -28,8 +28,8 @@ struct DemoPage {
         onBtnClick: () => {
           IBestActionSheet.show({
             actions: ["选项一", "选项二", "选项三"],
-            onSelect: (index: number) => {
-              IBestToast.show(`点击了第${index}个选项`)
+            onSelect: (index: number, name?: string | number) => {
+              IBestToast.show(`点击了第${index}个选项，名称为${name}`)
             },
             beforeClose: () => {
               return new Promise((resolve, reject) => {
@@ -74,7 +74,10 @@ struct DemoPage {
               { name: '选项一', icon: $r("app.media.icon_like") },// 替换为自己项目的资源
               { name: '选项二', icon: "https://ibestui.ibestservices.com/favicon.ico" },
               { name: '选项三', icon: $r("app.media.icon_star_o") }// 替换为自己项目的资源
-            ]
+            ],
+            onSelect: (index: number, name?: string | number) => {
+              IBestToast.show(`点击了第${index}个选项，名称为${name}`)
+            }
           })
         }
       })
@@ -105,6 +108,9 @@ struct DemoPage {
               { name: '选项三' }
             ],
             cancelText: '取消',
+            onSelect: (index: number, name?: string | number) => {
+              IBestToast.show(`点击了第${index}个选项，名称为${name}`)
+            },
             onCancel: () => {
               IBestToast.show(`取消`)
             }
@@ -203,8 +209,8 @@ struct DemoPage {
               { name: '选项二', value: '2' },
               { name: '选项三', value: '3' }
             ],
-            onSelect: (index: number, value?: string | number) => {
-              IBestToast.show(`点击了第${index}个选项，标识为${value}`)
+            onSelect: (index: number, value?: string | number, name?: string | number) => {
+              IBestToast.show(`点击了第${index}个选项，标识为${value}，名称为${name}`)
             }
           })
         }
@@ -235,23 +241,23 @@ struct DemoPage {
           IBestActionSheet.show({
             actions: [
               [
-                { name: '选项一', value: '1', icon: "https://img0.baidu.com/it/u=3543009939,2144310597&fm=253&fmt=auto&app=138&f=JPEG?w=704&h=500", isDisabled: true },
-                { name: '选项二', value: '2', icon: "https://img0.baidu.com/it/u=2123036823,827931345&fm=253&fmt=auto&app=120&f=JPEG?w=1280&h=800" },
-                { name: '选项三', value: '3', icon: "https://img0.baidu.com/it/u=180300320,2476402890&fm=253&fmt=auto&app=120&f=JPEG?w=1280&h=800" },
-                { name: '选项四', value: '4', icon: "https://img0.baidu.com/it/u=3335548191,973645921&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500" },
-                { name: '选项五', value: '5', icon: "https://img0.baidu.com/it/u=2138148539,1764238981&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" },
-                { name: '选项六', value: '6', icon: "https://img1.baidu.com/it/u=733418214,3903491350&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=313" },
-                { name: '选项七', value: '7', icon: "https://img1.baidu.com/it/u=1718642830,3610884461&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500" }
+                { name: '选项一', value: '1', icon: "https://img1.baidu.com/it/u=626427719,3451396095&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500", isDisabled: true },
+                { name: '选项二', value: '2', icon: "https://img1.baidu.com/it/u=700838104,4078529388&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500" },
+                { name: '选项三', value: '3', icon: "https://img2.baidu.com/it/u=4065465253,912770067&fm=253&fmt=auto&app=120&f=JPEG?w=800&h=800" },
+                { name: '选项四', value: '4', icon: "https://img1.baidu.com/it/u=2725751717,2191296050&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500" },
+                { name: '选项五', value: '5', icon: "https://img1.baidu.com/it/u=3680872223,3132467302&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500" },
+                { name: '选项六', value: '6', icon: "https://img2.baidu.com/it/u=2265290985,2435372066&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500" },
+                { name: '选项七', value: '7', icon: "https://img2.baidu.com/it/u=2400134426,605051231&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=800" }
               ],
               [
-                { name: '选项八', value: '8', icon: "https://img0.baidu.com/it/u=145395842,2013084776&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" },
-                { name: '选项九', value: '9', icon: "https://img2.baidu.com/it/u=840413173,1942127153&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500" },
-                { name: '选项十', value: '10', icon: "https://img0.baidu.com/it/u=863503243,1550253516&fm=253&fmt=auto&app=120&f=JPEG?w=1280&h=800" }
+                { name: '选项八', value: '8', icon: "https://img0.baidu.com/it/u=4206081356,667300244&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500" },
+                { name: '选项九', value: '9', icon: "https://img0.baidu.com/it/u=2290976380,3655879079&fm=253&fmt=auto&app=120&f=JPEG?w=500&h=500" },
+                { name: '选项十', value: '10', icon: "https://img0.baidu.com/it/u=1901164914,2143836773&fm=253&fmt=auto&app=120&f=JPEG?w=500&h=500" }
               ]
             ],
             cancelText: '取消',
-            onSelect: (index1: number, index2?: number | string, value?: string) => {
-              IBestToast.show(`点击了第${index1}行第${index2}个选项，标识为${value}`)
+            onSelect: (index1: number, index2?: number | string, value?: number | string, name?: string | number) => {
+              IBestToast.show(`点击了第${index1}行第${index2}个选项，标识为${value}，名称为${name}`)
             }
           })
         }
@@ -400,7 +406,7 @@ struct DemoPage {
 | closeOnClickOverlay| 是否允许点击遮罩关闭                         | _boolean_ |  `true`  |
 | customContent   | 自定义内容                                    | _CustomBuilder_ |  `-`  |
 | onOpen      | 打开面板后触发                                    | _() => void_ |  `-`  |
-| onSelect    | 点击选项后触发, 当 `acions` 为一维数组时, `index1` 为选项索引, `index2` 为选项标识; 当 `acions` 为二维数组时, `index1` 为点击选项的行索引, `index2` 为当前行的选项索引, `value` 为选项标识 | _(index1: number, index2?: number \| string, value?: string) => void_ |  `-`  |
+| onSelect    | 点击选项后触发, 当 `acions` 为一维简单数组或一维对象数组且未指定value时, `index1` 为选项索引, `index2` 为选项名称; 当 `acions` 为一维对象数组且指定value或二维数组时, `index1` 为点击选项的行索引, `index2` 为当前行的选项索引, `value` 为选项标识, `name` 为选项名称。`选项名称`为 <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">2.1.9</span> 版本新增。 | _(index1: number, index2?: number \| string, value?: string, name?: string) => void_ |  `-`  |
 | onCancel        | 点击取消按钮触发                               | _() => void_ |  `-`  |
 | onClose         | 面板关闭后触发                                 | _() => void_ |  `-`  |
 | cancelTextColor | 取消按钮文字颜色                               | _ResourceColor_ |  `#646566`  |
@@ -418,7 +424,6 @@ struct DemoPage {
 | icon         | 选项图标                                       | _ResourceStr_ |
 | isDisabled   | 是否禁用                                       | _boolean_ |
 | readonly     | 是否只读                                       | _boolean_ |
-
 
 ### IBestActionMultiLine 数据结构
 | 参数         | 说明                                          | 类型      |

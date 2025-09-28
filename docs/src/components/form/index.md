@@ -778,7 +778,7 @@ struct subjectItem{
 | validateField  | 验证指定表单           | `prop: string, callBack?: (valid: boolean, field?: FieldValidateResult) => void` | `Promise<IBestFieldValidateResult>` |
 | resetValidation| 重置整个/指定表单验证信息| `prop?: string \| string[]` | `void` |
 | getFormValues  | 获取表单所有表单项的值   | `-` | `Record<string, IBestFieldValueType>` |
-| setFormValues <span style="font-size: 12px; padding:2px 4px;color:#3D8AF2;border-radius:4px;border: 1px solid #3D8AF2">1.0.2</span>| 设置表单值 | `values: Record<string, IBestFieldValueType>` | `void` |
+| setFormValues  | 设置表单值 | `values: Record<string, IBestFieldValueType>` | `void` |
 
 ### IBestFormRuleItem  数据结构
 
